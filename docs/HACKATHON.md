@@ -50,12 +50,12 @@ The service is trusted to hold content keys. Encryption cannot stop copying afte
 | Oct 12, before 20:00 | Finalize form answers, logo, repository/video links, Telegram contact and founder profile. Review the complete submission preview. Obtain explicit owner confirmation, then submit and verify the receipt. | Owner's missing profile/contact information and explicit final confirmation. |
 | Oct 13, before 14:59 | Emergency buffer only: resolve upload/access issues and confirm the platform shows the project submitted.                                                                                                  | Official deadline; no new feature scope.                                     |
 
-If Devnet funding is still blocked on Oct 10, keep developing the repeatable local flow and record the blocker accurately. A mock video is a fallback demonstration, not a substitute for chain acceptance. Do not spend the remaining time adding NFTs, mainnet payments, usage metering, or another chain.
+Devnet funding and the positive CLI purchase/recovery path are verified. Focus the remaining time on browser-wallet, interrupted-payment and refund acceptance. Keep test transactions separate from revenue; mainnet payments, NFTs, metering and additional chains are outside the submission scope.
 
 ## Remaining owner inputs
 
-- Telegram contact: required by the form; no contact supplied yet.
-- Founder profile: role/title, city, school status, educational background, relevant experience, and the required gender choice (including “Prefer not to say”). Review the prefilled full name; a handle is not necessarily the desired full name.
+- Telegram contact: the form requires it; the owner has no account. Resolve an organizer-approved alternative without inventing a contact.
+- Founder profile is confirmed complete. Review its saved full name and experience before final submission.
 - Review the published founder biography and disclose any work predating the contest before final submission.
 
 Prepared next to the code: [product demo guide](DEMO.md), [two-minute pitch script](PITCH.md), [Devnet acceptance runbook](DEVNET-ACCEPTANCE.md), [publishing guide](PUBLISHING.md). The plan does not create reminders or schedule background runs.
