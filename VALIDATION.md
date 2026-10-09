@@ -1,5 +1,9 @@
 # 验证记录
 
+> Current October 10 acceptance: Hosted Solana Devnet checkout is enabled on the existing Alibaba server. Public HTTPS CLI purchase, exact 70/30 payouts, five-file installation, browser session recovery, a real 600-second timeout refund and encrypted off-host paid-vault restoration passed. Phantom browser purchase and exact ZIP recovery also passed. Test funds only; no mainnet payments or revenue claims. See [hosted evidence](docs/ONLINE-ACCEPTANCE.md).
+
+The records below describe their stated observation times. Later hosted results above supersede earlier pending/disabled statuses.
+
 ## Verified public Devnet purchase — October 9, 23:40 Shanghai
 
 - [Deployed program](https://explorer.solana.com/address/AXwhEjRZEqA8Yz6C5gyToudg65UZie8nXuJvbd83LKQu?cluster=devnet): `AXwhEjRZEqA8Yz6C5gyToudg65UZie8nXuJvbd83LKQu`; [deployment transaction](https://explorer.solana.com/tx/61kBkeFNH1x5bsAP4wwnzGr1en77MinJqAHrya6a5dbVkr6ncU3b4NfzRfUHwgXJs9htZUSSso8ZA8f8DoMxhL44?cluster=devnet) finalized. The executable program, upgrade authority and every byte of the deployed ELF were checked against CI source `f725265891260b3ee44afd25225f4314bd4fc3aa`. Artifact SHA-256: `0420cd7561f32883ea92220a652ccaf5f411eb8dd2b50ebed5ddb1912b5a8fd9`; 314,968 bytes.
