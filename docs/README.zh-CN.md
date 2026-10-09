@@ -182,7 +182,6 @@ TypeScript 测试覆盖密文篡改、错误密钥、危险路径、符号链接
 
 本地验证结果与公开 Devnet 部署状态见 [VALIDATION.md](../VALIDATION.md)。生产构建通过不等同于已部署合约或完成公开 Devnet 交易。
 
-
 ## 公开网站与独立安装工具
 
 产品形态是“网站 + 独立 CLI + 支付与密钥交付 API”。网站负责解释价值、预览技能和给出安装入口；CLI 将技能安装到用户机器；付费服务负责不可变版本、作者分成、订单、解密密钥和恢复。现阶段免费 MIT 示例可独立安装，公开 Devnet 购买尚待验收。
@@ -192,3 +191,14 @@ TypeScript 测试覆盖密文篡改、错误密钥、危险路径、符号链接
 GitHub Actions 在应用测试、完整生产构建、干净目录发行包安装和合约检查通过后，将网站自动发布到 GitHub Pages。Render 账户创建静态网站时要求绑卡，未创建任何服务或付费资源；持久化 API 的准备配置见 [DEPLOYMENT.md](DEPLOYMENT.md)。
 
 区块链支付对 agent 的价值在于钱包签名接口、稳定币计价、可读取的交易回执，以及一次交易内同步写入版本许可和支付作者份额。自主花费仍需预算、授权和私钥管理，当前 MVP 尚未实现这些控制。传统支付同样可以支持交付和分账；比较时需要计入链上手续费、账户租金、RPC 和出入金成本。
+
+## 已上线的网站与安装入口
+
+[SkillSeal 网站](https://fangnster.github.io/skillseal/) · [新版产品演示](https://youtu.be/fCNz1DUwwtM) · [创始人介绍](https://youtu.be/R40MxhZ26mo)。需要 Node.js 24 或更高版本：
+
+```sh
+npm install --ignore-scripts -g https://fangnster.github.io/skillseal/downloads/skillseal-cli-0.1.1.tgz
+skillseal sample --server https://fangnster.github.io/skillseal --destination ./skills/research-brief
+```
+
+已从公开 HTTPS 地址在干净目录验证 npm 安装、两个新目录的示例安装、已有目录拒绝覆盖，以及五个 Markdown 文件的本地读取。打开 `SKILL.md` 交给自己的 Agent，提供资料，再按 `references/review-checklist.md` 检查结果。公开示例免费且为 MIT，不需要钱包，也不会生成付费授权。付费 API 和公开 Devnet 购买仍待验收。

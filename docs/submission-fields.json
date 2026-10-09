@@ -1,5 +1,5 @@
 {
-  "status": "PROJECT AND REPOSITORY FIELDS SAVED AS DRAFT — NOT FINALLY SUBMITTED",
+  "status": "PROJECT AND REPOSITORY FIELDS SAVED AS DRAFT \u2014 NOT FINALLY SUBMITTED",
   "reviewedAt": "2026-10-09",
   "event": "Crypto World's Fair 2026",
   "projectUrl": "https://colosseum.com/arena/projects/skillseal",
@@ -21,15 +21,14 @@
     "otherContributors": "OpenAI Codex assisted with code generation, implementation review, tests, and documentation. The registered human team currently has one member. Any additional human contributor should be disclosed here before submission.",
     "notesForJudges": "This is an early prototype. Local mock payments are labelled explicitly and are not public-chain transactions or revenue. The key service is trusted and decrypted files can be copied. Public Devnet purchase acceptance, independent security review, and real willingness-to-pay evidence remain pending. Please use the validation record for the exact scope of each test result.",
     "repoContext": "Complete MVP source: marketplace, API, CLI, key service, worker, Anchor escrow, tests, and a MIT-licensed example Skill. Initial public upload: October 9, 2026. Runtime keys, sessions, and data are excluded. Local mock tests and compiled local SBF tests are distinct from public Devnet acceptance, which remains pending. See VALIDATION.md for the scope of each result.",
-    "accessInstructions": "A standalone CLI and free MIT Research Brief sample are prepared for the public website. Public HTTPS deployment acceptance is in progress. The paid marketplace flow can be reproduced with Node.js 24+, pnpm 11 and pnpm run demo; mock payments are explicitly labelled. Public Devnet payment acceptance remains pending.",
+    "accessInstructions": "No login. Website: copy the two install commands; Node.js 24+ required. The free MIT sample needs no wallet. Public HTTPS install/reinstall verified. Videos are Unlisted with AI narration. Paid flow is local mock; public Devnet checkout remains pending.",
     "githubRepository": "https://github.com/fangnster/skillseal",
-    "demoVideo": "https://youtu.be/eSiJYIZ4oU8",
-    "pitchVideo": "https://youtu.be/R40MxhZ26mo"
+    "demoVideo": "https://youtu.be/fCNz1DUwwtM",
+    "pitchVideo": "https://youtu.be/R40MxhZ26mo",
+    "website": "https://fangnster.github.io/skillseal/"
   },
   "missing": {
     "teamTelegram": "Required; owner explicitly has no Telegram account. Do not invent a contact.",
-    "demoVideo": "Published Unlisted at https://youtu.be/eSiJYIZ4oU8; an updated public website walkthrough is in preparation.",
-    "pitchVideo": "Published Unlisted at https://youtu.be/R40MxhZ26mo; title is Senior Technical Expert.",
     "founderProfile": "Owner must review full name, public role, gender/prefer-not-to-say, city, school status, education, and relevant experience.",
     "publicDevnetEvidence": "Not yet deployed or accepted on public Devnet. Do not invent addresses or transaction signatures.",
     "communityReferral": "Select the owner-requested solar community option after verifying it in the form; separate from Solana chain selection."
@@ -44,6 +43,18 @@
     "GitHub repository",
     "Project logo",
     "Repository context",
-    "Local access instructions"
-  ]
+    "Local access instructions",
+    "Public website URL",
+    "Updated product video URL",
+    "Founder video URL",
+    "Public installation access instructions"
+  ],
+  "publishedWebsite": "https://fangnster.github.io/skillseal/",
+  "publishedMedia": {
+    "demo": "https://youtu.be/fCNz1DUwwtM",
+    "founder": "https://youtu.be/R40MxhZ26mo",
+    "visibility": "Unlisted, viewable by link",
+    "demoSeconds": 174.21,
+    "founderSeconds": 99.42
+  }
 }

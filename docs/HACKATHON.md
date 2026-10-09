@@ -2,9 +2,9 @@
 
 SkillSeal's registration is verified: [project page](https://colosseum.com/arena/projects/skillseal), project ID 16413, category **AI Platforms / Agents**, one registered team member. On October 9, 2026, the English project answers, China, Solana, public repository link and logo were saved as a draft. **Final submission is not complete and requires explicit owner confirmation.**
 
-[The public MIT repository](https://github.com/fangnster/skillseal) contains the complete MVP. Its first full-source CI passed. Two English videos have been produced locally for owner review: a 2:23 product walkthrough of the explicitly labelled local mock flow and a separate 1:41 founder introduction. They are not yet uploaded to an accepted video platform. Founder photographs, resume and private video production assets stay outside the public code repository.
+[The public MIT repository](https://github.com/fangnster/skillseal) contains the complete MVP. Its first full-source CI passed. The [public website](https://fangnster.github.io/skillseal/) and standalone installer are live. The [2:54 product walkthrough](https://youtu.be/fCNz1DUwwtM) shows actual website and HTTPS installation results and separately labels the local mock paid flow. The [1:39 founder introduction](https://youtu.be/R40MxhZ26mo) uses the approved Senior Technical Expert title. Both videos are Unlisted and viewable by link. Founder photographs, resume and private video production assets stay outside the public code repository.
 
-The remaining form requirements are a Telegram contact, two video links and the incomplete founder profile. The owner requested **solar** as the community referral; that option is not present in the observed project-details, media/code or review sections and must be verified before final submission. It is distinct from the selected Solana chain checkbox.
+The remaining form requirements are a Telegram contact and the incomplete founder profile. The owner requested **solar** as the community referral; that option is not present in the observed project-details, media/code or review sections and must be verified before final submission. It is distinct from the selected Solana chain checkbox.
 
 ## Event and deadline
 
@@ -44,7 +44,7 @@ The service is trusted to hold content keys. Encryption cannot stop copying afte
 
 | Date                 | Work and completion condition                                                                                                                                                                              | Dependency                                                                   |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| Oct 9                | Verify registration, prepare English UI and form answers, fix pending checkout states, strengthen the example Skill, run regression checks.                                                                | Local implementation and review.                                             |
+| Oct 9                | Registration verified; public source, website and standalone installer published; HTTPS installation checked; English product and founder videos published.                                                | Local implementation and review.                                             |
 | Oct 10               | Deploy to public Devnet; complete one real test-USDC purchase, 70/30 payouts, local install and reinstall. Record transaction evidence. The public GitHub repository is already available.                 | Test SOL, program build/deploy and author/buyer funding.                     |
 | Oct 11               | Exercise interrupted checkout and timeout refund; review the prepared videos and update chain footage after Devnet acceptance. Publish reviewed videos and check visibility.                               | Devnet acceptance, founder facts, video recording/upload.                    |
 | Oct 12, before 20:00 | Finalize form answers, logo, repository/video links, Telegram contact and founder profile. Review the complete submission preview. Obtain explicit owner confirmation, then submit and verify the receipt. | Owner's missing profile/contact information and explicit final confirmation. |
@@ -56,7 +56,7 @@ If Devnet funding is still blocked on Oct 10, keep developing the repeatable loc
 
 - Telegram contact: required by the form; no contact supplied yet.
 - Founder profile: role/title, city, school status, educational background, relevant experience, and the required gender choice (including “Prefer not to say”). Review the prefilled full name; a handle is not necessarily the desired full name.
-- Confirm the founder pitch biography and any work predating the contest before publishing the final videos and submission.
+- Review the published founder biography and disclose any work predating the contest before final submission.
 
 Prepared next to the code: [product demo guide](DEMO.md), [two-minute pitch script](PITCH.md), [Devnet acceptance runbook](DEVNET-ACCEPTANCE.md), [publishing guide](PUBLISHING.md). The plan does not create reminders or schedule background runs.
 

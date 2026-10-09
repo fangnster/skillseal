@@ -52,10 +52,14 @@ pnpm run demo
 
 ## 参加黑客松
 
-准备好的 [项目介绍](HACKATHON.md) 与 [演示步骤](DEMO.md) 可作为报名和视频素材。当前赛事是 Crypto World’s Fair 2026。报名草稿已保存英文项目说明、China、Solana、公开仓库链接和标志；尚未最终提交。两段英文视频已在本机生成，发布平台链接与创始人资料仍需完成。既有工作与开发时间范围须在最终确认时核对。
+准备好的 [项目介绍](HACKATHON.md) 与 [演示步骤](DEMO.md) 可作为报名和视频素材。当前赛事是 Crypto World’s Fair 2026。报名草稿已保存英文项目说明、China、Solana、公开仓库链接和标志；尚未最终提交。[新版产品视频](https://youtu.be/fCNz1DUwwtM) 和 [创始人视频](https://youtu.be/R40MxhZ26mo) 已上传 YouTube，均为 Unlisted，可通过链接观看。创始人必填资料仍需补齐。既有工作与开发时间范围须在最终确认时核对。
 
 公开 Devnet 部署仍是下一项技术验收：获得测试 SOL、部署、两位作者批准、真实测试 USDC 购买、恢复与退款。详细状态见 `VALIDATION.md`。
 
 ## Final submission restriction
 
 未经所有者明确确认，不得最终提交 Colosseum 项目。提交前须核对并选择用户指定的 `solar` 社区推荐方；它与 Solana 链选项不同。Telegram 仍未提供，不可填写虚构联系账号。
+
+## 网站与独立安装包已发布
+
+公开地址为 [https://fangnster.github.io/skillseal/](https://fangnster.github.io/skillseal/)。GitHub Actions 在应用、发行包安装和合约检查通过后发布 `site-dist` 到 GitHub Pages。0.1.1 安装包包含编译后的 JavaScript 客户端；公开 MIT 示例通过固定 SHA-256 验证。真实 HTTPS 下载、npm 安装、重复安装、防覆盖和本地读取已验证。Render 因要求账户付款信息未创建服务；网站发布没有创建付费资源。持久化付费 API 与公开 Devnet 验收仍待完成。
