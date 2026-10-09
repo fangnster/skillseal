@@ -30,7 +30,8 @@ while (!stopped) {
             ))),
     )) {
     try {
-      await service.sync(order.id);
+      // Historical fee scans run in the worker so delivery does not wait for RPC history.
+      await service.sync(order.id, true);
     } catch {
       /* Metrics record a safe failure code; recover after RPC restarts. */
     }
