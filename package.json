@@ -1,0 +1,45 @@
+{
+  "name": "skillseal",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0",
+    "pnpm": ">=11.0.0"
+  },
+  "scripts": {
+    "setup": "node --experimental-strip-types scripts/init.ts",
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "cli": "node --env-file=.env.local --experimental-strip-types cli/index.ts",
+    "seed": "node --env-file=.env.local --experimental-strip-types scripts/seed.ts",
+    "worker": "node --env-file=.env.local --experimental-strip-types scripts/worker.ts",
+    "demo": "node --experimental-strip-types scripts/demo.ts",
+    "format": "prettier --write src app cli scripts tests next.config.ts",
+    "format:check": "prettier --check src app cli scripts tests next.config.ts"
+  },
+  "dependencies": {
+    "@solana/spl-token": "0.4.14",
+    "@solana/web3.js": "1.98.4",
+    "bs58": "6.0.0",
+    "libsodium-wrappers-sumo": "0.7.15",
+    "next": "16.4.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@types/libsodium-wrappers-sumo": "0.7.8",
+    "@types/node": "24.10.1",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "prettier": "3.6.2",
+    "typescript": "5.9.3"
+  },
+  "description": "Encrypted Agent Skill delivery with Solana escrow, version licenses and creator payouts.",
+  "packageManager": "pnpm@11.25.0",
+  "license": "MIT"
+}

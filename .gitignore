@@ -1,0 +1,14 @@
+node_modules/
+.next/
+.data/
+.env*
+!.env.example
+anchor/target/
+work/
+*.tsbuildinfo
+skills/
+*-keypair.json
+*-session.json
+sessions/
+*.log
+.DS_Store
