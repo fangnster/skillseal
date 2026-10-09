@@ -3,10 +3,14 @@ import { useState, useEffect } from 'react';
 import { Connection, Transaction, PublicKey } from '@solana/web3.js';
 import { DEVNET_GENESIS, type Version, type Order } from '../src/types.ts';
 import { validateWalletTransaction } from '../src/transactions.ts';
+import { Recovery } from './recovery';
 import { checkoutState } from '../src/checkout-state.ts';
 
-type Config = {
-  backend: 'mock' | 'solana';
+export type Config = {
+  backend: 'mock' | 'solana' | 'disabled';
+  adminWallet: string;
+  moderationRequired: boolean;
+  paidPublishing: boolean;
   issuer: string;
   network: string;
   origin: string;
@@ -40,7 +44,7 @@ export async function api<T = any>(url: string, body?: unknown): Promise<T> {
   return data;
 }
 const shorten = (s: string) => s.slice(0, 5) + '…' + s.slice(-4);
-function Header({ backend }: { backend?: string }) {
+export function Header({ backend }: { backend?: string }) {
   return (
     <header>
       <a className="brand" href="/">
@@ -48,7 +52,8 @@ function Header({ backend }: { backend?: string }) {
       </a>
       <nav aria-label="Main navigation">
         <a href="/install">Install</a>
-        <a href="/creators">Creators</a>
+        <a href="/creators">Publish</a>
+        <a href="/library">Recover</a>
         <a href="https://github.com/fangnster/skillseal">GitHub ↗</a>
       </nav>
       <div className="badge">
@@ -56,7 +61,9 @@ function Header({ backend }: { backend?: string }) {
           ? 'LOCAL MOCK · NO ON-CHAIN FUNDS'
           : backend === 'solana'
             ? 'SOLANA DEVNET · TEST FUNDS'
-            : 'CHECKING ENVIRONMENT…'}
+            : backend === 'disabled'
+              ? 'FREE SKILLS · PAID CHECKOUT NOT ENABLED'
+              : 'CHECKING ENVIRONMENT…'}
       </div>
     </header>
   );
@@ -65,11 +72,13 @@ export function Marketplace() {
   const [versions, setVersions] = useState<Version[]>([]),
     [config, setConfig] = useState<Config>(),
     [error, setError] = useState(''),
-    [buying, setBuying] = useState('');
+    [buying, setBuying] = useState(''),
+    [query, setQuery] = useState(''),
+    [filter, setFilter] = useState('all');
   useEffect(() => {
     Promise.all([api<Version[]>('versions'), api<Config>('config')])
       .then(([v, c]) => {
-        setVersions(v);
+        setVersions(v.filter((release) => release.active));
         setConfig(c);
       })
       .catch((e) => setError(e.message));
@@ -114,74 +123,127 @@ export function Marketplace() {
           {error} Please retry in a moment.
         </div>
       )}
+      <div className="catalog-filters">
+        <label>
+          Search Skills
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Name, description or creator wallet"
+          />
+        </label>
+        <label>
+          Price
+          <select value={filter} onChange={(e) => setFilter(e.target.value)}>
+            <option value="all">All releases</option>
+            <option value="free">Free</option>
+            <option value="paid">Paid / Devnet</option>
+          </select>
+        </label>
+      </div>
       <div className="cards">
-        {versions.map((v) => (
-          <article className="card" key={v.id}>
-            <div className="card-top">
-              <span className="glyph">⌘</span>
-              <span className="tag">v{v.manifest.version}</span>
-            </div>
-            <h3>{v.manifest.name}</h3>
-            <p>{v.manifest.description}</p>
-            <div className="author-line">
-              {v.manifest.splits.length} creators ·{' '}
-              {v.active ? 'Split approved' : 'Awaiting author approval'}
-            </div>
-            <div className="card-bottom">
-              <strong>
-                {(Number(v.manifest.price) / 1_000_000).toFixed(2)} <small>USDC</small>
-              </strong>
-              <button
-                disabled={!v.active || !config || Boolean(buying)}
-                onClick={async () => {
-                  setBuying(v.id);
-                  try {
-                    const sodium = (await import('libsodium-wrappers-sumo')).default;
-                    await sodium.ready;
-                    const bundleResponse = await fetch('/api/versions/' + v.id + '/bundle');
-                    if (!bundleResponse.ok)
-                      throw new Error('Encrypted download failed. Please retry.');
-                    const ciphertext = new Uint8Array(await bundleResponse.arrayBuffer());
-                    const digest = Array.from(
-                      new Uint8Array(await crypto.subtle.digest('SHA-256', ciphertext)),
-                      (b) => b.toString(16).padStart(2, '0'),
-                    ).join('');
-                    if (digest !== v.manifest.bundleHash)
-                      throw new Error('The encrypted bundle hash does not match. Please retry.');
-                    const pair = sodium.crypto_box_keypair();
-                    const toB64 = (b: Uint8Array) =>
-                      sodium.to_base64(b, sodium.base64_variants.ORIGINAL);
-                    const o = await api<Order>('orders', {
-                      versionId: v.id,
-                      encryptionPublicKey: toB64(pair.publicKey),
-                    });
-                    const file = JSON.stringify({
-                      orderId: o.id,
-                      origin: config!.origin,
-                      publicKey: toB64(pair.publicKey),
-                      privateKey: toB64(pair.privateKey),
-                      encryptedBundle: toB64(ciphertext),
-                    });
-                    const link = document.createElement('a');
-                    link.href = URL.createObjectURL(new Blob([file], { type: 'application/json' }));
-                    link.download = 'skillseal-session.json';
-                    link.click();
-                    URL.revokeObjectURL(link.href);
-                    window.location.href = '/checkout/' + o.id;
-                  } catch (e) {
-                    setError((e as Error).message);
-                    setBuying('');
-                  }
-                }}
-              >
-                {buying === v.id ? 'Preparing download…' : 'Buy version ↗'}
-              </button>
-            </div>
-          </article>
-        ))}
+        {versions
+          .filter(
+            (v) =>
+              (filter === 'all' || (filter === 'free') === (v.manifest.price === '0')) &&
+              [v.manifest.name, v.manifest.description, v.manifest.publisher]
+                .join(' ')
+                .toLowerCase()
+                .includes(query.toLowerCase()),
+          )
+          .map((v) => (
+            <article className="card" key={v.id}>
+              <div className="card-top">
+                <span className="glyph">⌘</span>
+                <span className="tag">v{v.manifest.version}</span>
+              </div>
+              <h3>
+                <a href={'/skills/' + v.id}>{v.manifest.name}</a>
+              </h3>
+              <p>{v.manifest.description}</p>
+              <div className="author-line">
+                {v.manifest.splits.length} creators ·{' '}
+                {v.active
+                  ? 'Available'
+                  : v.reviewStatus === 'pending'
+                    ? 'Awaiting review'
+                    : v.reviewStatus === 'rejected'
+                      ? 'Not listed'
+                      : 'Awaiting approvals / checkout'}
+              </div>
+              <div className="card-bottom">
+                <strong>
+                  {v.manifest.price === '0'
+                    ? 'Free'
+                    : (Number(v.manifest.price) / 1_000_000).toFixed(2)}{' '}
+                  <small>{v.manifest.price !== '0' && 'test USDC'}</small>
+                </strong>
+                <button
+                  disabled={!v.active || !config || Boolean(buying)}
+                  onClick={async () => {
+                    if (v.manifest.price === '0') {
+                      window.location.href = '/skills/' + v.id;
+                      return;
+                    }
+                    setBuying(v.id);
+                    try {
+                      const sodium = (await import('libsodium-wrappers-sumo')).default;
+                      await sodium.ready;
+                      const bundleResponse = await fetch('/api/versions/' + v.id + '/bundle');
+                      if (!bundleResponse.ok)
+                        throw new Error('Encrypted download failed. Please retry.');
+                      const ciphertext = new Uint8Array(await bundleResponse.arrayBuffer());
+                      const digest = Array.from(
+                        new Uint8Array(await crypto.subtle.digest('SHA-256', ciphertext)),
+                        (b) => b.toString(16).padStart(2, '0'),
+                      ).join('');
+                      if (digest !== v.manifest.bundleHash)
+                        throw new Error('The encrypted bundle hash does not match. Please retry.');
+                      const pair = sodium.crypto_box_keypair();
+                      const toB64 = (b: Uint8Array) =>
+                        sodium.to_base64(b, sodium.base64_variants.ORIGINAL);
+                      const o = await api<Order>('orders', {
+                        versionId: v.id,
+                        encryptionPublicKey: toB64(pair.publicKey),
+                      });
+                      const file = JSON.stringify({
+                        orderId: o.id,
+                        origin: config!.origin,
+                        publicKey: toB64(pair.publicKey),
+                        privateKey: toB64(pair.privateKey),
+                        encryptedBundle: toB64(ciphertext),
+                      });
+                      const link = document.createElement('a');
+                      link.href = URL.createObjectURL(
+                        new Blob([file], { type: 'application/json' }),
+                      );
+                      link.download = 'skillseal-session.json';
+                      link.click();
+                      URL.revokeObjectURL(link.href);
+                      window.location.href = '/checkout/' + o.id;
+                    } catch (e) {
+                      setError((e as Error).message);
+                      setBuying('');
+                    }
+                  }}
+                >
+                  {buying === v.id
+                    ? 'Preparing download…'
+                    : v.manifest.price === '0'
+                      ? 'Download ↗'
+                      : 'Buy version ↗'}
+                </button>
+              </div>
+              <a className="text-link" href={'/skills/' + v.id}>
+                Details & share →
+              </a>
+            </article>
+          ))}
       </div>
       {!versions.length && !error && (
-        <div className="notice">No Skills have been published yet. Check back soon.</div>
+        <div className="notice">
+          No approved Skills are listed yet. Publish a release or install the free MIT example.
+        </div>
       )}
       <aside className="trust">
         <div>
@@ -445,6 +507,12 @@ export function Checkout({ id }: { id: string }) {
                 </a>
               </p>
             )}
+            {config?.backend === 'disabled' && (
+              <div className="notice">
+                Paid checkout is not enabled on this server. Free Skills are available from their
+                detail pages.
+              </div>
+            )}
             {config?.backend === 'mock' && (
               <div className="notice">
                 This local demo uses simulated payments through the signed installer flow. Browser
@@ -458,7 +526,8 @@ export function Checkout({ id }: { id: string }) {
             )}
             {order?.status === 'granted' && (
               <div className="notice">
-                <strong>Finish the local install</strong>
+                <Recovery expectedOrder={id} />
+                <strong>Or finish with the CLI</strong>
                 <pre>
                   skillseal resume --session skillseal-session.json --destination ./skills/
                   {version.manifest.skillId}

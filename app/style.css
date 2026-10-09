@@ -583,3 +583,146 @@ code {
     padding: 10px;
   }
 }
+
+/* Creator studio, release pages and recovery */
+.compact {
+  padding: 45px 0 35px;
+}
+.compact h1 {
+  font-size: 44px;
+}
+.studio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.panel {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 26px;
+  min-width: 0;
+  margin-bottom: 24px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 18px 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+input:not([type='checkbox']),
+textarea,
+select {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+.check {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  margin: 18px 0;
+  line-height: 1.6;
+}
+.check input {
+  margin-top: 5px;
+}
+.split-input {
+  display: flex;
+  gap: 10px;
+  align-items: end;
+  margin-bottom: 12px;
+}
+.split-input label:first-child {
+  flex: 1;
+  min-width: 0;
+}
+.split-input label:nth-child(2) {
+  width: 85px;
+}
+.split-input label {
+  font-size: 12px;
+}
+.split-input input {
+  margin-top: 6px;
+}
+.address {
+  overflow-wrap: anywhere;
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.skill-preview,
+.panel pre,
+.card pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 360px;
+  overflow: auto;
+  line-height: 1.7;
+}
+.creator-row {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.catalog-filters {
+  display: flex;
+  gap: 18px;
+  margin: 20px 0;
+}
+.catalog-filters label:first-child {
+  flex: 1;
+}
+.catalog-filters label {
+  font-size: 13px;
+}
+.card .text-link {
+  display: inline-block;
+  margin: 16px 0;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid #65a881;
+  outline-offset: 3px;
+}
+@media (max-width: 760px) {
+  .studio-grid {
+    grid-template-columns: 1fr;
+  }
+  .compact h1 {
+    font-size: 35px;
+  }
+  .panel {
+    padding: 18px;
+  }
+  header {
+    height: auto;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+  }
+  .catalog-filters {
+    flex-direction: column;
+  }
+  .split-input {
+    flex-wrap: wrap;
+  }
+  .split-input label:first-child {
+    flex-basis: 100%;
+  }
+}
