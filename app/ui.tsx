@@ -75,6 +75,7 @@ export function Marketplace() {
     [buying, setBuying] = useState(''),
     [query, setQuery] = useState(''),
     [filter, setFilter] = useState('all');
+  const checkoutEnabled = config?.backend === 'solana' || config?.backend === 'mock';
   useEffect(() => {
     Promise.all([api<Version[]>('versions'), api<Config>('config')])
       .then(([v, c]) => {
@@ -94,9 +95,13 @@ export function Marketplace() {
           <em>sealed by its creators.</em>
         </h1>
         <p className="lede">
-          Download an encrypted Skill. Pay to unlock it locally.
+          {checkoutEnabled
+            ? 'Download an encrypted Skill. Pay to unlock it locally.'
+            : 'Publish, share and install a verified Skill version.'}
           <br />
-          Every version license comes with an agreed creator split.
+          {checkoutEnabled
+            ? 'Every version license comes with an agreed creator split.'
+            : 'Free releases need no buyer account or wallet. Paid checkout is not enabled.'}
         </p>
         <div className="actions">
           <a className="button" href="/install">
@@ -107,16 +112,20 @@ export function Marketplace() {
           </a>
         </div>
         <div className="steps">
-          <span>01 Download ciphertext</span>
-          <span>02 Pay with your wallet</span>
-          <span>03 Unlock locally</span>
+          <span>{checkoutEnabled ? '01 Download ciphertext' : '01 Choose a version'}</span>
+          <span>{checkoutEnabled ? '02 Pay with your wallet' : '02 Verify & download'}</span>
+          <span>{checkoutEnabled ? '03 Unlock locally' : '03 Install locally'}</span>
         </div>
       </section>
       <section className="section-heading">
         <h2>
           Explore Skills <small>{versions.length.toString().padStart(2, '0')}</small>
         </h2>
-        <span>One purchase · Keep the purchased version</span>
+        <span>
+          {checkoutEnabled
+            ? 'One purchase · Keep the purchased version'
+            : 'Free catalog · Keep the installed version'}
+        </span>
       </section>
       {error && (
         <div role="alert" className="notice error">
@@ -251,8 +260,12 @@ export function Marketplace() {
           <p>Use installed files offline. No per-run charge for local use.</p>
         </div>
         <div>
-          <strong>Know where the payment goes</strong>
-          <p>Authors approve the split before release. Changes require a new version.</p>
+          <strong>
+            {checkoutEnabled ? 'Know where the payment goes' : 'Know the release terms'}
+          </strong>
+          <p>
+            Authors approve the license and shares before release. Changes require a new version.
+          </p>
         </div>
         <div>
           <strong>Understand what is protected</strong>
@@ -260,7 +273,12 @@ export function Marketplace() {
         </div>
       </aside>
       <footer>
-        SKILLSEAL / DEVNET MVP <span>Use test funds during the beta.</span>
+        SKILLSEAL / {checkoutEnabled ? 'DEVNET MVP' : 'FREE CATALOG'}{' '}
+        <span>
+          {checkoutEnabled
+            ? 'Use test funds during the beta.'
+            : 'Paid Devnet checkout pending acceptance.'}
+        </span>
       </footer>
     </main>
   );
