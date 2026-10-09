@@ -613,7 +613,17 @@ code {
   font-size: 13px;
   font-weight: 600;
 }
-input:not([type='checkbox']),
+.file-picker {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.file-picker [role='status'] {
+  font-weight: 400;
+  overflow-wrap: anywhere;
+}
+input:not([type='checkbox']):not([hidden]),
 textarea,
 select {
   width: 100%;

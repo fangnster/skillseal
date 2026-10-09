@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { api, Header, type Config } from './ui';
+import { api, FilePicker, Header, type Config } from './ui';
 import { connectIdentity, importIdentity, signMessage, type SigningIdentity } from './wallet';
 import { decode64, checkedBundle } from '../src/browser-package.ts';
 import type { Bundle } from '../src/portable.ts';
@@ -76,18 +76,13 @@ export function ReviewQueue() {
         >
           Connect reviewer wallet
         </button>
-        <label className="field">
-          Restore reviewer identity for free catalog
-          <input
-            type="file"
-            accept=".json"
-            onChange={(e) => {
-              const f = e.target.files?.[0];
-              if (f) act(async () => setIdentity(await importIdentity(f)));
-              e.target.value = '';
-            }}
-          />
-        </label>
+        <FilePicker
+          label="Restore reviewer identity for free catalog"
+          buttonText="Choose reviewer file"
+          accept=".json"
+          disabled={busy}
+          onSelect={([file]) => act(async () => setIdentity(await importIdentity(file)))}
+        />
         {identity && <p className="address">Connected: {identity.address}</p>}
       </section>
       <div className="cards">

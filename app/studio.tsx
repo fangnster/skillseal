@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { PublicKey } from '@solana/web3.js';
-import { api, Header, type Config } from './ui';
+import { api, FilePicker, Header, type Config } from './ui';
 import {
   createIdentity,
   connectIdentity,
@@ -213,18 +213,13 @@ export function CreatorStudio() {
               Create free publishing identity
             </button>
           </div>
-          <label className="field">
-            Restore private creator identity
-            <input
-              type="file"
-              accept=".json"
-              onChange={(e) => {
-                const f = e.target.files?.[0];
-                if (f) act(async () => useIdentity(await importIdentity(f), true));
-                e.target.value = '';
-              }}
-            />
-          </label>
+          <FilePicker
+            label="Restore private creator identity"
+            buttonText="Choose identity file"
+            accept=".json"
+            disabled={busy}
+            onSelect={([file]) => act(async () => useIdentity(await importIdentity(file), true))}
+          />
           {identity && (
             <>
               <p className="address">{identity.address}</p>
@@ -259,23 +254,20 @@ export function CreatorStudio() {
             Choose a folder with SKILL.md at its root, or a single SKILL.md. Up to 500 files / 10
             MiB. No ZIP upload.
           </p>
-          <label className="field">
-            Choose Skill folder
-            <input
-              type="file"
-              {...({ webkitdirectory: '', directory: '' } as Record<string, string>)}
-              multiple
-              onChange={(e) => selectFiles(Array.from(e.target.files || []), true)}
-            />
-          </label>
-          <label className="field">
-            Or choose SKILL.md
-            <input
-              type="file"
-              accept=".md"
-              onChange={(e) => selectFiles(Array.from(e.target.files || []), false)}
-            />
-          </label>
+          <FilePicker
+            label="Skill folder"
+            buttonText="Choose Skill folder"
+            directory
+            disabled={busy}
+            onSelect={(files) => selectFiles(files, true)}
+          />
+          <FilePicker
+            label="Or select a single SKILL.md"
+            buttonText="Choose SKILL.md"
+            accept=".md"
+            disabled={busy}
+            onSelect={(files) => selectFiles(files, false)}
+          />
           {pkg && (
             <details open>
               <summary>{pkg.bundle.files.length} files validated</summary>

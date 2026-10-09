@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { api } from './ui';
+import { api, FilePicker } from './ui';
 import { sodiumClient } from './wallet';
 import {
   decode64,
@@ -90,16 +90,12 @@ export function Recovery({ expectedOrder }: { expectedOrder?: string }) {
         Choose your private skillseal-session.json. Its private key stays in this browser. Recovery
         uses the existing order.
       </p>
-      <input
-        aria-label="Private purchase recovery session"
-        type="file"
+      <FilePicker
+        label="Private purchase recovery session"
+        buttonText="Choose recovery file"
         accept=".json"
         disabled={busy}
-        onChange={(e) => {
-          const f = e.target.files?.[0];
-          if (f) recover(f);
-          e.target.value = '';
-        }}
+        onSelect={([file]) => recover(file)}
       />
       {busy && <p>Checking the existing license…</p>}
       {message && (

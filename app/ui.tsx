@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useId, useRef } from 'react';
 import { Connection, Transaction, PublicKey } from '@solana/web3.js';
 import { DEVNET_GENESIS, type Version, type Order } from '../src/types.ts';
 import { validateWalletTransaction } from '../src/transactions.ts';
@@ -44,6 +44,61 @@ export async function api<T = any>(url: string, body?: unknown): Promise<T> {
   return data;
 }
 const shorten = (s: string) => s.slice(0, 5) + '…' + s.slice(-4);
+export function FilePicker({
+  label,
+  buttonText,
+  accept,
+  directory = false,
+  disabled = false,
+  onSelect,
+}: {
+  label: string;
+  buttonText: string;
+  accept?: string;
+  directory?: boolean;
+  disabled?: boolean;
+  onSelect: (files: File[]) => void;
+}) {
+  const input = useRef<HTMLInputElement>(null);
+  const id = useId();
+  const [selection, setSelection] = useState('');
+  return (
+    <div className="field" role="group" aria-labelledby={id + '-label'}>
+      <span id={id + '-label'}>{label}</span>
+      <div className="file-picker">
+        <button
+          type="button"
+          disabled={disabled}
+          aria-describedby={id + '-selection'}
+          onClick={() => input.current?.click()}
+        >
+          {buttonText}
+        </button>
+        <span id={id + '-selection'} role="status">
+          {selection || (directory ? 'No folder selected' : 'No file selected')}
+        </span>
+      </div>
+      <input
+        ref={input}
+        hidden
+        type="file"
+        aria-label={label}
+        accept={accept}
+        disabled={disabled}
+        multiple={directory}
+        {...(directory ? { webkitdirectory: '', directory: '' } : {})}
+        onChange={(e) => {
+          const files = Array.from(e.target.files || []);
+          if (files.length) {
+            setSelection(directory ? `${files.length} files selected` : files[0].name);
+            onSelect(files);
+          }
+          e.target.value = '';
+        }}
+      />
+    </div>
+  );
+}
 export function Header({ backend }: { backend?: string }) {
   return (
     <header>
