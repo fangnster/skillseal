@@ -23,17 +23,20 @@ Choose the demo mode explicitly:
 
 Do not present a local mock order as a Devnet transaction. The browser has a visible environment badge.
 
-## Three-minute walkthrough
+## Published video timeline
 
-| Time      | Screen or action                                                                          | Narrative                                                                                                                                                                                                                             |
-| --------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0:00–0:25 | Marketplace and one Skill version                                                         | Agent developers want paid workflows that stay local. SkillSeal sells a permanent version license.                                                                                                                                    |
-| 0:25–0:45 | Research Brief card and 70/30 authors                                                     | Each author approves a fixed split before publication.                                                                                                                                                                                |
-| 0:45–1:25 | CLI install and checkout                                                                  | Download ciphertext before paying. Wallet identity and the local encryption key are separate.                                                                                                                                         |
-| 1:25–1:55 | Granted order and installed `SKILL.md`                                                    | Settlement records a license and splits funds atomically; then the installer decrypts locally. In this mock demo the settlement is simulated.                                                                                         |
-| 1:55–2:20 | Install again into another directory                                                      | Same wallet, same version, no second purchase. A new encryption key supports recovery.                                                                                                                                                |
-| 2:20–2:40 | Open the installed Skill, template and fictional reference brief with the service stopped | Installed assets remain available offline. Show the evidence-to-decision workflow and its output structure; the reference brief is a hand-written fictional example, not an Agent benchmark. Installation never runs package scripts. |
-| 2:40–2:45 | Validation record                                                                         | Solana's value is settlement and auditable revenue sharing. The service is trusted for keys; decrypted content can still be copied.                                                                                                   |
+| Time      | Screen or action                       | What the viewer sees                                                                                                                                                    |
+| --------- | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0:00–0:20 | Product meaning diagram                | Buyer delivery/recovery needs, creator shares, and the website + CLI + API product shape.                                                                               |
+| 0:20–0:42 | Payment architecture                   | Atomic version license and creator payouts, finalized key delivery, trusted service and pending public Devnet acceptance.                                               |
+| 0:42–1:06 | Actual public website                  | Product explanation and the free MIT Research Brief package.                                                                                                            |
+| 1:06–1:29 | Actual installation page               | Exact public URL, npm tool installation and `skillseal sample` commands.                                                                                                |
+| 1:29–1:52 | Recorded HTTPS installer results       | Clean npm installation, pinned sample integrity, fresh-directory install, reinstall and overwrite refusal. The console is an edited representation of verified results. |
+| 1:52–2:14 | Separate local mock purchase/recovery  | One simulated payment, 70/30 shares and no second payment for the licensed wallet/version. No public-chain transaction is claimed.                                      |
+| 2:14–2:36 | Installed package files                | Instructions, template and review checklist remain local. Example evidence is fictional and hand-written.                                                               |
+| 2:36–2:54 | Actual website workflow and validation | 27 TypeScript tests and clean packaged installation; public paid Devnet checkout is the next acceptance milestone.                                                      |
+
+The uploaded file is 174.21 seconds. English captions are rendered in the video. Generic synthetic narration, diagrams and actual website captures are disclosed in the YouTube description.
 
 ## Repeatable local commands
 
