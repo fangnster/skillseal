@@ -15,6 +15,16 @@ import {
 } from '../src/crypto.ts';
 import { DEVNET_GENESIS, type Version, type Manifest, type Order } from '../src/types.ts';
 import { validateWalletTransaction } from '../src/transactions.ts';
+import {
+  serverOrigin,
+  distributionBase,
+  orderId,
+  versionId,
+  parseSession,
+  download,
+  type Session,
+} from '../src/client.ts';
+import { SAMPLE_SHA256 } from '../src/sample.ts';
 
 const args = process.argv.slice(2),
   command = args.shift(),
@@ -25,22 +35,17 @@ for (let i = 0; i < args.length; i++) {
     flags.set(args[i].slice(2), args[i + 1] && !args[i + 1].startsWith('--') ? args[++i] : '1');
   else positional.push(args[i]);
 }
-let origin = (flags.get('server') || process.env.APP_ORIGIN || 'http://127.0.0.1:3000').replace(
-  /\/$/,
-  '',
+let origin = (command === 'sample' ? distributionBase : serverOrigin)(
+  flags.get('server') || process.env.APP_ORIGIN || 'http://127.0.0.1:3000',
 );
-function secureOrigin(value: string) {
-  const u = new URL(value);
-  if (u.protocol !== 'https:' && !['localhost', '127.0.0.1', '[::1]'].includes(u.hostname))
-    throw new Error('Remote servers require HTTPS');
-}
 async function request<T = any>(url: string, body?: unknown): Promise<T> {
-  secureOrigin(origin);
   const res = await fetch(
     origin + '/api/' + url,
     body === undefined
-      ? {}
+      ? { signal: AbortSignal.timeout(30000), redirect: 'error' }
       : {
+          signal: AbortSignal.timeout(30000),
+          redirect: 'error',
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(body),
@@ -85,29 +90,17 @@ async function broadcast(
   }
   throw new Error('Finality still pending. Resume the existing order instead of paying again.');
 }
-type Session = {
-  orderId: string;
-  origin: string;
-  publicKey: string;
-  privateKey: string;
-  bundlePath?: string;
-  encryptedBundle?: string;
-};
 async function finish(session: Session, destination: string) {
   const result = await request<{ envelope: string; versionId: string }>(
       'orders/' + session.orderId + '/claim',
       {},
     ),
-    version = await request<Version>('versions/' + result.versionId);
+    version = await request<Version>('versions/' + versionId(result.versionId));
   const bytes = session.encryptedBundle
     ? Buffer.from(session.encryptedBundle, 'base64')
     : session.bundlePath
       ? await readFile(session.bundlePath)
-      : Buffer.from(
-          await (
-            await fetch(origin + '/api/versions/' + result.versionId + '/bundle')
-          ).arrayBuffer(),
-        );
+      : await download(origin + '/api/versions/' + versionId(result.versionId) + '/bundle');
   if (sha256(bytes) !== version.manifest.bundleHash)
     throw new Error('Encrypted bundle hash mismatch');
   const key = await openKey(result.envelope, session.publicKey, session.privateKey);
@@ -135,6 +128,18 @@ async function approve(version: Version, signer: Keypair) {
   return request<Version>('versions/' + version.id + '/sync', {});
 }
 async function main() {
+  if (command === 'sample') {
+    const bytes = await download(origin + '/downloads/research-brief-v1.bundle.json');
+    if (sha256(bytes) !== SAMPLE_SHA256) throw new Error('Sample integrity check failed');
+    const target = await install(bytes, flags.get('destination') || './skills/research-brief');
+    console.log(
+      `Installed Research Brief v1.0.0 at ${target}. MIT licensed; no payment, scripts or wallet required.`,
+    );
+    console.log(
+      'Open SKILL.md with your agent tool, supply your own source notes, and use references/review-checklist.md to review its output.',
+    );
+    return;
+  }
   if (command === 'list') {
     const versions = await request<Version[]>('versions');
     for (const v of versions)
@@ -182,7 +187,7 @@ async function main() {
     return;
   }
   if (command === 'approve') {
-    const version = await request<Version>('versions/' + positional[0]);
+    const version = await request<Version>('versions/' + versionId(positional[0]));
     const updated = await approve(version, await wallet(flags.get('wallet')));
     console.log(`Version ${updated.id}: ${updated.active ? 'active' : 'awaiting other authors'}`);
     return;
@@ -193,7 +198,7 @@ async function main() {
   }
   if (command === 'refund') {
     const signer = await wallet(flags.get('wallet')),
-      order = await request<Order>('orders/' + positional[0]);
+      order = await request<Order>('orders/' + orderId(positional[0]));
     if (order.buyer !== signer.publicKey.toBase58())
       throw new Error('Original buyer wallet required');
     const result = await request('orders/' + order.id + '/refund', {}),
@@ -208,11 +213,12 @@ async function main() {
   if (command === 'resume') {
     const file = flags.get('session');
     if (!file) throw new Error('--session session.json required');
-    const session = JSON.parse(await readFile(file, 'utf8')) as Session;
+    const session = parseSession(JSON.parse(await readFile(file, 'utf8')));
     origin = session.origin;
-    secureOrigin(origin);
     const order = await request<Order>('orders/' + session.orderId),
       version = await request<Version>('versions/' + order.versionId);
+    if (order.encryptionPublicKey !== session.publicKey)
+      throw new Error('Recovery session does not match the order');
     await finish(
       session,
       flags.get('destination') ||
@@ -222,11 +228,11 @@ async function main() {
   }
   if (command === 'install') {
     if (!positional[0]) throw new Error('Use install <version hash> --destination directory');
-    secureOrigin(origin);
-    const version = await request<Version>('versions/' + positional[0]);
-    const response = await fetch(origin + '/api/versions/' + version.id + '/bundle');
-    if (!response.ok) throw new Error('Bundle unavailable');
-    const bytes = Buffer.from(await response.arrayBuffer());
+    const version = await request<Version>('versions/' + versionId(positional[0]));
+    const waitSeconds = Number(flags.get('wait-seconds') || 300);
+    if (!Number.isFinite(waitSeconds) || waitSeconds < 0 || waitSeconds > 3600)
+      throw new Error('--wait-seconds must be between 0 and 3600');
+    const bytes = await download(origin + '/api/versions/' + versionId(version.id) + '/bundle');
     if (sha256(bytes) !== version.manifest.bundleHash)
       throw new Error('Encrypted bundle hash mismatch');
     const keys = await encryptionKeypair(),
@@ -234,6 +240,9 @@ async function main() {
         versionId: version.id,
         encryptionPublicKey: keys.publicKey,
       });
+    orderId(order.id);
+    if (order.versionId !== version.id || order.encryptionPublicKey !== keys.publicKey)
+      throw new Error('Order does not match this installation session');
     const dir = path.resolve(process.env.DATA_DIR || '.data', 'sessions');
     await mkdir(dir, { recursive: true, mode: 0o700 });
     const bundlePath = path.join(dir, order.id + '.enc'),
@@ -283,7 +292,7 @@ async function main() {
           () => {},
         );
     }
-    const deadline = Date.now() + Number(flags.get('wait-seconds') || 300) * 1000;
+    const deadline = Date.now() + waitSeconds * 1000;
     while (Date.now() < deadline) {
       const state = await request<Order>('orders/' + order.id + '/sync', {});
       if (state.status === 'granted') {
@@ -297,11 +306,13 @@ async function main() {
       if (state.status === 'refunded') throw new Error('Order refunded');
       await new Promise((r) => setTimeout(r, 2000));
     }
-    console.log(`Purchase is still pending. Resume with: pnpm cli resume --session ${sessionFile}`);
+    console.log(
+      `Purchase is still pending. Resume with: skillseal resume --session ${sessionFile}`,
+    );
     return;
   }
   console.log(
-    'SkillSeal CLI\n  list\n  publish --skill directory --manifest manifest.json --wallet author.json\n  approve <version hash> --wallet author.json\n  install <version hash> --destination directory [--wallet devnet.json]\n  resume --session session.json --destination directory\n  refund <order id> --wallet buyer.json\n  metrics',
+    'SkillSeal CLI (Node.js 24+)\n  sample --server https://your-site --destination ./skills/research-brief\n  list\n  publish --skill directory --manifest manifest.json --wallet author.json\n  approve <version hash> --wallet author.json\n  install <version hash> --destination directory [--wallet devnet.json]\n  resume --session session.json --destination directory\n  refund <order id> --wallet buyer.json\n  metrics',
   );
 }
 main().catch((error) => {
