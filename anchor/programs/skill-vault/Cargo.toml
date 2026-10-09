@@ -1,0 +1,22 @@
+[package]
+name = "skill-vault"
+version = "0.1.0"
+edition = "2021"
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "skill_vault"
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+[dependencies]
+anchor-lang = { version = "=0.32.2", features = ["init-if-needed"] }
+anchor-spl = { version = "=0.32.2", features = ["token", "associated_token"] }
+[dev-dependencies]
+solana-program-test = "2.3.13"
+solana-sdk = "2.3.1"
+spl-token = { version = "8", features = ["no-entrypoint"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
