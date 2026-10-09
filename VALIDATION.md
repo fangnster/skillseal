@@ -61,6 +61,15 @@ This follow-up distinguishes newly executed checks from the earlier validation r
 
 ## October 9 website and standalone installer update
 
-The installer no longer requires the server environment file. The distribution build packs only client modules and creates a pinned MIT sample download. Additional tests cover secure origins and recovery files, unsafe order identifiers, size-limited downloads, redirect refusal, actual HTTP sample installation, overwrite refusal and tamper detection. Static project-path support is tested separately from strict paid API origins. Public paid Devnet deployment is still pending; the issuer test wallet has zero SOL and the public faucet again returned a rate limit.
+**27/27 TypeScript tests, formatting and strict type checks passed.** The installer no longer requires the server environment file. The distribution build packs only client modules and creates a pinned MIT sample download. Additional tests cover secure origins and recovery files, unsafe order identifiers, size-limited downloads, redirect refusal, actual HTTP sample installation, overwrite refusal and tamper detection. Static project-path support is tested separately from strict paid API origins. Public paid Devnet deployment is still pending; the issuer test wallet has zero SOL and the public faucet again returned a rate limit.
 
-A clean isolated installation of the standalone 0.1.1 package resolves its dependencies without the source checkout. Next.js production build includes the marketplace, installation/creator guides and health endpoint. Public website acceptance and updated video URLs will be recorded after deployment.
+A clean isolated installation of the standalone 0.1.1 package resolves its dependencies without the source checkout. Next.js production build includes the marketplace, installation/creator guides and health endpoint. The [public website](https://fangnster.github.io/skillseal/) is live. [GitHub CI and Pages deployment](https://github.com/fangnster/skillseal/actions/runs/37913825716) passed the application checks, clean packaged-CLI installation, production Next.js build and Anchor Rust checks. The updated [product video](https://youtu.be/fCNz1DUwwtM) shows the public website and HTTPS installation, with separate local-mock labels for payment.
+
+## Public HTTPS acceptance — 2026-10-09T09:57:53.586Z
+
+- Live website, installation commands and relative project-path assets checked in Chrome. Copy control reports success; the project URL is included in the command.
+- Downloaded the actual public CLI archive and verified its SHA-256 against the published release metadata: `e5a8bcaafc3a492bc580eab2d67908337b7bbd69498d107c64745287e4f4c9e9`. This is the artifact observed at this acceptance time; later builds publish their own checksum in [release.json](https://fangnster.github.io/skillseal/downloads/release.json).
+- Verified the pinned MIT sample hash: `a617bf3a049873a51a38d6620d98efa6a51afc8adeb4179108dbb85bc5e782a7`.
+- Installed through standard npm global installation with `--ignore-scripts` and an isolated user-owned prefix. No source checkout or `.env.local` was present. The compiled JavaScript CLI launched successfully.
+- Downloaded and installed the sample over public HTTPS into two fresh destinations. Refused an existing destination. Read `SKILL.md` and the four template/reference/example Markdown files locally without a network request.
+- This free MIT distribution creates no paid license and requires no wallet. These checks do not imply public Devnet checkout acceptance.
