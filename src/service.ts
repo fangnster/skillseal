@@ -477,7 +477,7 @@ export class VaultService {
     const { envelope, ...publicData } = order;
     return publicData;
   }
-  async sync(orderId: string) {
+  async sync(orderId: string, collectCosts = false) {
     if (!this.store.lease('order:' + orderId)) return this.publicOrder(this.order(orderId));
     try {
       const order = this.order(orderId),
@@ -492,7 +492,7 @@ export class VaultService {
         delete order.envelope;
         this.store.saveOrder(order);
         this.store.event('refunded', order.id);
-        await this.recordCosts(version, order);
+        if (collectCosts) await this.recordCosts(version, order);
         return this.publicOrder(order);
       }
       if (state.status === 'funded') {
@@ -532,7 +532,7 @@ export class VaultService {
         ),
         feeLamports: order.feeLamports || 0,
       });
-      await this.recordCosts(version, order);
+      if (collectCosts) await this.recordCosts(version, order);
       return this.publicOrder(order);
     } catch (error) {
       this.store.event('failure', orderId, {
