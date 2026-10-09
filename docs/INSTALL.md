@@ -3,7 +3,7 @@
 Requires Node.js 24 or newer. The public website's Install section generates the exact command using its own HTTPS address.
 
 ```sh
-npm install --ignore-scripts -g https://YOUR_SITE/downloads/skillseal-cli-0.1.1.tgz
+npm install --ignore-scripts -g https://YOUR_SITE/downloads/skillseal-cli-0.2.0.tgz
 skillseal sample --server https://YOUR_SITE --destination ./skills/research-brief
 ```
 
@@ -12,7 +12,7 @@ Open `skills/research-brief/SKILL.md` in your agent tool. Provide your own sourc
 If global npm installation needs administrator access, use a user-owned prefix:
 
 ```sh
-npm install --ignore-scripts --prefix ./skillseal-tool https://YOUR_SITE/downloads/skillseal-cli-0.1.1.tgz
+npm install --ignore-scripts --prefix ./skillseal-tool https://YOUR_SITE/downloads/skillseal-cli-0.2.0.tgz
 ./skillseal-tool/node_modules/.bin/skillseal sample --server https://YOUR_SITE --destination ./skills/research-brief
 ```
 

@@ -1,3 +1,7 @@
+# Deployment
+
+The complete 0.2 website can run on a selected existing Alibaba Cloud ECS or Simple Application Server. See [deploy/aliyun/README.md](../deploy/aliyun/README.md) for Docker, persistent storage, HTTPS, a shared existing proxy and a prebuilt runtime for small hosts. Start with `PAYMENT_BACKEND=disabled`: the free upload/review/share/download flow runs without chain funding, while test-priced drafts remain unavailable for purchase. An operator public signing address is required. This configuration does not create cloud resources or authorize new spending.
+
 # Public website and persistent marketplace deployment
 
 The public website is a static product entry point and free MIT installer distribution. Build it with `pnpm run build:distribution`; publish `site-dist/`. `render.yaml` configures an optional Render static service. The GitHub Actions workflow publishes `site-dist/` to GitHub Pages after app and contract checks pass; enable GitHub Actions as the Pages source in repository settings. Relative asset paths and sample distribution URLs support a project subpath. It does not run a mock ledger or pretend to accept payments. The download package contains only client code, dependencies and MIT material; no runtime secrets or database.

@@ -197,8 +197,20 @@ GitHub Actions 在应用测试、完整生产构建、干净目录发行包安�
 [SkillSeal 网站](https://fangnster.github.io/skillseal/) · [新版产品演示](https://youtu.be/fCNz1DUwwtM) · [创始人介绍](https://youtu.be/R40MxhZ26mo)。需要 Node.js 24 或更高版本：
 
 ```sh
-npm install --ignore-scripts -g https://fangnster.github.io/skillseal/downloads/skillseal-cli-0.1.1.tgz
+npm install --ignore-scripts -g https://fangnster.github.io/skillseal/downloads/skillseal-cli-0.2.0.tgz
 skillseal sample --server https://fangnster.github.io/skillseal --destination ./skills/research-brief
 ```
 
 已从公开 HTTPS 地址在干净目录验证 npm 安装、两个新目录的示例安装、已有目录拒绝覆盖，以及五个 Markdown 文件的本地读取。打开 `SKILL.md` 交给自己的 Agent，提供资料，再按 `references/review-checklist.md` 检查结果。公开示例免费且为 MIT，不需要钱包，也不会生成付费授权。付费 API 和公开 Devnet 购买仍待验收。
+
+
+## 0.2 完整网站功能
+
+Next.js 应用现已增加网页上传、发布预览、作者批准、审核人检查文件与上架审核、独立版本分享页、免费 ZIP 下载和 CLI 安装，以及私有 session 的网页解密恢复。免费发布可在 `PAYMENT_BACKEND=disabled` 模式下运行，不依赖 Devnet 空投或程序部署；该模式没有模拟账本，也不能产生付费授权。源码功能验收与公开阿里云上线是两项不同的状态。
+
+- `/creators`：选择 Skill 文件夹或根 `SKILL.md`，设置版本、许可、免费/测试价格及作者分成，预览后签名发布。免费创作者可创建并保存本地身份文件，钱包私钥不上传服务器。
+- `/manage`：仅配置的审核人可用一次性签名挑战检查包内容、批准或拒绝上架。
+- `/skills/<版本哈希>`：分享此版本，查看许可、作者分成、审核状态及校验摘要；免费包无需钱包即可下载安装。
+- `/library`：读取自己的私有恢复 session，在浏览器本地解密已购买版本，避免重复付款。
+
+公开测试收费仍要求完成 Devnet 部署、发行者测试 SOL、创作者准入、链上作者批准与实际购买验收。真实主网收款没有启用。现有 MIT 示例仍免费且可按 MIT 许可分发。操作步骤见 [PLATFORM.md](PLATFORM.md)，阿里云部署见 [deploy/aliyun/README.md](../deploy/aliyun/README.md)。
