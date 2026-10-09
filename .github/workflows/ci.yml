@@ -40,6 +40,27 @@ jobs:
       - run: pnpm prune --prod
       - run: pnpm run build:runtime
       - run: node --experimental-strip-types scripts/test-runtime.ts
+      - name: Build public Devnet program artifact
+        env:
+          DEVNET_PROGRAM_ID: AXwhEjRZEqA8Yz6C5gyToudg65UZie8nXuJvbd83LKQu
+        run: |
+          rustup toolchain install 1.99.0 --profile minimal
+          rustup default 1.99.0
+          mkdir -p /tmp/skillseal-agave /tmp/skillseal-sbf
+          curl --fail --location --retry 3 https://github.com/anza-xyz/agave/releases/download/v2.3.13/solana-release-x86_64-unknown-linux-gnu.tar.bz2 -o /tmp/skillseal-agave/release.tar.bz2
+          tar -xjf /tmp/skillseal-agave/release.tar.bz2 -C /tmp/skillseal-agave
+          cp -R anchor /tmp/skillseal-sbf/anchor
+          sed -i -E "s/declare_id!\(\"[1-9A-HJ-NP-Za-km-z]+\"\)/declare_id!(\"$DEVNET_PROGRAM_ID\")/" /tmp/skillseal-sbf/anchor/programs/skill-vault/src/lib.rs
+          /tmp/skillseal-agave/solana-release/bin/cargo-build-sbf --tools-version v1.53 --manifest-path /tmp/skillseal-sbf/anchor/programs/skill-vault/Cargo.toml --sbf-out-dir /tmp/skillseal-sbf/artifacts -j 2
+          cp /tmp/skillseal-sbf/artifacts/skill_vault.so site-dist/downloads/skillseal-devnet-program.so
+          node --input-type=module - <<'JS'
+          import fs from 'node:fs';
+          import { createHash } from 'node:crypto';
+          const bytes = fs.readFileSync('site-dist/downloads/skillseal-devnet-program.so');
+          const record = { cluster: 'devnet', programId: process.env.DEVNET_PROGRAM_ID, sourceCommit: process.env.GITHUB_SHA, sha256: createHash('sha256').update(bytes).digest('hex'), bytes: bytes.length, agave: '2.3.13', platformTools: 'v1.53', deployment: 'Build artifact only; verify deployment separately.' };
+          fs.writeFileSync('site-dist/downloads/skillseal-devnet-program.json', JSON.stringify(record, null, 2) + '\n');
+          console.log(record);
+          JS
       - uses: actions/upload-pages-artifact@v4
         if: github.ref == 'refs/heads/main'
         with:
