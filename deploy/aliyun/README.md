@@ -51,7 +51,7 @@ References: [Alibaba Cloud Docker deployment](https://www.alibabacloud.com/help/
 
 ## A 1 GiB host with an existing HTTPS proxy
 
-Compile and bundle the runtime on GitHub's Linux x64 runner, then use the public `downloads/skillseal-server-0.2.0.tgz` archive and verify its SHA-256 against `downloads/release.json`. Check `serverSourceCommit` against the reviewed public commit. The archive includes compiled pages, runtime source and production dependencies for Linux x64 glibc; it excludes the vault, environment files, private identities and build cache. Extract into a new release directory and build with `Dockerfile.prebuilt`. This mode performs no dependency installation or Next compilation on the 1 GiB server. Do not substitute a macOS or ARM node_modules directory.
+Compile and bundle the runtime on GitHub's Linux x64 runner, then use the public `downloads/skillseal-server-0.2.0.tgz` archive and verify its SHA-256 against `downloads/release.json`. Check `serverSourceCommit` against the reviewed public commit. The archive includes compiled pages, runtime source and production dependencies for Linux x64 glibc; it excludes the vault, environment files, private identities and build cache. Extract into a new release directory. On a 1 GiB host, reuse the already installed Node image and mount the verified runtime read-only as described below. A full image export exceeded this host's practical memory budget during acceptance; avoid rebuilding the image on that server. This mode performs no dependency installation or Next compilation on the 1 GiB server. Do not substitute a macOS or ARM node_modules directory.
 
 CI builds the image from the actual archive and checks health, free-catalog mode and persistent issuer/master keys after a container restart under the same 384 MiB memory limit. This is separate from acceptance on the selected Alibaba server.
 
@@ -65,3 +65,27 @@ docker network connect skillseal_default EXISTING_CADDY_CONTAINER
 ```
 
 The prebuilt mode is an alternative to the full source Dockerfile. Local validation of compiled app pages is distinct from building and running a Linux container on the selected server.
+
+
+## Updating the accepted 1 GiB deployment without an image build
+
+The October 10 public Devnet acceptance is in [ONLINE-ACCEPTANCE.md](../../docs/ONLINE-ACCEPTANCE.md). It covers curated paid publishing, purchase, timeout refund, installer interruption recovery and encrypted paid-vault restore. Mainnet is outside that scope.
+
+For the existing small host, keep the currently running Compose release available for rollback. Verify the public runtime archive's full SHA-256 and source commit, then extract to a new release directory. Verify `.skillseal-runtime.json` says Linux x64 and the expected commit, and that UID 1000 can read the compiled runtime. Keep the release directory traversable but environment files mode 0600. Retain the existing vault volume and copy the previous release's private `.env` locally without displaying it.
+
+Create `compose.runtime-mount.yaml` in the new release's `deploy/aliyun` directory using the immutable image ID from the current app. Use the real absolute release path:
+
+```yaml
+services:
+  app:
+    image: sha256:EXISTING_NODE_IMAGE_ID
+    volumes:
+      - /ABSOLUTE/NEW/RELEASE:/app:ro
+```
+
+```sh
+docker compose -f compose.yaml -f compose.prebuilt.yaml -f compose.shared-proxy.yaml -f compose.runtime-mount.yaml config --quiet
+docker compose -f compose.yaml -f compose.prebuilt.yaml -f compose.shared-proxy.yaml -f compose.runtime-mount.yaml up -d --no-build app
+```
+
+Compare private issuer/master-key fingerprints before and after, check `/api/health` readiness with backend `solana` and network `devnet`, inspect the worker, and verify the original HTTPS website still returns 200. Do not expose fingerprints or keys in public logs. Retain the previous release's own runtime-mount override: rollback runs the same four Compose files from that previous directory, pointing to its previous runtime. Do not fall back to an old image without the corresponding mount, rebuild images, delete volumes, or restart the original website to perform this update.
