@@ -82,3 +82,14 @@ Local source validation: 33 tests pass, including free release author/operator g
 Actual browser review on an isolated loopback server: restored a dedicated test creator, uploaded fictional SKILL.md, previewed and signed a release, restored the separate reviewer, inspected files, approved the listing, opened the exact version share URL, copied it, downloaded a ZIP and verified its contents. The standalone compiled CLI installed that same browser-published release without a wallet. A separate clean package installation verifies CLI help, MIT sample delivery and overwrite refusal. These are local product tests, not public Devnet or Alibaba Cloud production acceptance.
 
 Alibaba Cloud deployment assets include persistent Docker hosting, Caddy HTTPS, free catalog startup, and optional prebuilt/shared-proxy modes. Compose syntax is validated locally. Local Docker daemon is unavailable; the Linux image, remote health, HTTPS, restart and backup restoration require acceptance on the selected host. Public GitHub/website synchronization and cloud rollout must be recorded separately when observed.
+
+
+## 0.2 Linux runtime and product media — October 9, 2026
+
+[CI for source 6f2b248](https://github.com/fangnster/skillseal/actions/runs/37929047150) passed 33 TypeScript tests, formatting, type checking, local protocol demo, clean distribution installation, Next production build, Anchor host checks and Pages deployment. The published Linux x64 glibc archive bundles production dependencies. CI builds the image from that actual archive and starts it under 384 MiB, one CPU and no external network. Readiness reports disabled checkout; issuer and master key files are mode 0600 and remain byte-identical after restart. These container checks do not substitute for acceptance on the Alibaba server.
+
+The downloaded 107659670-byte runtime matched SHA-256 `9789d0a50a099708b92bb268c93597f1790a7a5b57b3333c88353b0d12c2da4d`; its marker matched source `6f2b24810dacbb569bfb076c7130dd332ef920a6`. Later releases publish their own source and hash in release.json.
+
+The existing Alibaba server command agent stopped responding; deployment is not accepted. The console reports operating-system health warnings, high CPU and a crash/restart record. A rescue console requires the existing server login. The original site's later external HTTPS check timed out, so its current health is unconfirmed. No final cloud URL or public paid settlement is claimed.
+
+The new [0.2 product video](https://youtu.be/374T4FpqwEI) is Unlisted and 166.00 seconds. It uses actual local platform pages, product diagrams and verified standalone CLI output, with an explicit cloud-pending label. A new global CLI installation in an isolated prefix installed the browser-published approved release; file bytes matched and a repeat to the existing destination was refused. Videos and source updates do not authorize final competition submission.

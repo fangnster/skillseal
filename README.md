@@ -1,16 +1,16 @@
 # SkillSeal
 
-**Encrypted Agent Skills. Wallet payments. Transparent creator payouts.**
+**Versioned Agent Skills. Verified local delivery. Solana checkout design.**
 
 Version 0.2 adds browser upload, release preview, author approval, operator file inspection/review, immutable share pages, verified free ZIP/CLI delivery and private-session recovery. Free catalog hosting works without a deployed chain program; paid checkout remains a separately accepted Solana Devnet mode. See [the platform guide](docs/PLATFORM.md) and [Alibaba Cloud deployment](deploy/aliyun/README.md).
 
 [Live website](https://fangnster.github.io/skillseal/) · [中文说明](docs/README.zh-CN.md) · [Installer](docs/INSTALL.md) · [Hosting](docs/DEPLOYMENT.md) · [Architecture](docs/ARCHITECTURE.md) · [Demo guide](docs/DEMO.md) · [Submission plan](docs/HACKATHON.md) · [Devnet acceptance](docs/DEVNET-ACCEPTANCE.md) · [Validation](VALIDATION.md)
 
-SkillSeal lets Agent developers **download an encrypted Skill, pay with Solana Devnet USDC, and unlock it for local installation**. Each purchase grants permanent use of that exact version. Creators agree on fixed revenue shares before the version becomes available.
+SkillSeal lets creators publish a reviewed Skill version and lets Agent developers verify, download and install it locally. Free releases need no wallet. The paid design uses encrypted delivery and Solana Devnet USDC escrow; each purchase covers that exact version, with creator shares approved before release. Public paid checkout acceptance is pending.
 
-![SkillSeal marketplace — local mock demo](docs/assets/marketplace-en.png)
+![SkillSeal 0.2 architecture](docs/assets/platform-architecture-0.2.png)
 
-_Product screenshot from the local mock environment; no on-chain payment is shown._
+_Free upload, review, share and installation have local evidence. Public cloud and paid Devnet acceptance remain pending._
 
 ```text
 Download ciphertext → Sign with wallet → Pay into escrow
@@ -31,9 +31,9 @@ skillseal sample --server https://fangnster.github.io/skillseal --destination ./
 
 Requires Node.js 24 or newer. Open the installed `SKILL.md` with your agent tool, supply your own sources, and review the output with the included checklist. This free installation was verified over public HTTPS in a clean directory.
 
-The GitHub Actions workflow deploys the website and installer to GitHub Pages after app and contract checks pass. An existing-server Alibaba Cloud deployment is prepared in free catalog mode. Public cloud acceptance is pending; paid checkout is disabled. See [DEPLOYMENT.md](docs/DEPLOYMENT.md).
+The GitHub Actions workflow deploys the introduction and installer to GitHub Pages after app, contract and Linux container checks pass. The prebuilt Linux archive includes production dependencies, so the small target server performs no package installation or Next compilation. CI verifies readiness and private key persistence after restart with a 384 MiB limit. An existing-server Alibaba Cloud deployment is prepared in free catalog mode. Public cloud acceptance is pending; paid checkout is disabled. See [DEPLOYMENT.md](docs/DEPLOYMENT.md).
 
-[Product video](https://youtu.be/fCNz1DUwwtM) · [Founder video](https://youtu.be/R40MxhZ26mo)
+[Product video 0.2 — local functional demo](https://youtu.be/374T4FpqwEI) · [Founder video](https://youtu.be/R40MxhZ26mo)
 
 ## Try it in one command
 
