@@ -1,0 +1,35 @@
+name: Bug report
+description: Report a reproducible product or protocol bug without secrets.
+title: '[Bug] '
+body:
+  - type: markdown
+    attributes:
+      value: 'Keep wallet keys, session files and configuration secrets out of reports. See SECURITY.md for sensitive findings.'
+  - type: dropdown
+    id: backend
+    attributes:
+      label: Payment environment
+      options:
+        - Local mock
+        - Solana Devnet
+        - Not payment related
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Include the command or UI action and sanitized errors.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Environment
+      description: OS, Node.js, pnpm and project commit; Rust/Solana tools if relevant.
