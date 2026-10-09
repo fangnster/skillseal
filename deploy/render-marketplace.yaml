@@ -1,0 +1,31 @@
+# Deploy only after approving the paid plan and completing public Devnet deployment.
+services:
+  - type: web
+    runtime: node
+    name: skillseal-marketplace
+    repo: https://github.com/fangnster/skillseal
+    branch: main
+    plan: 0.5c-512mb
+    region: singapore
+    buildCommand: corepack enable && corepack prepare pnpm@11.25.0 --activate && pnpm install --frozen-lockfile && pnpm run build:distribution && pnpm run build
+    startCommand: pnpm run start:hosted
+    healthCheckPath: /api/health
+    disk:
+      name: skillseal-vault
+      mountPath: /opt/render/project/src/storage
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: 24.19.0
+      - key: DATA_DIR
+        value: /opt/render/project/src/storage
+      - key: PERSISTENT_STORAGE
+        value: "1"
+      - key: PAYMENT_BACKEND
+        value: solana
+      - key: SOLANA_RPC_URL
+        value: https://api.devnet.solana.com
+      - key: SOLANA_PROGRAM_ID
+        sync: false
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"
