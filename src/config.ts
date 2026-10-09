@@ -10,7 +10,9 @@ export type Config = {
   issuerPath: string;
 };
 export function loadConfig(): Config {
-  const origin = new URL(process.env.APP_ORIGIN || 'http://127.0.0.1:3000').origin;
+  const origin = new URL(
+    process.env.APP_ORIGIN || process.env.RENDER_EXTERNAL_URL || 'http://127.0.0.1:3000',
+  ).origin;
   const loopback = ['localhost', '127.0.0.1', '[::1]'].includes(new URL(origin).hostname);
   const backend = process.env.PAYMENT_BACKEND || 'solana';
   if (backend !== 'solana' && backend !== 'mock') throw new Error('Unsupported payment backend');

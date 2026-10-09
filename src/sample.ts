@@ -1,0 +1,1 @@
+export const SAMPLE_SHA256 = 'a617bf3a049873a51a38d6620d98efa6a51afc8adeb4179108dbb85bc5e782a7';
