@@ -4,13 +4,13 @@
 
 Version 0.2 adds browser upload, release preview, author approval, operator file inspection/review, immutable share pages, verified free ZIP/CLI delivery and private-session recovery. Free catalog hosting works without a deployed chain program; paid checkout remains a separately accepted Solana Devnet mode. See [the platform guide](docs/PLATFORM.md) and [Alibaba Cloud deployment](deploy/aliyun/README.md).
 
-[Live website](https://fangnster.github.io/skillseal/) · [中文说明](docs/README.zh-CN.md) · [Installer](docs/INSTALL.md) · [Hosting](docs/DEPLOYMENT.md) · [Architecture](docs/ARCHITECTURE.md) · [Demo guide](docs/DEMO.md) · [Submission plan](docs/HACKATHON.md) · [Devnet acceptance](docs/DEVNET-ACCEPTANCE.md) · [Validation](VALIDATION.md)
+[Live platform](https://skillseal-47-236-112-184.sslip.io/) · [Static installer](https://fangnster.github.io/skillseal/) · [中文说明](docs/README.zh-CN.md) · [Installer](docs/INSTALL.md) · [Hosting](docs/DEPLOYMENT.md) · [Architecture](docs/ARCHITECTURE.md) · [Demo guide](docs/DEMO.md) · [Submission plan](docs/HACKATHON.md) · [Devnet acceptance](docs/DEVNET-ACCEPTANCE.md) · [Validation](VALIDATION.md)
 
 SkillSeal lets creators publish a reviewed Skill version and lets Agent developers verify, download and install it locally. Free releases need no wallet. The paid design uses encrypted delivery and Solana Devnet USDC escrow; each purchase covers that exact version, with creator shares approved before release. Public paid checkout acceptance is pending.
 
 ![SkillSeal 0.2 architecture](docs/assets/platform-architecture-0.2.png)
 
-_Free upload, review, share and installation have local evidence. Public cloud and paid Devnet acceptance remain pending._
+_The Alibaba Cloud free catalog is live: signed publishing/review, share pages, verified ZIP/CLI installation and restart persistence passed acceptance. Public paid Devnet checkout remains pending._
 
 ```text
 Download ciphertext → Sign with wallet → Pay into escrow
@@ -22,7 +22,7 @@ Solana provides settlement and a verifiable version license. AES-256-GCM and X25
 
 ## Website and standalone installer
 
-Try the [public website](https://fangnster.github.io/skillseal/). The product includes a public discovery website, an independently installable CLI, and a separately hosted paid marketplace API. The free MIT Research Brief can be installed without a wallet or server configuration. The website generates commands for its actual URL; see [INSTALL.md](docs/INSTALL.md). Paid Devnet checkout remains pending acceptance.
+Try the [live platform](https://skillseal-47-236-112-184.sslip.io/) or the [static introduction and installer](https://fangnster.github.io/skillseal/). The product includes a public discovery website, an independently installable CLI, and a separately hosted paid marketplace API. The free MIT Research Brief can be installed without a wallet or server configuration. The website generates commands for its actual URL; see [INSTALL.md](docs/INSTALL.md). Paid Devnet checkout remains pending acceptance.
 
 ```sh
 npm install --ignore-scripts -g https://fangnster.github.io/skillseal/downloads/skillseal-cli-0.2.0.tgz
@@ -31,9 +31,9 @@ skillseal sample --server https://fangnster.github.io/skillseal --destination ./
 
 Requires Node.js 24 or newer. Open the installed `SKILL.md` with your agent tool, supply your own sources, and review the output with the included checklist. This free installation was verified over public HTTPS in a clean directory.
 
-The GitHub Actions workflow deploys the introduction and installer to GitHub Pages after app, contract and Linux container checks pass. The prebuilt Linux archive includes production dependencies, so the small target server performs no package installation or Next compilation. CI verifies readiness and private key persistence after restart with a 384 MiB limit. An existing-server Alibaba Cloud deployment is prepared in free catalog mode. Public cloud acceptance is pending; paid checkout is disabled. See [DEPLOYMENT.md](docs/DEPLOYMENT.md).
+The GitHub Actions workflow deploys the introduction and installer to GitHub Pages after app, contract and Linux container checks pass. The prebuilt Linux archive includes production dependencies, so the small target server performs no package installation or Next compilation. CI verifies readiness and private key persistence after restart with a 384 MiB limit. The existing-server Alibaba Cloud deployment is live in free catalog mode. [Cloud acceptance](docs/CLOUD-ACCEPTANCE.md) confirms HTTPS, package delivery and persisted keys/releases after restart; paid checkout is disabled. See [DEPLOYMENT.md](docs/DEPLOYMENT.md).
 
-[Product video 0.2 — local functional demo](https://youtu.be/374T4FpqwEI) · [Founder video](https://youtu.be/R40MxhZ26mo)
+[Product video 0.2 — live cloud walkthrough](https://youtu.be/YWXcdWWev34) · [Earlier local demo](https://youtu.be/374T4FpqwEI) · [Founder video](https://youtu.be/R40MxhZ26mo)
 
 ## Try it in one command
 
