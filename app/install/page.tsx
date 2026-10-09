@@ -1,3 +1,4 @@
+import { InstallCommands } from '../install-ui';
 export default function InstallGuide() {
   return (
     <main>
@@ -20,20 +21,7 @@ export default function InstallGuide() {
         </p>
       </section>
       <section className="content-section">
-        <h2>Install the standalone CLI</h2>
-        <p>Use your marketplace HTTPS origin in place of YOUR_SITE.</p>
-        <pre className="command-box">
-          npm install --ignore-scripts -g https://YOUR_SITE/downloads/skillseal-cli-0.1.1.tgz
-        </pre>
-        <h2>Try the free MIT sample</h2>
-        <pre className="command-box">
-          skillseal sample --server https://YOUR_SITE --destination ./skills/research-brief
-        </pre>
-        <p>
-          Open SKILL.md, supply source notes, and review the result with
-          references/review-checklist.md. Choose a new directory for each installation. No scripts
-          are executed.
-        </p>
+        <InstallCommands />
         <h2>Resume a granted purchase</h2>
         <pre className="command-box">
           skillseal resume --session /path/to/skillseal-session.json --destination
