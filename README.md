@@ -2,7 +2,7 @@
 
 **Encrypted Agent Skills. Wallet payments. Transparent creator payouts.**
 
-[中文说明](docs/README.zh-CN.md) · [Architecture](docs/ARCHITECTURE.md) · [Demo guide](docs/DEMO.md) · [Submission plan](docs/HACKATHON.md) · [Devnet acceptance](docs/DEVNET-ACCEPTANCE.md) · [Validation](VALIDATION.md)
+[中文说明](docs/README.zh-CN.md) · [Installer](docs/INSTALL.md) · [Hosting](docs/DEPLOYMENT.md) · [Architecture](docs/ARCHITECTURE.md) · [Demo guide](docs/DEMO.md) · [Submission plan](docs/HACKATHON.md) · [Devnet acceptance](docs/DEVNET-ACCEPTANCE.md) · [Validation](VALIDATION.md)
 
 SkillSeal lets Agent developers **download an encrypted Skill, pay with Solana Devnet USDC, and unlock it for local installation**. Each purchase grants permanent use of that exact version. Creators agree on fixed revenue shares before the version becomes available.
 
@@ -17,6 +17,19 @@ Download ciphertext → Sign with wallet → Pay into escrow
 ```
 
 Solana provides settlement and a verifiable version license. AES-256-GCM and X25519 sealed boxes provide encrypted delivery. The service holds the content keys; the system cannot prevent copying after decryption or prove that a creator owns the underlying IP.
+
+## Website and standalone installer
+
+The product includes a public discovery website, an independently installable CLI, and a separately hosted paid marketplace API. The free MIT Research Brief can be installed without a wallet or server configuration. The website generates commands for its actual URL; see [INSTALL.md](docs/INSTALL.md). Paid Devnet checkout remains pending acceptance.
+
+```sh
+pnpm run build:distribution
+# Publish site-dist/; generated downloads include the CLI archive and pinned MIT sample.
+```
+
+The GitHub Actions workflow deploys the website and installer to GitHub Pages after app and contract checks pass. Persistent API configuration is prepared for Render; account billing setup and paid hosting approval remain pending. See [DEPLOYMENT.md](docs/DEPLOYMENT.md).
+
+[Product video](https://youtu.be/eSiJYIZ4oU8) · [Founder video](https://youtu.be/R40MxhZ26mo)
 
 ## Try it in one command
 

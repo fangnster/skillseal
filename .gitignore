@@ -12,3 +12,8 @@ skills/
 sessions/
 *.log
 .DS_Store
+
+# Rebuilt public website and standalone installer
+site-dist/
+dist/
+public/downloads/

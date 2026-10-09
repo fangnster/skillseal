@@ -14,12 +14,14 @@
     "start": "next start --hostname 127.0.0.1",
     "typecheck": "tsc --noEmit",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
-    "cli": "node --env-file=.env.local --experimental-strip-types cli/index.ts",
+    "cli": "node --env-file-if-exists=.env.local --experimental-strip-types cli/index.ts",
     "seed": "node --env-file=.env.local --experimental-strip-types scripts/seed.ts",
     "worker": "node --env-file=.env.local --experimental-strip-types scripts/worker.ts",
     "demo": "node --experimental-strip-types scripts/demo.ts",
     "format": "prettier --write src app cli scripts tests next.config.ts",
-    "format:check": "prettier --check src app cli scripts tests next.config.ts"
+    "format:check": "prettier --check src app cli scripts tests next.config.ts",
+    "build:distribution": "node --experimental-strip-types scripts/build-distribution.ts",
+    "start:hosted": "node --experimental-strip-types scripts/start-hosted.ts"
   },
   "dependencies": {
     "@solana/spl-token": "0.4.14",

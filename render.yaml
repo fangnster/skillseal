@@ -1,0 +1,12 @@
+# Free public website and installer distribution. The paid API is configured separately.
+services:
+  - type: web
+    runtime: static
+    name: skillseal
+    repo: https://github.com/fangnster/skillseal
+    branch: main
+    buildCommand: corepack enable && corepack prepare pnpm@11.25.0 --activate && pnpm install --frozen-lockfile && pnpm run build:distribution
+    staticPublishPath: ./site-dist
+    envVars:
+      - key: NODE_VERSION
+        value: 24.19.0

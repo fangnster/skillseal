@@ -58,3 +58,9 @@ This follow-up distinguishes newly executed checks from the earlier validation r
 - English form answers were checked against the observed 500/1000/600-character limits. Logo and separate product/pitch scripts were prepared. No video was recorded or uploaded. No GitHub repository was published.
 - Public Devnet funding was retried with a newly generated dedicated test identity. The official RPC airdrop request failed (the CLI reported possible rate limiting); its SOL balance was verified as **0 SOL**. No public program deployment, real wallet-extension purchase or finalized public-chain acceptance is claimed.
 - The example's interview notes and reference brief are fictional and hand-written. They are not customer traction, an actual Agent-run benchmark, or proof of willingness to pay.
+
+## October 9 website and standalone installer update
+
+The installer no longer requires the server environment file. The distribution build packs only client modules and creates a pinned MIT sample download. Additional tests cover secure origins and recovery files, unsafe order identifiers, size-limited downloads, redirect refusal, actual HTTP sample installation, overwrite refusal and tamper detection. Static project-path support is tested separately from strict paid API origins. Public paid Devnet deployment is still pending; the issuer test wallet has zero SOL and the public faucet again returned a rate limit.
+
+A clean isolated installation of the standalone 0.1.1 package resolves its dependencies without the source checkout. Next.js production build includes the marketplace, installation/creator guides and health endpoint. Public website acceptance and updated video URLs will be recorded after deployment.
