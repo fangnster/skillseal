@@ -25,6 +25,12 @@ services:
         value: solana
       - key: SOLANA_RPC_URL
         value: https://api.devnet.solana.com
+      - key: ADMIN_WALLET
+        sync: false
+      - key: PUBLISHER_ALLOWLIST
+        sync: false
+      - key: MODERATION_REQUIRED
+        value: "1"
       - key: SOLANA_PROGRAM_ID
         sync: false
       - key: NEXT_TELEMETRY_DISABLED
