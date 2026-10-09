@@ -1,0 +1,10 @@
+[toolchain]
+anchor_version = "0.32.2"
+[features]
+resolution = true
+skip-lint = false
+[programs.devnet]
+skill_vault = "6qpmGN1jHG1wwfETtQ63mkzMZtFpuPB8HggzP6GqLyEz"
+[provider]
+cluster = "Devnet"
+wallet = "../.data/issuer.json"
