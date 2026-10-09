@@ -2,7 +2,7 @@
 
 Hosted Solana Devnet checkout is enabled on the existing Alibaba server. Public HTTPS CLI purchase, exact 70/30 payouts, five-file installation, browser session recovery, a real 600-second timeout refund and encrypted off-host paid-vault restoration passed. Phantom browser purchase and exact ZIP recovery also passed. Test funds only; no mainnet payments or revenue claims.
 
-[Live platform](https://skillseal-47-236-112-184.sslip.io/) · [Product walkthrough](https://youtu.be/aptKyuK1mVI) (149.00 seconds, Unlisted) · [Machine-readable evidence](ONLINE-EVIDENCE.json) · [Release checklist](RELEASE-CHECKLIST.md).
+[Live platform](https://skillseal-47-236-112-184.sslip.io/) · [Product walkthrough](https://youtu.be/AuWg-B13cbg) (149.00 seconds, Unlisted) · [Machine-readable evidence](ONLINE-EVIDENCE.json) · [Release checklist](RELEASE-CHECKLIST.md).
 
 ## Deployment and creator review
 

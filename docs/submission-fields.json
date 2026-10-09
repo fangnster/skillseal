@@ -19,9 +19,9 @@
     "otherContributors": "OpenAI Codex assisted with code generation, implementation review, tests, and documentation. The registered human team currently has one member. Any additional human contributor should be disclosed here before submission.",
     "notesForJudges": "The video shows actual hosted pages and verified Devnet HTTPS CLI purchase: 1 test USDC paid 0.7/0.3, five exact files and recovery without repayment. Real ten-minute refund and encrypted off-host paid-vault restore passed. Phantom purchase also passed. No real funds, customers or revenue. Generic synthetic narration and edited result views are disclosed. Trusted keys; no independent audit.",
     "repoContext": "MIT 0.2 website, CLI, review/share/recovery, persistent API/worker and Anchor escrow. CI passes 39 tests, production build, clean CLI/container and Rust/SBF builds. Public HTTPS Devnet purchase, 70/30 payouts, exact install/recovery, real timeout refund and paid-vault off-host restore passed. Phantom purchase passed. Private keys, sessions and personal video sources are excluded.",
-    "accessInstructions": "Website: https://skillseal-47-236-112-184.sslip.io/ — free MIT sample needs no wallet. Publish supports upload/preview; approved releases have ZIP/CLI share pages. Priced engineering releases use Solana Devnet only, 1 test USDC plus test SOL fees. Node.js 24+ for CLI. See repository docs/ONLINE-ACCEPTANCE.md for acceptance scope.",
+    "accessInstructions": "Open https://skillseal-47-236-112-184.sslip.io/. Free MIT sample needs no wallet; Publish previews uploads. Paid releases: Solana Devnet only, 1 test USDC plus test SOL fees. CLI: Node.js 24+. Acceptance: repository docs/ONLINE-ACCEPTANCE.md.",
     "githubRepository": "https://github.com/fangnster/skillseal",
-    "demoVideo": "https://youtu.be/aptKyuK1mVI",
+    "demoVideo": "https://youtu.be/AuWg-B13cbg",
     "pitchVideo": "https://youtu.be/R40MxhZ26mo",
     "website": "https://skillseal-47-236-112-184.sslip.io/"
   },
@@ -51,7 +51,7 @@
   ],
   "publishedWebsite": "https://skillseal-47-236-112-184.sslip.io/",
   "publishedMedia": {
-    "demo": "https://youtu.be/aptKyuK1mVI",
+    "demo": "https://youtu.be/AuWg-B13cbg",
     "founder": "https://youtu.be/R40MxhZ26mo",
     "visibility": "Unlisted, viewable by link",
     "demoSeconds": 149.0,

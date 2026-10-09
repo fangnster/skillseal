@@ -2,7 +2,7 @@
 
 > 10 月 10 日：线上 Devnet 测试收费已启用；公网 HTTPS CLI 购买、70/30 分账、安装、网页恢复、真实十分钟退款、异机加密备份恢复均已通过。Phantom 状态以[线上验收](ONLINE-ACCEPTANCE.md)为准。仅使用免费测试币，不代表主网收款或收入。
 
-0.2 已实现网页上传、发布预览、作者批准、运营者文件审核、固定版本分享页、免费 ZIP 下载、独立 CLI 安装及私有 session 恢复。免费目录无需买家账号或钱包。[阿里云平台](https://skillseal-47-236-112-184.sslip.io/)已上线：发布签名、作者批准、包内容审核、分享页、网页 ZIP 与独立 CLI 安装验收通过；重启后版本和密钥保留，原网站仍正常。线上 Devnet 测试收费、退款和付费恢复已通过公网 API/CLI 验收。Linux 依赖已在 CI 打包，384 MiB 容器启动及重启后密钥保留验证通过。[新版产品演示（线上平台与真实 Devnet 交易）](https://youtu.be/aptKyuK1mVI)；[此前线上演示](https://youtu.be/YWXcdWWev34)；[此前本机演示](https://youtu.be/374T4FpqwEI)。
+0.2 已实现网页上传、发布预览、作者批准、运营者文件审核、固定版本分享页、免费 ZIP 下载、独立 CLI 安装及私有 session 恢复。免费目录无需买家账号或钱包。[阿里云平台](https://skillseal-47-236-112-184.sslip.io/)已上线：发布签名、作者批准、包内容审核、分享页、网页 ZIP 与独立 CLI 安装验收通过；重启后版本和密钥保留，原网站仍正常。线上 Devnet 测试收费、退款和付费恢复已通过公网 API/CLI 验收。Linux 依赖已在 CI 打包，384 MiB 容器启动及重启后密钥保留验证通过。[新版产品演示（线上平台与真实 Devnet 交易）](https://youtu.be/AuWg-B13cbg)；[此前线上演示](https://youtu.be/YWXcdWWev34)；[此前本机演示](https://youtu.be/374T4FpqwEI)。
 
 2026 年 10 月 9 日已领取 10 测试 SOL 和 20 测试 USDC，完成公开 Devnet 程序部署、两位测试作者签名、1 测试 USDC 购买和 70/30 分账。作者实际到账 0.7 / 0.3，买家余额从 20 变为 19。五个安装文件与源包完全一致；一次同步超时后通过原 session 恢复成功，没有二次扣款或分账。[完整交易凭证与限制](DEVNET-ACCEPTANCE.md)。测试 API 在本机运行，链上交易使用真实公开 Devnet；这些测试资产和身份不代表收入或客户。
 
@@ -202,7 +202,7 @@ GitHub Actions 在应用测试、完整生产构建、干净目录发行包安�
 
 ## 已上线的网站与安装入口
 
-[SkillSeal 网站](https://fangnster.github.io/skillseal/) · [新版产品演示](https://youtu.be/aptKyuK1mVI) · [创始人介绍](https://youtu.be/R40MxhZ26mo)。需要 Node.js 24 或更高版本：
+[SkillSeal 网站](https://fangnster.github.io/skillseal/) · [新版产品演示](https://youtu.be/AuWg-B13cbg) · [创始人介绍](https://youtu.be/R40MxhZ26mo)。需要 Node.js 24 或更高版本：
 
 ```sh
 npm install --ignore-scripts -g https://fangnster.github.io/skillseal/downloads/skillseal-cli-0.2.0.tgz

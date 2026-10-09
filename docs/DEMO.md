@@ -1,6 +1,6 @@
 # Product walkthrough — hosted Devnet 0.2
 
-[Current product video](https://youtu.be/aptKyuK1mVI) — 149.00 seconds, Unlisted. [Founder introduction](https://youtu.be/R40MxhZ26mo) — 99.42 seconds, Unlisted. The product video stays below the three-minute form limit; the separate founder introduction stays below two minutes.
+[Current product video](https://youtu.be/AuWg-B13cbg) — 149.00 seconds, Unlisted. [Founder introduction](https://youtu.be/R40MxhZ26mo) — 99.42 seconds, Unlisted. The product video stays below the three-minute form limit; the separate founder introduction stays below two minutes.
 
 Hosted Solana Devnet checkout is enabled on the existing Alibaba server. Public HTTPS CLI purchase, exact 70/30 payouts, five-file installation, browser session recovery, a real 600-second timeout refund and encrypted off-host paid-vault restoration passed. Phantom browser purchase and exact ZIP recovery also passed. Test funds only; no mainnet payments or revenue claims.
 
@@ -15,7 +15,7 @@ Hosted Solana Devnet checkout is enabled on the existing Alibaba server. Public 
 | 1:35–1:59        | Phantom purchase and local ZIP recovery  |
 | 1:59–2:28        | Timeout refund and encrypted restoration |
 
-The product meaning and architecture are rendered diagrams. Creator Studio and the completed Phantom checkout are actual hosted pages. The CLI and acceptance checklist scenes are edited representations of recorded test results, not a continuous screen capture. Generic synthetic narration and edited scenes are disclosed on screen and in the description. Product visuals contain no founder photographs.
+Five scenes use actual hosted catalog, Creator Studio, version/share/install, completed Phantom checkout and confirmed refund pages. One scene explains the product architecture. Narration describes independently recorded CLI, chain and backup results; this is an edited walkthrough, not a continuous screen capture. Generic synthetic narration and edited scenes are disclosed on screen and in the description. Product visuals contain no founder photographs.
 
 The independent HTTPS CLI test paid one test USDC and received a permanent grant with exact 70/30 payouts. A fresh directory reused that grant without another payment. A different engineering client exited after finalized payment, then the public packaged CLI resumed its saved session to exact installation with only one payment and one settlement. Phantom browser purchase and exact ZIP recovery also passed.
 
