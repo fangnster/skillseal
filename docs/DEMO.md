@@ -1,12 +1,18 @@
 # SkillSeal demo guide
 
-Use this script to record a short product demo or walk a reviewer through the project. The current Crypto World's Fair form requires a live product video up to three minutes and a separate pitch video up to two minutes. The published product walkthrough is 2:54; see PITCH.md for the founder pitch.
+Use this script to record a short product demo or walk a reviewer through the project. The current Crypto World's Fair form requires a live product video up to three minutes and a separate pitch video up to two minutes. The current product walkthrough is 2:46; see PITCH.md for the founder pitch.
 
-## Public website and free installation
+## Product walkthrough 0.2 — current video
+
+[Watch the 0.2 product demo](https://youtu.be/374T4FpqwEI) (166.00 seconds, under three minutes, Unlisted). It shows product meaning, the current architecture, actual local upload/preview, operator package inspection, immutable share/download pages and a newly installed standalone 0.2 CLI. The CLI installed the reviewed version, matched file bytes and refused an existing destination. English captions are rendered; narration is generic synthetic speech. Product visuals contain no founder photograph.
+
+The entire video is labelled **local functional demo; cloud acceptance pending**. The free catalog has checkout disabled and produces no simulated paid grants. Paid settlement and recovery tests remain distinct from public Solana Devnet acceptance. Alibaba Cloud command delivery is unavailable; do not advertise the proposed platform hostname as live until HTTPS, storage and original-site checks pass.
+
+## Previous website and free installation walkthrough
 
 The public website provides product meaning, workflow, example preview, creator guidance and two installation commands. Install the standalone CLI archive with npm, then run `skillseal sample --server WEBSITE_URL --destination ./skills/research-brief`. The archive contains compiled JavaScript and does not require a server environment file. Use a new directory for repeat installation. The free MIT sample is directly distributed and does not exercise payment or create a paid license.
 
-The [published product video](https://youtu.be/fCNz1DUwwtM) first shows the actual public website and installation, then distinctly labels the implemented paid purchase/recovery demonstration as local mock. Public Devnet remains pending. The verified duration is below three minutes. The original product video is [available on YouTube](https://youtu.be/eSiJYIZ4oU8); retain it as a previous version alongside the new walkthrough.
+The [previous 0.1 product video](https://youtu.be/fCNz1DUwwtM) first shows the actual public website and installation, then distinctly labels the implemented paid purchase/recovery demonstration as local mock. Public Devnet remains pending. The verified duration is below three minutes. The original product video is [available on YouTube](https://youtu.be/eSiJYIZ4oU8); retain it as a previous version alongside the new walkthrough.
 
 Public website: [https://fangnster.github.io/skillseal/](https://fangnster.github.io/skillseal/). Clean public HTTPS installation and reinstall were verified on October 9. The console scenes are edited representations of recorded results, and narration uses a generic synthetic voice; no founder photograph appears in the product video.
 
@@ -23,7 +29,7 @@ Choose the demo mode explicitly:
 
 Do not present a local mock order as a Devnet transaction. The browser has a visible environment badge.
 
-## Published video timeline
+## Previous 0.1 video timeline
 
 | Time      | Screen or action                       | What the viewer sees                                                                                                                                                    |
 | --------- | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
