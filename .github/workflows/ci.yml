@@ -37,6 +37,7 @@ jobs:
       - run: pnpm run build:distribution
       - run: pnpm run test:distribution
       - run: pnpm run build
+      - run: pnpm run build:runtime
       - uses: actions/upload-pages-artifact@v4
         if: github.ref == 'refs/heads/main'
         with:
