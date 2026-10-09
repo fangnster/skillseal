@@ -1,0 +1,24 @@
+# Explicit build context allowlist; use the extracted, verified CI archive.
+*
+!package.json
+!pnpm-lock.yaml
+!next.config.ts
+!LICENSE
+!.skillseal-runtime.json
+!node_modules/
+!node_modules/**
+!.next/
+!.next/**
+!public/
+!public/**
+!src/
+!src/**
+!scripts/
+!scripts/**
+.next/cache
+.next/dev
+**/.env*
+**/.npmrc
+**/*-private.json
+**/*-session.json
+**/*-keypair.json

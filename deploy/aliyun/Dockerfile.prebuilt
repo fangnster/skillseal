@@ -1,16 +1,16 @@
-# Build from the reviewed Linux runtime archive. No Next compilation on a 1 GiB host.
+# Build only from the verified Linux x64 archive. No package install or compilation.
 FROM node:24.19.0-bookworm-slim
 WORKDIR /app
-RUN npm install --global pnpm@11.25.0
-COPY package.json pnpm-lock.yaml ./
-RUN NODE_OPTIONS=--max-old-space-size=256 pnpm install --frozen-lockfile --ignore-scripts --child-concurrency=1 --network-concurrency=4
-COPY .next ./.next
-COPY public ./public
-COPY src ./src
-COPY scripts ./scripts
-COPY next.config.ts ./next.config.ts
+COPY .skillseal-runtime.json ./
+RUN node -e "const r=require('./.skillseal-runtime.json');if(r.platform!==process.platform||r.arch!==process.arch)throw new Error('Runtime platform mismatch')"
+COPY --chown=node:node package.json pnpm-lock.yaml next.config.ts LICENSE ./
+COPY --chown=node:node node_modules ./node_modules
+COPY --chown=node:node .next ./.next
+COPY --chown=node:node public ./public
+COPY --chown=node:node src ./src
+COPY --chown=node:node scripts ./scripts
 ENV NODE_ENV=production NEXT_TELEMETRY_DISABLED=1 DATA_DIR=/var/lib/skillseal PORT=3000 PERSISTENT_STORAGE=1
-RUN mkdir -p /var/lib/skillseal && chown -R node:node /app /var/lib/skillseal && chmod 700 /var/lib/skillseal
+RUN mkdir -p /var/lib/skillseal && chown node:node /var/lib/skillseal && chmod 700 /var/lib/skillseal
 USER node
 EXPOSE 3000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=45s CMD node -e "fetch('http://127.0.0.1:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
