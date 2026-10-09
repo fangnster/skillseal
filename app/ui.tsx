@@ -46,6 +46,11 @@ function Header({ backend }: { backend?: string }) {
       <a className="brand" href="/">
         ◈ <span>SKILLSEAL</span>
       </a>
+      <nav aria-label="Main navigation">
+        <a href="/install">Install</a>
+        <a href="/creators">Creators</a>
+        <a href="https://github.com/fangnster/skillseal">GitHub ↗</a>
+      </nav>
       <div className="badge">
         {backend === 'mock'
           ? 'LOCAL MOCK · NO ON-CHAIN FUNDS'
@@ -75,7 +80,7 @@ export function Marketplace() {
       <section className="hero">
         <p className="eyebrow">WORKFLOWS WORTH OWNING</p>
         <h1>
-          Your next workflow,
+          A useful workflow,
           <br />
           <em>sealed by its creators.</em>
         </h1>
@@ -84,6 +89,14 @@ export function Marketplace() {
           <br />
           Every version license comes with an agreed creator split.
         </p>
+        <div className="actions">
+          <a className="button" href="/install">
+            Install the free MIT example ↗
+          </a>
+          <a className="text-link" href="/creators">
+            Publish a Skill →
+          </a>
+        </div>
         <div className="steps">
           <span>01 Download ciphertext</span>
           <span>02 Pay with your wallet</span>
@@ -447,7 +460,7 @@ export function Checkout({ id }: { id: string }) {
               <div className="notice">
                 <strong>Finish the local install</strong>
                 <pre>
-                  pnpm run cli resume --session skillseal-session.json --destination ./skills/
+                  skillseal resume --session skillseal-session.json --destination ./skills/
                   {version.manifest.skillId}
                 </pre>
                 <p>
