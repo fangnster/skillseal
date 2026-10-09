@@ -1,5 +1,33 @@
 # 验证记录
 
+## Verified public Devnet purchase — October 9, 23:40 Shanghai
+
+- [Deployed program](https://explorer.solana.com/address/AXwhEjRZEqA8Yz6C5gyToudg65UZie8nXuJvbd83LKQu?cluster=devnet): `AXwhEjRZEqA8Yz6C5gyToudg65UZie8nXuJvbd83LKQu`; [deployment transaction](https://explorer.solana.com/tx/61kBkeFNH1x5bsAP4wwnzGr1en77MinJqAHrya6a5dbVkr6ncU3b4NfzRfUHwgXJs9htZUSSso8ZA8f8DoMxhL44?cluster=devnet) finalized. The executable program, upgrade authority and every byte of the deployed ELF were checked against CI source `f725265891260b3ee44afd25225f4314bd4fc3aa`. Artifact SHA-256: `0420cd7561f32883ea92220a652ccaf5f411eb8dd2b50ebed5ddb1912b5a8fd9`; 314,968 bytes.
+- Immutable test version: `75e0f6030a4233b7ce1b85661d7a9204bf0b57bd1024ec32b7972a612d8faa2a`; version PDA `A5QDqv7zqB6Mws77bWVDnPgqdQDHjyeZRRpaaJubKoGS`. Both dedicated test authors approved 7,000/3,000 basis points before payment.
+- [register version](https://explorer.solana.com/tx/YKp9z6rYrvrpYZdny7uBJixutX6BvizH2sfqAR8MXUoQ9wnF2581T7gwk1AVA773DYtaR5TcSmt2GFThXgj63R4?cluster=devnet): finalized, fee 5,000 lamports. Signer `AcJHD71UwABBAKa39z1jvrrpHdR7JF9dacJJH1dWizmu`.
+- [approve version](https://explorer.solana.com/tx/2iT754UJrAoWv5Q2MLZrqkt1Nmgry6Pqgv8X2GW3cvtQN9TaACqxwoxduFNiRyoEbKXMMQ4gwgM9CBajHddHVh3D?cluster=devnet): finalized, fee 5,000 lamports. Signer `965U51Yg2UMreesDHXervVpoXn9xf5WUhC62UN67atn7`.
+- [approve version](https://explorer.solana.com/tx/y6XxKuq8teAPdSwrqDUnGU4PZtNrdQN2xommKGBCa5cq2v2RN2ncYKvXQHPd96RPdXtPSYTuC6c5yn1yFx6wn5t?cluster=devnet): finalized, fee 5,000 lamports. Signer `E2PNPLiS6uj3qrjM4oKzYjRjS7319PNq2F1yYQPLYutE`.
+- [pay](https://explorer.solana.com/tx/2SvnuE5htfUyJp7vz3C5CEuvNNjAVFsCDsNGKe8pUvB22iryeC6rypgynAr431RfXgYK3fwLPNc5VbE7FnansDyd?cluster=devnet): finalized, fee 5,000 lamports. Signer `8fHzM29cBkrCjk8mvzYTg7a5FgydvM5i8axKmB79RfX`.
+- [settle](https://explorer.solana.com/tx/4WGi6LH2GW2JMdA7gjaTjAsNStpvnEXK9DdW9o4dtpL8SReGMBpWwhuJ9SA1v8eG8xCn9wnpVEmcyow3nkzQ3Amg?cluster=devnet): finalized, fee 5,000 lamports. Signer `AcJHD71UwABBAKa39z1jvrrpHdR7JF9dacJJH1dWizmu`.
+
+| Test wallet    |  Before | After purchase | After recovery/reinstall |
+| -------------- | ------: | -------------: | -----------------------: |
+| Buyer          | 20 USDC |        19 USDC |                  19 USDC |
+| Author A (70%) |  0 USDC |       0.7 USDC |                 0.7 USDC |
+| Author B (30%) |  0 USDC |       0.3 USDC |                 0.3 USDC |
+
+The order PDA `96C36gGzdgZkmuJYWms4CoHMCJZFcwFvkgMhLacGN2aC` was independently read as `granted` on finalized Devnet state. The encrypted package installed through the actual API/CLI path into a fresh directory. All five files matched the source bytes. A second local delivery session used the same wallet/version grant and a fresh encryption key; no second payment or payout occurred.
+
+The reinstall request exceeded the CLI’s 30-second HTTP timeout during synchronization. `resume` completed that same private session successfully. This is recorded as an observed transport failure; the server’s zero failure-event metric does not erase it. Payment and settlement cost 10,000 lamports in transaction fees and deposited 5,735,320 lamports for the inspected new order/escrow/author token accounts. These figures exclude program deployment, registration, approvals and funding.
+
+These are test accounts controlled for engineering validation, not additional team members, customers or revenue. The API ran on local loopback; the blockchain transactions are public Devnet. Browser wallet-extension purchase, interruption after payment submission, timeout refund and hosted paid checkout remain outstanding. The public Alibaba catalog still has checkout disabled.
+
+Machine-readable public addresses, signatures, balances, file comparisons and failures: [DEVNET-EVIDENCE.json](docs/DEVNET-EVIDENCE.json). No private keys, delivery keys or recovery-session contents are included.
+
+## English upload controls accepted — October 9, 2026
+
+Source `2d61be3d3ef248a269ca5a85aa4f184ea48fa3b4` is live on Alibaba Cloud. Custom English file-picker buttons and statuses replace browser-localized native controls across publishing, reviewer identity and recovery. Keyboard SKILL.md selection and package validation passed in the live Creator Studio. Formatting, type checking and all 33 existing tests passed; CI, production build and the constrained Linux runtime passed. Public HTTPS CLI delivery matched all five sample files and refused overwrite. The app restart retained its release and private vault identity, and server-side original-site HTTPS checks returned 200. See [cloud acceptance](docs/CLOUD-ACCEPTANCE.md).
+
 ## Alibaba Cloud free catalog accepted — October 9, 2026, 21:51 Shanghai
 
 See [cloud acceptance](docs/CLOUD-ACCEPTANCE.md) for the live URL and exact source. HTTPS, signed author/operator approval, package inspection, verified browser ZIP, independently installed CLI delivery and app restart persistence all passed on the selected server. The original website returned HTTP 200 before and after deployment and restart. Checkout remains disabled; public Devnet and off-host backup restoration are separate outstanding checks. Earlier deployment failures below are historical records.

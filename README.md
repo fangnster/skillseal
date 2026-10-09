@@ -6,11 +6,11 @@ Version 0.2 adds browser upload, release preview, author approval, operator file
 
 [Live platform](https://skillseal-47-236-112-184.sslip.io/) · [Static installer](https://fangnster.github.io/skillseal/) · [中文说明](docs/README.zh-CN.md) · [Installer](docs/INSTALL.md) · [Hosting](docs/DEPLOYMENT.md) · [Architecture](docs/ARCHITECTURE.md) · [Demo guide](docs/DEMO.md) · [Submission plan](docs/HACKATHON.md) · [Devnet acceptance](docs/DEVNET-ACCEPTANCE.md) · [Validation](VALIDATION.md)
 
-SkillSeal lets creators publish a reviewed Skill version and lets Agent developers verify, download and install it locally. Free releases need no wallet. The paid design uses encrypted delivery and Solana Devnet USDC escrow; each purchase covers that exact version, with creator shares approved before release. Public paid checkout acceptance is pending.
+SkillSeal lets creators publish a reviewed Skill version and lets Agent developers verify, download and install it locally. Free releases need no wallet. The paid design uses encrypted delivery and Solana Devnet USDC escrow; each purchase covers that exact version, with creator shares approved before release. A real 1 test-USDC purchase, 70/30 payouts and CLI recovery/reinstall passed on public Devnet with a local API. Hosted paid checkout remains disabled; browser-wallet and refund acceptance are pending.
 
 ![SkillSeal 0.2 architecture](docs/assets/platform-architecture-0.2.png)
 
-_The Alibaba Cloud free catalog is live: signed publishing/review, share pages, verified ZIP/CLI installation and restart persistence passed acceptance. Public paid Devnet checkout remains pending._
+_The Alibaba Cloud free catalog is live: signed publishing/review, share pages, verified ZIP/CLI installation and restart persistence passed acceptance. Public Devnet deployment and CLI purchase/recovery passed; hosted paid checkout stays disabled._
 
 ```text
 Download ciphertext → Sign with wallet → Pay into escrow
@@ -33,7 +33,7 @@ Requires Node.js 24 or newer. Open the installed `SKILL.md` with your agent tool
 
 The GitHub Actions workflow deploys the introduction and installer to GitHub Pages after app, contract and Linux container checks pass. The prebuilt Linux archive includes production dependencies, so the small target server performs no package installation or Next compilation. CI verifies readiness and private key persistence after restart with a 384 MiB limit. The existing-server Alibaba Cloud deployment is live in free catalog mode. [Cloud acceptance](docs/CLOUD-ACCEPTANCE.md) confirms HTTPS, package delivery and persisted keys/releases after restart; paid checkout is disabled. See [DEPLOYMENT.md](docs/DEPLOYMENT.md).
 
-[Product video 0.2 — live cloud walkthrough](https://youtu.be/YWXcdWWev34) · [Earlier local demo](https://youtu.be/374T4FpqwEI) · [Founder video](https://youtu.be/R40MxhZ26mo)
+[Product video 0.2 — live website and real Devnet purchase](https://youtu.be/MaYbKNupnBA) · [Previous cloud walkthrough](https://youtu.be/YWXcdWWev34) · [Earlier local demo](https://youtu.be/374T4FpqwEI) · [Founder video](https://youtu.be/R40MxhZ26mo)
 
 ## Try it in one command
 
@@ -128,7 +128,7 @@ pnpm run build
 pnpm run demo
 ```
 
-The compiled SBF contract has passed two local ProgramTest integration tests with real SPL token transfers. **A public Devnet deployment and wallet-extension purchase are still pending.** The public faucet failed during the initial validation; no public program address or transaction is presented as completed evidence. See [VALIDATION.md](VALIDATION.md).
+The compiled SBF contract passed two local ProgramTest integration tests with real SPL token transfers. On October 9 the program was deployed to public Devnet, its bytes matched the CI ELF, both authors approved, and a 1 test-USDC CLI purchase paid 0.7/0.3 USDC. Installation and session recovery/reinstall matched all five source files with no second payment. **Browser wallet-extension purchase and public Devnet timeout refund remain pending; the hosted catalog has checkout disabled.** See [Devnet evidence](docs/DEVNET-ACCEPTANCE.md) and [VALIDATION.md](VALIDATION.md).
 
 Use a fresh clone for `pnpm run setup` without `--mock`, then follow the [Devnet runbook](docs/README.zh-CN.md#solana-devnet). The checked-in program address is a bootstrap identifier, not a deployed endpoint; setup generates your own program identity.
 
