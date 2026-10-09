@@ -7,6 +7,7 @@ The full Next.js application adds browser Creator Studio (`/creators`), reviewed
 ## Upload and release
 
 1. Open **Publish**. Connect a wallet, or create a local identity for free publishing. Save the private identity file; import it on a later visit. Only the public address is shared. A local free identity is not a funded wallet and cannot approve Devnet transactions.
+   File buttons and selection messages are English regardless of the browser's locale. Use **Choose Skill folder** for the complete package or **Choose SKILL.md** for one file. The system file dialog uses your operating system language.
 2. Choose a folder with a nonempty root `SKILL.md` and optional reference/template/example files, or choose one `SKILL.md`. The app validates portable paths, duplicate names, collisions, 500-file and 10 MiB limits. ZIP upload and symlinks are unsupported. Files are not executed.
 3. Set Skill ID, display name, semantic version, description, free/paid terms, license and up to five unique creator addresses. Shares total exactly 100%; the publisher is one of the authors. Paid prices use six-decimal test-USDC units. The public MIT sample remains freely redistributable.
 4. Preview the exact terms, confirm rights and sign the version. Browser AES-256-GCM encryption is compatible with the existing CLI. The API verifies the signed manifest, hashes and bundle, encrypts the content key at rest, and saves an immutable version.

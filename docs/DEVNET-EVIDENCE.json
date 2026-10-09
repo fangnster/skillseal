@@ -1,0 +1,408 @@
+{
+  "scope": "Public Solana Devnet, dedicated test identities, local loopback API and source CLI. No mainnet assets or revenue.",
+  "funding": {
+    "solReceived": 10,
+    "usdcReceived": 20
+  },
+  "deployment": {
+    "recordedAt": "2026-10-09T15:29:35.368Z",
+    "cluster": "devnet",
+    "programId": "AXwhEjRZEqA8Yz6C5gyToudg65UZie8nXuJvbd83LKQu",
+    "signature": "61kBkeFNH1x5bsAP4wwnzGr1en77MinJqAHrya6a5dbVkr6ncU3b4NfzRfUHwgXJs9htZUSSso8ZA8f8DoMxhL44",
+    "programData": "89qaztkG5YoFAGbvBJoSMj8CbPA3jtd8cKkQ6J4p6F8f",
+    "authority": "AcJHD71UwABBAKa39z1jvrrpHdR7JF9dacJJH1dWizmu",
+    "artifactSha256": "0420cd7561f32883ea92220a652ccaf5f411eb8dd2b50ebed5ddb1912b5a8fd9",
+    "artifactBytes": 314968,
+    "onChainBytesMatch": true,
+    "sourceCommit": "f725265891260b3ee44afd25225f4314bd4fc3aa",
+    "status": {
+      "confirmationStatus": "finalized",
+      "confirmations": null,
+      "err": null,
+      "slot": 509223505,
+      "status": {
+        "Ok": null
+      }
+    },
+    "issuerLamports": 8096665600
+  },
+  "before": {
+    "recordedAt": "2026-10-09T15:36:48.164Z",
+    "phase": "before",
+    "cluster": "devnet",
+    "programId": "AXwhEjRZEqA8Yz6C5gyToudg65UZie8nXuJvbd83LKQu",
+    "versionId": "75e0f6030a4233b7ce1b85661d7a9204bf0b57bd1024ec32b7972a612d8faa2a",
+    "versionPda": "A5QDqv7zqB6Mws77bWVDnPgqdQDHjyeZRRpaaJubKoGS",
+    "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+    "price": "1000000",
+    "splits": [
+      {
+        "wallet": "965U51Yg2UMreesDHXervVpoXn9xf5WUhC62UN67atn7",
+        "bps": 7000
+      },
+      {
+        "wallet": "E2PNPLiS6uj3qrjM4oKzYjRjS7319PNq2F1yYQPLYutE",
+        "bps": 3000
+      }
+    ],
+    "balances": [
+      {
+        "wallet": "965U51Yg2UMreesDHXervVpoXn9xf5WUhC62UN67atn7",
+        "ata": "EVniwJs4eYH515pG2xmjSUoL4FerVSSVvRs61PrnGE3s",
+        "baseUnits": "0"
+      },
+      {
+        "wallet": "E2PNPLiS6uj3qrjM4oKzYjRjS7319PNq2F1yYQPLYutE",
+        "ata": "CXH3TjGErGfKNknthowVxqnMMiRYPK816nCfPYBit4D1",
+        "baseUnits": "0"
+      },
+      {
+        "wallet": "8fHzM29cBkrCjk8mvzYTg7a5FgydvM5i8axKmB79RfX",
+        "ata": "EUCJkFA2gtgWgUho8J5evYtYGUkTv4vYsGbGFvve7wow",
+        "baseUnits": "20000000"
+      }
+    ]
+  },
+  "purchase": {
+    "recordedAt": "2026-10-09T15:37:41.231Z",
+    "phase": "after",
+    "cluster": "devnet",
+    "programId": "AXwhEjRZEqA8Yz6C5gyToudg65UZie8nXuJvbd83LKQu",
+    "versionId": "75e0f6030a4233b7ce1b85661d7a9204bf0b57bd1024ec32b7972a612d8faa2a",
+    "versionPda": "A5QDqv7zqB6Mws77bWVDnPgqdQDHjyeZRRpaaJubKoGS",
+    "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+    "price": "1000000",
+    "splits": [
+      {
+        "wallet": "965U51Yg2UMreesDHXervVpoXn9xf5WUhC62UN67atn7",
+        "bps": 7000
+      },
+      {
+        "wallet": "E2PNPLiS6uj3qrjM4oKzYjRjS7319PNq2F1yYQPLYutE",
+        "bps": 3000
+      }
+    ],
+    "balances": [
+      {
+        "wallet": "965U51Yg2UMreesDHXervVpoXn9xf5WUhC62UN67atn7",
+        "ata": "EVniwJs4eYH515pG2xmjSUoL4FerVSSVvRs61PrnGE3s",
+        "baseUnits": "700000"
+      },
+      {
+        "wallet": "E2PNPLiS6uj3qrjM4oKzYjRjS7319PNq2F1yYQPLYutE",
+        "ata": "CXH3TjGErGfKNknthowVxqnMMiRYPK816nCfPYBit4D1",
+        "baseUnits": "300000"
+      },
+      {
+        "wallet": "8fHzM29cBkrCjk8mvzYTg7a5FgydvM5i8axKmB79RfX",
+        "ata": "EUCJkFA2gtgWgUho8J5evYtYGUkTv4vYsGbGFvve7wow",
+        "baseUnits": "19000000"
+      }
+    ],
+    "approvals": [
+      "965U51Yg2UMreesDHXervVpoXn9xf5WUhC62UN67atn7",
+      "E2PNPLiS6uj3qrjM4oKzYjRjS7319PNq2F1yYQPLYutE"
+    ],
+    "versionTransactions": [
+      {
+        "signature": "4WGi6LH2GW2JMdA7gjaTjAsNStpvnEXK9DdW9o4dtpL8SReGMBpWwhuJ9SA1v8eG8xCn9wnpVEmcyow3nkzQ3Amg",
+        "blockTime": 1791560245,
+        "confirmationStatus": "finalized"
+      },
+      {
+        "signature": "2SvnuE5htfUyJp7vz3C5CEuvNNjAVFsCDsNGKe8pUvB22iryeC6rypgynAr431RfXgYK3fwLPNc5VbE7FnansDyd",
+        "blockTime": 1791560243,
+        "confirmationStatus": "finalized"
+      },
+      {
+        "signature": "y6XxKuq8teAPdSwrqDUnGU4PZtNrdQN2xommKGBCa5cq2v2RN2ncYKvXQHPd96RPdXtPSYTuC6c5yn1yFx6wn5t",
+        "blockTime": 1791560219,
+        "confirmationStatus": "finalized"
+      },
+      {
+        "signature": "2iT754UJrAoWv5Q2MLZrqkt1Nmgry6Pqgv8X2GW3cvtQN9TaACqxwoxduFNiRyoEbKXMMQ4gwgM9CBajHddHVh3D",
+        "blockTime": 1791560129,
+        "confirmationStatus": "finalized"
+      },
+      {
+        "signature": "YKp9z6rYrvrpYZdny7uBJixutX6BvizH2sfqAR8MXUoQ9wnF2581T7gwk1AVA773DYtaR5TcSmt2GFThXgj63R4",
+        "blockTime": 1791560104,
+        "confirmationStatus": "finalized"
+      }
+    ],
+    "orders": [
+      {
+        "id": "d492833d-e261-4009-979f-23ca7e6bde17",
+        "status": "granted",
+        "buyer": "8fHzM29cBkrCjk8mvzYTg7a5FgydvM5i8axKmB79RfX",
+        "orderPda": "96C36gGzdgZkmuJYWms4CoHMCJZFcwFvkgMhLacGN2aC",
+        "chainStatus": "granted",
+        "settlementSignature": "4WGi6LH2GW2JMdA7gjaTjAsNStpvnEXK9DdW9o4dtpL8SReGMBpWwhuJ9SA1v8eG8xCn9wnpVEmcyow3nkzQ3Amg",
+        "costs": [
+          {
+            "signature": "4WGi6LH2GW2JMdA7gjaTjAsNStpvnEXK9DdW9o4dtpL8SReGMBpWwhuJ9SA1v8eG8xCn9wnpVEmcyow3nkzQ3Amg",
+            "phase": "settlement",
+            "feeLamports": 5000,
+            "rentDepositLamports": 2976880
+          },
+          {
+            "signature": "2SvnuE5htfUyJp7vz3C5CEuvNNjAVFsCDsNGKe8pUvB22iryeC6rypgynAr431RfXgYK3fwLPNc5VbE7FnansDyd",
+            "phase": "payment",
+            "feeLamports": 5000,
+            "rentDepositLamports": 2758440
+          }
+        ]
+      }
+    ],
+    "install": {
+      "exactSourceBytesMatch": true,
+      "fileCount": 5,
+      "files": [
+        "SKILL.md",
+        "assets/brief-template.md",
+        "examples/demo-input.md",
+        "examples/reference-brief.md",
+        "references/review-checklist.md"
+      ]
+    },
+    "metrics": {
+      "checkouts": 1,
+      "funded": 1,
+      "unlocked": 1,
+      "failures": 0,
+      "refunds": 0,
+      "completionRate": 1,
+      "failureRate": 0,
+      "averageCheckoutMs": 6591,
+      "averageUnlockMs": 4455,
+      "settlementFeesLamports": 5000,
+      "chainCosts": {
+        "transactions": [
+          {
+            "signature": "4WGi6LH2GW2JMdA7gjaTjAsNStpvnEXK9DdW9o4dtpL8SReGMBpWwhuJ9SA1v8eG8xCn9wnpVEmcyow3nkzQ3Amg",
+            "resource": "75e0f6030a4233b7ce1b85661d7a9204bf0b57bd1024ec32b7972a612d8faa2a:8fHzM29cBkrCjk8mvzYTg7a5FgydvM5i8axKmB79RfX",
+            "phase": "settlement",
+            "fee": 5000,
+            "rent": 2976880
+          },
+          {
+            "signature": "2SvnuE5htfUyJp7vz3C5CEuvNNjAVFsCDsNGKe8pUvB22iryeC6rypgynAr431RfXgYK3fwLPNc5VbE7FnansDyd",
+            "resource": "75e0f6030a4233b7ce1b85661d7a9204bf0b57bd1024ec32b7972a612d8faa2a:8fHzM29cBkrCjk8mvzYTg7a5FgydvM5i8axKmB79RfX",
+            "phase": "payment",
+            "fee": 5000,
+            "rent": 2758440
+          }
+        ],
+        "transactionFeesLamports": 10000,
+        "rentDepositsLamports": 5735320,
+        "ordersWithUnavailableHistory": 0
+      }
+    }
+  },
+  "reinstall": {
+    "recordedAt": "2026-10-09T15:40:08.122Z",
+    "phase": "reinstall",
+    "cluster": "devnet",
+    "programId": "AXwhEjRZEqA8Yz6C5gyToudg65UZie8nXuJvbd83LKQu",
+    "versionId": "75e0f6030a4233b7ce1b85661d7a9204bf0b57bd1024ec32b7972a612d8faa2a",
+    "versionPda": "A5QDqv7zqB6Mws77bWVDnPgqdQDHjyeZRRpaaJubKoGS",
+    "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+    "price": "1000000",
+    "splits": [
+      {
+        "wallet": "965U51Yg2UMreesDHXervVpoXn9xf5WUhC62UN67atn7",
+        "bps": 7000
+      },
+      {
+        "wallet": "E2PNPLiS6uj3qrjM4oKzYjRjS7319PNq2F1yYQPLYutE",
+        "bps": 3000
+      }
+    ],
+    "balances": [
+      {
+        "wallet": "965U51Yg2UMreesDHXervVpoXn9xf5WUhC62UN67atn7",
+        "ata": "EVniwJs4eYH515pG2xmjSUoL4FerVSSVvRs61PrnGE3s",
+        "baseUnits": "700000"
+      },
+      {
+        "wallet": "E2PNPLiS6uj3qrjM4oKzYjRjS7319PNq2F1yYQPLYutE",
+        "ata": "CXH3TjGErGfKNknthowVxqnMMiRYPK816nCfPYBit4D1",
+        "baseUnits": "300000"
+      },
+      {
+        "wallet": "8fHzM29cBkrCjk8mvzYTg7a5FgydvM5i8axKmB79RfX",
+        "ata": "EUCJkFA2gtgWgUho8J5evYtYGUkTv4vYsGbGFvve7wow",
+        "baseUnits": "19000000"
+      }
+    ],
+    "approvals": [
+      "965U51Yg2UMreesDHXervVpoXn9xf5WUhC62UN67atn7",
+      "E2PNPLiS6uj3qrjM4oKzYjRjS7319PNq2F1yYQPLYutE"
+    ],
+    "versionTransactions": [
+      {
+        "signature": "4WGi6LH2GW2JMdA7gjaTjAsNStpvnEXK9DdW9o4dtpL8SReGMBpWwhuJ9SA1v8eG8xCn9wnpVEmcyow3nkzQ3Amg",
+        "blockTime": 1791560245,
+        "confirmationStatus": "finalized"
+      },
+      {
+        "signature": "2SvnuE5htfUyJp7vz3C5CEuvNNjAVFsCDsNGKe8pUvB22iryeC6rypgynAr431RfXgYK3fwLPNc5VbE7FnansDyd",
+        "blockTime": 1791560243,
+        "confirmationStatus": "finalized"
+      },
+      {
+        "signature": "y6XxKuq8teAPdSwrqDUnGU4PZtNrdQN2xommKGBCa5cq2v2RN2ncYKvXQHPd96RPdXtPSYTuC6c5yn1yFx6wn5t",
+        "blockTime": 1791560219,
+        "confirmationStatus": "finalized"
+      },
+      {
+        "signature": "2iT754UJrAoWv5Q2MLZrqkt1Nmgry6Pqgv8X2GW3cvtQN9TaACqxwoxduFNiRyoEbKXMMQ4gwgM9CBajHddHVh3D",
+        "blockTime": 1791560129,
+        "confirmationStatus": "finalized"
+      },
+      {
+        "signature": "YKp9z6rYrvrpYZdny7uBJixutX6BvizH2sfqAR8MXUoQ9wnF2581T7gwk1AVA773DYtaR5TcSmt2GFThXgj63R4",
+        "blockTime": 1791560104,
+        "confirmationStatus": "finalized"
+      }
+    ],
+    "orders": [
+      {
+        "id": "d492833d-e261-4009-979f-23ca7e6bde17",
+        "status": "granted",
+        "buyer": "8fHzM29cBkrCjk8mvzYTg7a5FgydvM5i8axKmB79RfX",
+        "orderPda": "96C36gGzdgZkmuJYWms4CoHMCJZFcwFvkgMhLacGN2aC",
+        "chainStatus": "granted",
+        "settlementSignature": "4WGi6LH2GW2JMdA7gjaTjAsNStpvnEXK9DdW9o4dtpL8SReGMBpWwhuJ9SA1v8eG8xCn9wnpVEmcyow3nkzQ3Amg",
+        "costs": [
+          {
+            "signature": "4WGi6LH2GW2JMdA7gjaTjAsNStpvnEXK9DdW9o4dtpL8SReGMBpWwhuJ9SA1v8eG8xCn9wnpVEmcyow3nkzQ3Amg",
+            "phase": "settlement",
+            "feeLamports": 5000,
+            "rentDepositLamports": 2976880
+          },
+          {
+            "signature": "2SvnuE5htfUyJp7vz3C5CEuvNNjAVFsCDsNGKe8pUvB22iryeC6rypgynAr431RfXgYK3fwLPNc5VbE7FnansDyd",
+            "phase": "payment",
+            "feeLamports": 5000,
+            "rentDepositLamports": 2758440
+          }
+        ]
+      },
+      {
+        "id": "4239b3b4-6b49-4fde-822c-c7507d577d37",
+        "status": "granted",
+        "buyer": "8fHzM29cBkrCjk8mvzYTg7a5FgydvM5i8axKmB79RfX",
+        "orderPda": "96C36gGzdgZkmuJYWms4CoHMCJZFcwFvkgMhLacGN2aC",
+        "chainStatus": "granted",
+        "costs": [
+          {
+            "signature": "4WGi6LH2GW2JMdA7gjaTjAsNStpvnEXK9DdW9o4dtpL8SReGMBpWwhuJ9SA1v8eG8xCn9wnpVEmcyow3nkzQ3Amg",
+            "phase": "settlement",
+            "feeLamports": 5000,
+            "rentDepositLamports": 2976880
+          },
+          {
+            "signature": "2SvnuE5htfUyJp7vz3C5CEuvNNjAVFsCDsNGKe8pUvB22iryeC6rypgynAr431RfXgYK3fwLPNc5VbE7FnansDyd",
+            "phase": "payment",
+            "feeLamports": 5000,
+            "rentDepositLamports": 2758440
+          }
+        ]
+      }
+    ],
+    "install": {
+      "exactSourceBytesMatch": true,
+      "fileCount": 5,
+      "files": [
+        "SKILL.md",
+        "assets/brief-template.md",
+        "examples/demo-input.md",
+        "examples/reference-brief.md",
+        "references/review-checklist.md"
+      ]
+    },
+    "metrics": {
+      "checkouts": 2,
+      "funded": 1,
+      "unlocked": 2,
+      "failures": 0,
+      "refunds": 0,
+      "completionRate": 1,
+      "failureRate": 0,
+      "averageCheckoutMs": 4001,
+      "averageUnlockMs": 2933,
+      "settlementFeesLamports": 5000,
+      "chainCosts": {
+        "transactions": [
+          {
+            "signature": "4WGi6LH2GW2JMdA7gjaTjAsNStpvnEXK9DdW9o4dtpL8SReGMBpWwhuJ9SA1v8eG8xCn9wnpVEmcyow3nkzQ3Amg",
+            "resource": "75e0f6030a4233b7ce1b85661d7a9204bf0b57bd1024ec32b7972a612d8faa2a:8fHzM29cBkrCjk8mvzYTg7a5FgydvM5i8axKmB79RfX",
+            "phase": "settlement",
+            "fee": 5000,
+            "rent": 2976880
+          },
+          {
+            "signature": "2SvnuE5htfUyJp7vz3C5CEuvNNjAVFsCDsNGKe8pUvB22iryeC6rypgynAr431RfXgYK3fwLPNc5VbE7FnansDyd",
+            "resource": "75e0f6030a4233b7ce1b85661d7a9204bf0b57bd1024ec32b7972a612d8faa2a:8fHzM29cBkrCjk8mvzYTg7a5FgydvM5i8axKmB79RfX",
+            "phase": "payment",
+            "fee": 5000,
+            "rent": 2758440
+          }
+        ],
+        "transactionFeesLamports": 10000,
+        "rentDepositsLamports": 5735320,
+        "ordersWithUnavailableHistory": 0
+      }
+    },
+    "secondPaymentRequired": false,
+    "secondPayout": false
+  },
+  "transactions": [
+    {
+      "signature": "4WGi6LH2GW2JMdA7gjaTjAsNStpvnEXK9DdW9o4dtpL8SReGMBpWwhuJ9SA1v8eG8xCn9wnpVEmcyow3nkzQ3Amg",
+      "action": "settle",
+      "signers": ["AcJHD71UwABBAKa39z1jvrrpHdR7JF9dacJJH1dWizmu"],
+      "finalized": true,
+      "feeLamports": 5000
+    },
+    {
+      "signature": "2SvnuE5htfUyJp7vz3C5CEuvNNjAVFsCDsNGKe8pUvB22iryeC6rypgynAr431RfXgYK3fwLPNc5VbE7FnansDyd",
+      "action": "pay",
+      "signers": ["8fHzM29cBkrCjk8mvzYTg7a5FgydvM5i8axKmB79RfX"],
+      "finalized": true,
+      "feeLamports": 5000
+    },
+    {
+      "signature": "y6XxKuq8teAPdSwrqDUnGU4PZtNrdQN2xommKGBCa5cq2v2RN2ncYKvXQHPd96RPdXtPSYTuC6c5yn1yFx6wn5t",
+      "action": "approve_version",
+      "signers": ["E2PNPLiS6uj3qrjM4oKzYjRjS7319PNq2F1yYQPLYutE"],
+      "finalized": true,
+      "feeLamports": 5000
+    },
+    {
+      "signature": "2iT754UJrAoWv5Q2MLZrqkt1Nmgry6Pqgv8X2GW3cvtQN9TaACqxwoxduFNiRyoEbKXMMQ4gwgM9CBajHddHVh3D",
+      "action": "approve_version",
+      "signers": ["965U51Yg2UMreesDHXervVpoXn9xf5WUhC62UN67atn7"],
+      "finalized": true,
+      "feeLamports": 5000
+    },
+    {
+      "signature": "YKp9z6rYrvrpYZdny7uBJixutX6BvizH2sfqAR8MXUoQ9wnF2581T7gwk1AVA773DYtaR5TcSmt2GFThXgj63R4",
+      "action": "register_version",
+      "signers": ["AcJHD71UwABBAKa39z1jvrrpHdR7JF9dacJJH1dWizmu"],
+      "finalized": true,
+      "feeLamports": 5000
+    }
+  ],
+  "observedFailures": [
+    "The first program upload using --use-rpc exceeded maximum retries; the same buffer succeeded with the official --use-tpu-client mode.",
+    "Reinstall synchronization exceeded the CLI 30-second HTTP timeout. Resuming the existing private session completed installation without another payment."
+  ],
+  "pending": [
+    "Browser wallet-extension purchase",
+    "Hosted paid checkout enablement and acceptance",
+    "Interrupted payment submission recovery",
+    "Public Devnet timeout refund and rejected post-refund claim"
+  ]
+}

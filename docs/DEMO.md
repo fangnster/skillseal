@@ -1,8 +1,12 @@
 # SkillSeal demo guide
 
-Use this script to record a short product demo or walk a reviewer through the project. The current Crypto World's Fair form requires a live product video up to three minutes and a separate pitch video up to two minutes. The current live-cloud product walkthrough is approximately 2:17; see PITCH.md for the founder pitch.
+Use this script to record a short product demo or walk a reviewer through the project. The current Crypto World's Fair form requires a live product video up to three minutes and a separate pitch video up to two minutes. The current live-website and Devnet product walkthrough is 132.50 seconds; see PITCH.md for the founder pitch.
 
-## Live cloud walkthrough 0.2 — current video
+## Live website + public Devnet walkthrough 0.2 — current video
+
+[Watch the updated product video](https://youtu.be/MaYbKNupnBA) (132.50 seconds, Unlisted). It shows the live Creator Studio with English upload buttons, the free release share/download page, code-rendered architecture, recorded real Devnet CLI results and the actual granted-order UI. Both author approvals, 1 test-USDC payment, 0.7/0.3 payouts and five-file installation were independently verified. Session recovery after a synchronization timeout succeeded with no second payment. The paid API ran locally; these are public Devnet transactions. Hosted checkout remains disabled; browser-wallet and refund acceptance are pending. Generic synthetic narration and edited result representations are disclosed. See [public transaction evidence](DEVNET-ACCEPTANCE.md).
+
+## Previous live cloud walkthrough 0.2
 
 [Watch the live cloud walkthrough](https://youtu.be/YWXcdWWev34) (136.12 seconds, under three minutes, Unlisted). It uses actual public Alibaba Cloud pages, product meaning/architecture diagrams and an edited representation of verified HTTPS CLI output. Generic synthetic narration and rendered captions are disclosed. It shows the live Creator Studio, approved Research Brief share/download page, exact package installation and restart persistence. Public paid checkout remains disabled. See [cloud acceptance](CLOUD-ACCEPTANCE.md).
 
@@ -26,10 +30,10 @@ Install Node.js 24+ and pnpm 11. Run `pnpm install --frozen-lockfile` in a fresh
 
 Choose the demo mode explicitly:
 
-| Mode                      | What to say                                                         | Prerequisites                                                                      |
-| ------------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| Local mock, available now | “This is the local product flow; payment and splits are simulated.” | `setup --mock`, `seed`, `dev`                                                      |
-| Public Devnet, pending    | “This purchase uses test USDC on Solana Devnet.”                    | Deploy and fund the program, issuer, authors and buyer; complete Devnet acceptance |
+| Mode                        | What to say                                                         | Prerequisites                                                                                |
+| --------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| Local mock, available now   | “This is the local product flow; payment and splits are simulated.” | `setup --mock`, `seed`, `dev`                                                                |
+| Public Devnet CLI, verified | “This purchase uses test USDC on Solana Devnet.”                    | See recorded CLI purchase/recovery evidence; browser-wallet and refund checks remain pending |
 
 Do not present a local mock order as a Devnet transaction. The browser has a visible environment badge.
 

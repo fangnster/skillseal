@@ -8,6 +8,12 @@ Deployed source: `c3ffe58cfd8021a0216ee487263c388a76351cab`. The Linux x64 runti
 
 [Watch the live cloud walkthrough](https://youtu.be/YWXcdWWev34) (under three minutes; generic synthetic narration, actual pages and verified CLI results).
 
+## English upload controls — October 9, 22:57 Shanghai
+
+Deployed source `2d61be3d3ef248a269ca5a85aa4f184ea48fa3b4`, runtime SHA-256 `ef9c490f10d719e87ecca6deedf474f9f82313aff43e959e82c86a5d744b83bb`. [CI passed](https://github.com/fangnster/skillseal/actions/runs/37946646383). File selection now uses English buttons and selection messages in Creator Studio, reviewer identity restore and purchase recovery. The operating system's file chooser retains the user's system language.
+
+The live Creator Studio passed keyboard selection and local validation of the original SKILL.md. Public CLI installation again matched all five approved sample files and refused an existing destination. The API returned `ready`, `disabled`, `devnet`. The deployment command completed with exit code zero and checked the original application as HTTP 200 before and after the update. A separate app restart at 23:09 also passed: approved release, key fingerprints, issuer and 0600 permissions persisted; original HTTPS remained 200. SkillSeal used 185.6 MiB within its 384 MiB cap, and the host had 295 MiB available.
+
 ## Observed acceptance
 
 | Check                      | Result                                                                                                                                                    |
