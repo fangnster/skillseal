@@ -1,5 +1,5 @@
 {
-  "status": "PROJECT AND REPOSITORY FIELDS SAVED AS DRAFT \u2014 NOT FINALLY SUBMITTED",
+  "status": "PROJECT, MEDIA AND FOUNDER PROFILE SAVED AS DRAFT \u2014 NOT FINALLY SUBMITTED",
   "reviewedAt": "2026-10-09",
   "event": "Crypto World's Fair 2026",
   "projectUrl": "https://colosseum.com/arena/projects/skillseal",
@@ -27,7 +27,6 @@
   },
   "missing": {
     "teamTelegram": "Required; owner explicitly has no Telegram account. Do not invent a contact.",
-    "founderProfile": "Owner must review full name, public role, gender/prefer-not-to-say, city, school status, education, and relevant experience.",
     "publicDevnetEvidence": "Not yet deployed or accepted on public Devnet. Do not invent addresses or transaction signatures.",
     "communityReferral": "Select the owner-requested solar community option after verifying it in the form; separate from Solana chain selection."
   },
@@ -45,7 +44,8 @@
     "Public website URL",
     "Updated product video URL",
     "Founder video URL",
-    "Public installation access instructions"
+    "Public installation access instructions",
+    "Completed founder submission profile"
   ],
   "publishedWebsite": "https://skillseal-47-236-112-184.sslip.io/",
   "publishedMedia": {
@@ -64,5 +64,6 @@
     "completedAt": "2026-10-09T21:51:10+08:00",
     "evidence": "docs/CLOUD-ACCEPTANCE.md"
   },
-  "staticIntroduction": "https://fangnster.github.io/skillseal/"
+  "staticIntroduction": "https://fangnster.github.io/skillseal/",
+  "founderProfileStatus": "Colosseum confirmed complete; personal answers remain in the private submission profile."
 }
