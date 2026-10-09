@@ -1,0 +1,7 @@
+{$SKILLSEAL_DOMAIN} {
+  encode zstd gzip
+  request_body {
+    max_size 24MB
+  }
+  reverse_proxy app:3000
+}

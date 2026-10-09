@@ -1,0 +1,4 @@
+services:
+  app:
+    build:
+      dockerfile: deploy/aliyun/Dockerfile.prebuilt

@@ -1,0 +1,45 @@
+name: skillseal
+services:
+  app:
+    build:
+      context: ../..
+      dockerfile: deploy/aliyun/Dockerfile
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      APP_ORIGIN: https://${SKILLSEAL_DOMAIN:?Set the actual domain in .env}
+      DATA_DIR: /var/lib/skillseal
+      PERSISTENT_STORAGE: "1"
+      NODE_ENV: production
+      PORT: "3000"
+    volumes:
+      - vault:/var/lib/skillseal
+    expose:
+      - "3000"
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+  https:
+    image: caddy:2.10.2-alpine
+    restart: unless-stopped
+    environment:
+      SKILLSEAL_DOMAIN: ${SKILLSEAL_DOMAIN:?Set the actual domain in .env}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      app:
+        condition: service_healthy
+volumes:
+  vault:
+  caddy_data:
+  caddy_config:

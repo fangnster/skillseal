@@ -1,0 +1,13 @@
+# Reuse an existing, inspected Caddy proxy without binding public ports again.
+# Connect the existing proxy to skillseal_default after starting the app.
+# SkillSeal does not join the original application's private network.
+services:
+  app:
+    mem_limit: 384m
+    cpus: 1.0
+    pids_limit: 128
+    networks:
+      default:
+        aliases: [skillseal-app]
+  https:
+    profiles: [dedicated-proxy]
