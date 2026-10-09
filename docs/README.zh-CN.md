@@ -1,6 +1,6 @@
 # SkillSeal · 加密下载与 Solana 授权 MVP
 
-0.2 已实现网页上传、发布预览、作者批准、运营者文件审核、固定版本分享页、免费 ZIP 下载、独立 CLI 安装及私有 session 恢复。免费目录无需买家账号或钱包。阿里云网站验收尚未完成，现有命令助手不可用，需恢复原有服务器登录；收费 Devnet 另行验收，当前不创建付费订单。Linux 依赖已在 CI 打包，384 MiB 容器启动及重启后密钥保留验证通过。[新版产品演示（本机功能）](https://youtu.be/374T4FpqwEI)。
+0.2 已实现网页上传、发布预览、作者批准、运营者文件审核、固定版本分享页、免费 ZIP 下载、独立 CLI 安装及私有 session 恢复。免费目录无需买家账号或钱包。[阿里云平台](https://skillseal-47-236-112-184.sslip.io/)已上线：发布签名、作者批准、包内容审核、分享页、网页 ZIP 与独立 CLI 安装验收通过；重启后版本和密钥保留，原网站仍正常。收费 Devnet 另行验收，当前不创建付费订单。Linux 依赖已在 CI 打包，384 MiB 容器启动及重启后密钥保留验证通过。[新版产品演示（线上平台）](https://youtu.be/YWXcdWWev34)；[此前本机演示](https://youtu.be/374T4FpqwEI)。
 
 面向已有钱包的 Agent 开发者：先下载密文，再支付，最后在本地解密安装。购买者永久使用所购版本；新版本单独授权。安装后可离线使用，安装器不执行包内脚本。
 
@@ -204,7 +204,6 @@ skillseal sample --server https://fangnster.github.io/skillseal --destination ./
 ```
 
 已从公开 HTTPS 地址在干净目录验证 npm 安装、两个新目录的示例安装、已有目录拒绝覆盖，以及五个 Markdown 文件的本地读取。打开 `SKILL.md` 交给自己的 Agent，提供资料，再按 `references/review-checklist.md` 检查结果。公开示例免费且为 MIT，不需要钱包，也不会生成付费授权。付费 API 和公开 Devnet 购买仍待验收。
-
 
 ## 0.2 完整网站功能
 

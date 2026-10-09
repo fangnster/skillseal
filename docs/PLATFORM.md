@@ -1,5 +1,7 @@
 # Publishing, sharing and installing a Skill
 
+Live free platform: [https://skillseal-47-236-112-184.sslip.io](https://skillseal-47-236-112-184.sslip.io/). Open `/creators` to publish, share an approved version page, and download a ZIP or copy its CLI command. [Cloud acceptance](CLOUD-ACCEPTANCE.md) is complete; public paid checkout remains disabled.
+
 The full Next.js application adds browser Creator Studio (`/creators`), reviewed version pages (`/skills/<version hash>`), operator inspection/review (`/manage`), and purchase recovery (`/library`). These pages require a running API and persistent vault. GitHub Pages remains the static introduction and free-example installer; it does not host the API.
 
 ## Upload and release

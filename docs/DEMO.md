@@ -1,12 +1,16 @@
 # SkillSeal demo guide
 
-Use this script to record a short product demo or walk a reviewer through the project. The current Crypto World's Fair form requires a live product video up to three minutes and a separate pitch video up to two minutes. The current product walkthrough is 2:46; see PITCH.md for the founder pitch.
+Use this script to record a short product demo or walk a reviewer through the project. The current Crypto World's Fair form requires a live product video up to three minutes and a separate pitch video up to two minutes. The current live-cloud product walkthrough is approximately 2:17; see PITCH.md for the founder pitch.
 
-## Product walkthrough 0.2 — current video
+## Live cloud walkthrough 0.2 — current video
+
+[Watch the live cloud walkthrough](https://youtu.be/YWXcdWWev34) (136.12 seconds, under three minutes, Unlisted). It uses actual public Alibaba Cloud pages, product meaning/architecture diagrams and an edited representation of verified HTTPS CLI output. Generic synthetic narration and rendered captions are disclosed. It shows the live Creator Studio, approved Research Brief share/download page, exact package installation and restart persistence. Public paid checkout remains disabled. See [cloud acceptance](CLOUD-ACCEPTANCE.md).
+
+## Earlier local walkthrough 0.2
 
 [Watch the 0.2 product demo](https://youtu.be/374T4FpqwEI) (166.00 seconds, under three minutes, Unlisted). It shows product meaning, the current architecture, actual local upload/preview, operator package inspection, immutable share/download pages and a newly installed standalone 0.2 CLI. The CLI installed the reviewed version, matched file bytes and refused an existing destination. English captions are rendered; narration is generic synthetic speech. Product visuals contain no founder photograph.
 
-The entire video is labelled **local functional demo; cloud acceptance pending**. The free catalog has checkout disabled and produces no simulated paid grants. Paid settlement and recovery tests remain distinct from public Solana Devnet acceptance. Alibaba Cloud command delivery is unavailable; do not advertise the proposed platform hostname as live until HTTPS, storage and original-site checks pass.
+The entire video is labelled **local functional demo; cloud acceptance pending**. The free catalog has checkout disabled and produces no simulated paid grants. Paid settlement and recovery tests remain distinct from public Solana Devnet acceptance. The later [Alibaba Cloud acceptance](CLOUD-ACCEPTANCE.md) passed HTTPS, storage, delivery and original-site checks. This earlier video retains its original local-demo label.
 
 ## Previous website and free installation walkthrough
 

@@ -1,5 +1,7 @@
 # Deployment
 
+The [Alibaba Cloud free catalog](https://skillseal-47-236-112-184.sslip.io/) is live on the selected existing server. [Acceptance evidence](CLOUD-ACCEPTANCE.md) covers HTTPS, signed publication/review, exact ZIP/CLI bytes, private file permissions and release/key persistence after app restart. Paid checkout is disabled. The existing application still returns HTTP 200. No new paid cloud resource was created.
+
 The complete 0.2 website can run on a selected existing Alibaba Cloud ECS or Simple Application Server. See [deploy/aliyun/README.md](../deploy/aliyun/README.md) for Docker, persistent storage, HTTPS, a shared existing proxy and a prebuilt runtime for small hosts. Start with `PAYMENT_BACKEND=disabled`: the free upload/review/share/download flow runs without chain funding, while test-priced drafts remain unavailable for purchase. An operator public signing address is required. This configuration does not create cloud resources or authorize new spending.
 
 # Public website and persistent marketplace deployment

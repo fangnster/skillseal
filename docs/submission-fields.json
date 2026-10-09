@@ -8,31 +8,28 @@
   "fields": {
     "projectName": "SkillSeal",
     "briefDescription": "Encrypted delivery, permanent version licenses, and approved creator revenue splits for locally installed Agent Skills, using Solana USDC escrow.",
-    "buildingAndAudience": "SkillSeal helps Agent developers publish and install reusable workflow packages with clear version licenses and creator shares. The 0.2 website includes Creator Studio upload and preview, signed author approvals, operator file inspection, stable version share pages, verified free ZIP delivery and a standalone publish/install/recovery CLI. Approved free Skills need no buyer account or wallet. The paid design uses encrypted packages and Solana USDC escrow to couple a wallet/version license with agreed creator payouts atomically. Our Research Brief example turns supplied sources into a cited decision brief with verification steps. Installed files remain local. Browser publishing and free installation have local evidence; paid flows have labelled mock and local compiled-SBF test evidence. Alibaba Cloud deployment and public Devnet acceptance remain pending. The service holds content keys and cannot prevent copying after decryption.",
+    "buildingAndAudience": "SkillSeal helps Agent developers publish and install reusable workflow packages with clear version licenses and creator shares. The live 0.2 website includes Creator Studio upload/preview, signed author approvals, operator file inspection, permanent version share pages, verified free ZIP delivery and a standalone CLI. Approved free Skills need no buyer account or wallet. The paid design uses encrypted packages and Solana USDC escrow to couple a wallet/version license with approved creator payouts atomically. Our MIT Research Brief turns supplied sources into a cited decision brief. Alibaba Cloud acceptance passed signed publication/review, exact ZIP/CLI installation and release/key persistence after app restart. The existing website stayed healthy. Paid flows have labelled local mock and compiled-SBF test evidence; public Devnet checkout remains pending. The service holds content keys and cannot prevent copying after decryption.",
     "whyAndWhyNow": "Agent workflows increasingly combine prompts, reference material, and reusable instructions into locally installed packages. We want to test whether creators can sell those packages while preserving local use and sharing revenue with collaborators. SkillSeal focuses first on developers who already use wallets, rather than assuming every buyer wants crypto payments. Solana makes the approved split and wallet/version receipt inspectable, while encryption and the installer handle delivery. Ordinary payment systems can offer similar access control; our hypothesis is that wallet-native teams value transparent collaboration accounting and purchase recovery. We have not established paying demand. The next experiment is to observe a small group of developers purchasing and reinstalling a useful Skill, measure failures and total costs, and distinguish interest from actual payment commitments.",
     "technologies": "Solana; Anchor/Rust escrow program; SPL Token and Devnet USDC; TypeScript; Next.js 16 and React 19; Node.js 24; SQLite; AES-256-GCM; libsodium X25519 sealed boxes; @solana/web3.js; Phantom/Solflare wallet integration; pnpm; GitHub Actions. OpenAI Codex assisted implementation, review, tests, and documentation. The current prototype does not require an LLM API to buy or install a Skill.",
-    "chains": [
-      "Solana"
-    ],
+    "chains": ["Solana"],
     "chainUsage": "The Anchor program registers immutable versions and author-approved splits, escrows Devnet USDC, and atomically records a wallet/version license and distributes creator shares. The original buyer can refund an unsettled order after 600 seconds. The key service verifies finalized chain state before releasing an encrypted key. The program has local compiled-SBF test evidence; public Devnet acceptance remains pending.",
     "category": "AI Platforms / Agents",
     "teamCountry": "China",
     "teamTelegram": null,
     "otherContributors": "OpenAI Codex assisted with code generation, implementation review, tests, and documentation. The registered human team currently has one member. Any additional human contributor should be disclosed here before submission.",
-    "notesForJudges": "Video 0.2 demonstrates local upload, package review, sharing and independently installed CLI delivery. Cloud API acceptance is pending recovery of the existing Alibaba server login. Checkout-disabled free mode creates no simulated paid grants. Local mock/SBF tests are distinct from public Devnet transactions; no live-chain revenue is claimed. The key service is trusted and decrypted files can be copied. Public paid acceptance, independent review and willingness-to-pay evidence remain pending.",
-    "repoContext": "Complete 0.2 source: Creator Studio, operator package review, immutable share pages, verified free ZIP/CLI install, private recovery, API, worker, Anchor escrow and tests. MIT. CI passes 33 tests, clean CLI installation, Next build, Anchor host checks and a 384 MiB Linux container restart with persistent keys. Public cloud and paid Devnet acceptance remain pending. No keys, sessions or personal media sources are published.",
-    "accessInstructions": "Public introduction and free MIT installer: no login; Node.js 24+. Video 0.2 shows local upload, review, share and standalone CLI delivery. Alibaba API and public paid Devnet acceptance are pending. Videos are Unlisted with synthetic narration.",
+    "notesForJudges": "The 2:17 video uses actual live Alibaba pages, diagrams and verified public CLI results. Free catalog acceptance passed signed publication/review, exact ZIP/CLI delivery and restart persistence. Checkout is disabled; no paid grants or live-chain revenue are claimed. Public Devnet acceptance is pending. The key service is trusted and decrypted files can be copied. Independent review and willingness-to-pay evidence remain outstanding.",
+    "repoContext": "Complete MIT 0.2 source: Creator Studio, operator inspection/review, permanent share pages, verified ZIP/CLI delivery, recovery, API/worker and Anchor escrow. CI passes 33 tests, clean CLI installation, Next build and Anchor host checks. Alibaba HTTPS, signed publication/review, exact package delivery and restart persistence passed. Paid Devnet acceptance remains pending. No private keys, sessions or personal media sources are published.",
+    "accessInstructions": "Live free platform: https://skillseal-47-236-112-184.sslip.io/ \u2014 no buyer login or wallet. Open Publish to upload; share the approved version URL. ZIP works directly; CLI needs Node.js 24+. Paid checkout disabled.",
     "githubRepository": "https://github.com/fangnster/skillseal",
-    "demoVideo": "https://youtu.be/374T4FpqwEI",
+    "demoVideo": "https://youtu.be/YWXcdWWev34",
     "pitchVideo": "https://youtu.be/R40MxhZ26mo",
-    "website": "https://fangnster.github.io/skillseal/"
+    "website": "https://skillseal-47-236-112-184.sslip.io/"
   },
   "missing": {
     "teamTelegram": "Required; owner explicitly has no Telegram account. Do not invent a contact.",
     "founderProfile": "Owner must review full name, public role, gender/prefer-not-to-say, city, school status, education, and relevant experience.",
     "publicDevnetEvidence": "Not yet deployed or accepted on public Devnet. Do not invent addresses or transaction signatures.",
-    "communityReferral": "Select the owner-requested solar community option after verifying it in the form; separate from Solana chain selection.",
-    "publicCloudAcceptance": "Existing Alibaba command agent unavailable; recover original server login, then verify HTTPS, persistence and original-site health before advertising a full-platform URL."
+    "communityReferral": "Select the owner-requested solar community option after verifying it in the form; separate from Solana chain selection."
   },
   "sourceLicense": "MIT",
   "ownerApprovalRequired": true,
@@ -44,19 +41,28 @@
     "GitHub repository",
     "Project logo",
     "Repository context",
-    "Local access instructions",
+    "Live platform access instructions",
     "Public website URL",
     "Updated product video URL",
     "Founder video URL",
     "Public installation access instructions"
   ],
-  "publishedWebsite": "https://fangnster.github.io/skillseal/",
+  "publishedWebsite": "https://skillseal-47-236-112-184.sslip.io/",
   "publishedMedia": {
-    "demo": "https://youtu.be/374T4FpqwEI",
+    "demo": "https://youtu.be/YWXcdWWev34",
     "founder": "https://youtu.be/R40MxhZ26mo",
     "visibility": "Unlisted, viewable by link",
-    "demoSeconds": 166.0,
+    "demoSeconds": 136.12,
     "founderSeconds": 99.42,
-    "demoScope": "0.2 local functional demonstration; public cloud and paid Devnet acceptance pending"
-  }
+    "demoScope": "Live Alibaba free catalog, actual UI and verified HTTPS CLI results; public paid Devnet pending",
+    "previousLocalDemo": "https://youtu.be/374T4FpqwEI"
+  },
+  "publicCloudAcceptance": {
+    "status": "passed",
+    "sourceCommit": "c3ffe58cfd8021a0216ee487263c388a76351cab",
+    "versionId": "778fda57fca27de5da92df1d4a13a5f300a02494992a2714e8b60a2530a5ae9e",
+    "completedAt": "2026-10-09T21:51:10+08:00",
+    "evidence": "docs/CLOUD-ACCEPTANCE.md"
+  },
+  "staticIntroduction": "https://fangnster.github.io/skillseal/"
 }
