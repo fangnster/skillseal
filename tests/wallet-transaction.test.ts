@@ -1,6 +1,12 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { Keypair, PublicKey, SystemProgram, Transaction } from '@solana/web3.js';
+import {
+  ComputeBudgetProgram,
+  Keypair,
+  PublicKey,
+  SystemProgram,
+  Transaction,
+} from '@solana/web3.js';
 import { DEVNET_GENESIS } from '../src/types.ts';
 import { signFreshDevnetTransaction } from '../src/wallet-transaction.ts';
 
@@ -43,7 +49,7 @@ test('human wallet signing refreshes a stale blockhash without changing the paym
   const originalInstruction = Buffer.from(f.tx.instructions[0].data);
   const signed = await signFreshDevnetTransaction(f.tx, f.wallet, f.rpc);
   assert.equal(signed.recentBlockhash, f.fresh);
-  assert.deepEqual(signed.instructions[0].data, originalInstruction);
+  assert.deepEqual(signed.instructions[1].data, originalInstruction);
   assert(signed.verifySignatures());
   assert.equal(f.prompts(), 1);
 });
@@ -65,9 +71,26 @@ test('an approval that expires in the human prompt cannot proceed to broadcast',
 test('wallet mutation after review is rejected instead of submitting altered instructions', async () => {
   const f = fixture();
   f.wallet.signTransaction = async (tx: Transaction) => {
-    tx.instructions[0].data[4] ^= 1;
+    tx.instructions[1].data[4] ^= 1;
     tx.sign(f.payer);
     return tx;
   };
   await assert.rejects(signFreshDevnetTransaction(f.tx, f.wallet, f.rpc), /wallet changed/);
+});
+test('Phantom-style automatic fees see the explicit zero priority fee before signing', async () => {
+  const f = fixture();
+  let enhanced = false;
+  f.wallet.signTransaction = async (tx: Transaction) => {
+    if (!tx.instructions.some((ix) => ix.programId.equals(ComputeBudgetProgram.programId))) {
+      enhanced = true;
+      tx.instructions.unshift(ComputeBudgetProgram.setComputeUnitPrice({ microLamports: 1000 }));
+    }
+    tx.sign(f.payer);
+    return tx;
+  };
+  const signed = await signFreshDevnetTransaction(f.tx, f.wallet, f.rpc);
+  assert.equal(enhanced, false);
+  assert(signed.instructions[0].programId.equals(ComputeBudgetProgram.programId));
+  assert.equal(signed.instructions[0].data.readBigUInt64LE(1), 0n);
+  assert(signed.verifySignatures());
 });
