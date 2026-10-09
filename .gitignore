@@ -6,7 +6,7 @@ node_modules/
 anchor/target/
 work/
 *.tsbuildinfo
-skills/
+/skills/
 *-keypair.json
 *-session.json
 sessions/

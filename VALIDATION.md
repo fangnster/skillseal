@@ -73,3 +73,12 @@ A clean isolated installation of the standalone 0.1.1 package resolves its depen
 - Installed through standard npm global installation with `--ignore-scripts` and an isolated user-owned prefix. No source checkout or `.env.local` was present. The compiled JavaScript CLI launched successfully.
 - Downloaded and installed the sample over public HTTPS into two fresh destinations. Refused an existing destination. Read `SKILL.md` and the four template/reference/example Markdown files locally without a network request.
 - This free MIT distribution creates no paid license and requires no wallet. These checks do not imply public Devnet checkout acceptance.
+
+
+## October 9 — Complete web platform (0.2)
+
+Local source validation: 33 tests pass, including free release author/operator gating, authorized inspection, replay/expiry protection, disabled checkout isolation, signed content digest, storage quota, restart persistence, browser/server AES interoperability and ZIP structure. Existing 70/30 local-mock purchase/recovery/refund tests still pass. TypeScript and a complete Next production build pass.
+
+Actual browser review on an isolated loopback server: restored a dedicated test creator, uploaded fictional SKILL.md, previewed and signed a release, restored the separate reviewer, inspected files, approved the listing, opened the exact version share URL, copied it, downloaded a ZIP and verified its contents. The standalone compiled CLI installed that same browser-published release without a wallet. A separate clean package installation verifies CLI help, MIT sample delivery and overwrite refusal. These are local product tests, not public Devnet or Alibaba Cloud production acceptance.
+
+Alibaba Cloud deployment assets include persistent Docker hosting, Caddy HTTPS, free catalog startup, and optional prebuilt/shared-proxy modes. Compose syntax is validated locally. Local Docker daemon is unavailable; the Linux image, remote health, HTTPS, restart and backup restoration require acceptance on the selected host. Public GitHub/website synchronization and cloud rollout must be recorded separately when observed.

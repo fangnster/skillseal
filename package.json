@@ -1,6 +1,6 @@
 {
   "name": "skillseal",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -22,7 +22,8 @@
     "format:check": "prettier --check src app cli scripts tests next.config.ts",
     "build:distribution": "node --experimental-strip-types scripts/build-distribution.ts",
     "start:hosted": "node --experimental-strip-types scripts/start-hosted.ts",
-    "test:distribution": "node --experimental-strip-types scripts/test-distribution.ts"
+    "test:distribution": "node --experimental-strip-types scripts/test-distribution.ts",
+    "build:runtime": "node --experimental-strip-types scripts/package-runtime.ts"
   },
   "dependencies": {
     "@solana/spl-token": "0.4.14",

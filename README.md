@@ -2,6 +2,8 @@
 
 **Encrypted Agent Skills. Wallet payments. Transparent creator payouts.**
 
+Version 0.2 adds browser upload, release preview, author approval, operator file inspection/review, immutable share pages, verified free ZIP/CLI delivery and private-session recovery. Free catalog hosting works without a deployed chain program; paid checkout remains a separately accepted Solana Devnet mode. See [the platform guide](docs/PLATFORM.md) and [Alibaba Cloud deployment](deploy/aliyun/README.md).
+
 [Live website](https://fangnster.github.io/skillseal/) · [中文说明](docs/README.zh-CN.md) · [Installer](docs/INSTALL.md) · [Hosting](docs/DEPLOYMENT.md) · [Architecture](docs/ARCHITECTURE.md) · [Demo guide](docs/DEMO.md) · [Submission plan](docs/HACKATHON.md) · [Devnet acceptance](docs/DEVNET-ACCEPTANCE.md) · [Validation](VALIDATION.md)
 
 SkillSeal lets Agent developers **download an encrypted Skill, pay with Solana Devnet USDC, and unlock it for local installation**. Each purchase grants permanent use of that exact version. Creators agree on fixed revenue shares before the version becomes available.
@@ -23,13 +25,13 @@ Solana provides settlement and a verifiable version license. AES-256-GCM and X25
 Try the [public website](https://fangnster.github.io/skillseal/). The product includes a public discovery website, an independently installable CLI, and a separately hosted paid marketplace API. The free MIT Research Brief can be installed without a wallet or server configuration. The website generates commands for its actual URL; see [INSTALL.md](docs/INSTALL.md). Paid Devnet checkout remains pending acceptance.
 
 ```sh
-npm install --ignore-scripts -g https://fangnster.github.io/skillseal/downloads/skillseal-cli-0.1.1.tgz
+npm install --ignore-scripts -g https://fangnster.github.io/skillseal/downloads/skillseal-cli-0.2.0.tgz
 skillseal sample --server https://fangnster.github.io/skillseal --destination ./skills/research-brief
 ```
 
 Requires Node.js 24 or newer. Open the installed `SKILL.md` with your agent tool, supply your own sources, and review the output with the included checklist. This free installation was verified over public HTTPS in a clean directory.
 
-The GitHub Actions workflow deploys the website and installer to GitHub Pages after app and contract checks pass. Persistent API configuration is prepared for Render; account billing setup and paid hosting approval remain pending. See [DEPLOYMENT.md](docs/DEPLOYMENT.md).
+The GitHub Actions workflow deploys the website and installer to GitHub Pages after app and contract checks pass. An existing-server Alibaba Cloud deployment is prepared in free catalog mode. Public cloud acceptance is pending; paid checkout is disabled. See [DEPLOYMENT.md](docs/DEPLOYMENT.md).
 
 [Product video](https://youtu.be/fCNz1DUwwtM) · [Founder video](https://youtu.be/R40MxhZ26mo)
 
