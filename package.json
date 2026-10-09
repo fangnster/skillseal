@@ -21,7 +21,8 @@
     "format": "prettier --write src app cli scripts tests next.config.ts",
     "format:check": "prettier --check src app cli scripts tests next.config.ts",
     "build:distribution": "node --experimental-strip-types scripts/build-distribution.ts",
-    "start:hosted": "node --experimental-strip-types scripts/start-hosted.ts"
+    "start:hosted": "node --experimental-strip-types scripts/start-hosted.ts",
+    "test:distribution": "node --experimental-strip-types scripts/test-distribution.ts"
   },
   "dependencies": {
     "@solana/spl-token": "0.4.14",
