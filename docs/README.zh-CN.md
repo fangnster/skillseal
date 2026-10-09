@@ -1,6 +1,10 @@
 # SkillSeal · 加密下载与 Solana 授权 MVP
 
-0.2 已实现网页上传、发布预览、作者批准、运营者文件审核、固定版本分享页、免费 ZIP 下载、独立 CLI 安装及私有 session 恢复。免费目录无需买家账号或钱包。[阿里云平台](https://skillseal-47-236-112-184.sslip.io/)已上线：发布签名、作者批准、包内容审核、分享页、网页 ZIP 与独立 CLI 安装验收通过；重启后版本和密钥保留，原网站仍正常。收费 Devnet 另行验收，当前不创建付费订单。Linux 依赖已在 CI 打包，384 MiB 容器启动及重启后密钥保留验证通过。[新版产品演示（线上平台）](https://youtu.be/YWXcdWWev34)；[此前本机演示](https://youtu.be/374T4FpqwEI)。
+0.2 已实现网页上传、发布预览、作者批准、运营者文件审核、固定版本分享页、免费 ZIP 下载、独立 CLI 安装及私有 session 恢复。免费目录无需买家账号或钱包。[阿里云平台](https://skillseal-47-236-112-184.sslip.io/)已上线：发布签名、作者批准、包内容审核、分享页、网页 ZIP 与独立 CLI 安装验收通过；重启后版本和密钥保留，原网站仍正常。收费 Devnet 另行验收，当前不创建付费订单。Linux 依赖已在 CI 打包，384 MiB 容器启动及重启后密钥保留验证通过。[新版产品演示（线上平台与真实 Devnet 交易）](https://youtu.be/MaYbKNupnBA)；[此前线上演示](https://youtu.be/YWXcdWWev34)；[此前本机演示](https://youtu.be/374T4FpqwEI)。
+
+2026 年 10 月 9 日已领取 10 测试 SOL 和 20 测试 USDC，完成公开 Devnet 程序部署、两位测试作者签名、1 测试 USDC 购买和 70/30 分账。作者实际到账 0.7 / 0.3，买家余额从 20 变为 19。五个安装文件与源包完全一致；一次同步超时后通过原 session 恢复成功，没有二次扣款或分账。[完整交易凭证与限制](DEVNET-ACCEPTANCE.md)。测试 API 在本机运行，链上交易使用真实公开 Devnet；这些测试资产和身份不代表收入或客户。
+
+公开网站的支付后端仍为 `disabled`，未配置合约入口，因而只提供免费目录。现有阿里云服务器可继续接入 Devnet，不需要新增付费 Render API；还需保留现有密钥库与发行者身份，补齐云端配置、测试余额、创作者准入，并验收浏览器钱包、付款中断恢复、超时退款及备份恢复。真实主网收款未实现。网页上传按钮和文件状态现已使用英文；操作系统选择文件窗口仍遵循用户的系统语言。
 
 面向已有钱包的 Agent 开发者：先下载密文，再支付，最后在本地解密安装。购买者永久使用所购版本；新版本单独授权。安装后可离线使用，安装器不执行包内脚本。
 
@@ -49,7 +53,7 @@ solana --url devnet --keypair .data/issuer.json program deploy \
 pnpm run seed
 ```
 
-部署需要足够测试 SOL，包括程序账户租金；Faucet 可能限流。`seed` 生成两位作者、测试买家和一个尚待批准的版本。给 `.data/author-a.json`、`.data/author-b.json` 对应地址提供测试 SOL，然后分别签署批准：
+部署需要足够测试 SOL，包括程序账户租金；Faucet 可能限流。`seed` 生成两位作者、测试买家和一个尚待批准的版本。付费发布要求将测试发布者地址加入 `PUBLISHER_ALLOWLIST`；如首次 seed 因未准入被拒绝，可用生成的 `.data/author-a.json` 查询公钥、配置准入后重试。运营者审核仍为默认要求，仅隔离的 loopback 测试可设置 `MODERATION_REQUIRED=0`。给 `.data/author-a.json`、`.data/author-b.json` 对应地址提供测试 SOL，然后分别签署批准：
 
 ```sh
 pnpm run cli approve <版本 ID> --wallet .data/author-a.json
@@ -186,7 +190,7 @@ TypeScript 测试覆盖密文篡改、错误密钥、危险路径、符号链接
 
 ## 公开网站与独立安装工具
 
-产品形态是“网站 + 独立 CLI + 支付与密钥交付 API”。网站负责解释价值、预览技能和给出安装入口；CLI 将技能安装到用户机器；付费服务负责不可变版本、作者分成、订单、解密密钥和恢复。现阶段免费 MIT 示例可独立安装，公开 Devnet 购买尚待验收。
+产品形态是“网站 + 独立 CLI + 支付与密钥交付 API”。网站负责解释价值、预览技能和给出安装入口；CLI 将技能安装到用户机器；付费服务负责不可变版本、作者分成、订单、解密密钥和恢复。现阶段免费 MIT 示例可独立安装，公开 Devnet CLI 购买与恢复已通过；线上浏览器购买和退款仍待验收。
 
 执行 `pnpm run build:distribution` 会生成 `site-dist/`，包含网站、编译后的 JavaScript CLI 压缩包、带固定 SHA-256 校验的 Research Brief 示例和发行哈希清单。网站的安装页按当前地址生成可复制命令。用户仅需 Node.js 24+，不需要服务端 `.env.local`、钱包或完整源码仓库。安装后打开 `SKILL.md`，提供自己的资料，再用 `references/review-checklist.md` 检查输出。免费示例直接下载，与付费解锁验收分开记录。
 
@@ -203,7 +207,7 @@ npm install --ignore-scripts -g https://fangnster.github.io/skillseal/downloads/
 skillseal sample --server https://fangnster.github.io/skillseal --destination ./skills/research-brief
 ```
 
-已从公开 HTTPS 地址在干净目录验证 npm 安装、两个新目录的示例安装、已有目录拒绝覆盖，以及五个 Markdown 文件的本地读取。打开 `SKILL.md` 交给自己的 Agent，提供资料，再按 `references/review-checklist.md` 检查结果。公开示例免费且为 MIT，不需要钱包，也不会生成付费授权。付费 API 和公开 Devnet 购买仍待验收。
+已从公开 HTTPS 地址在干净目录验证 npm 安装、两个新目录的示例安装、已有目录拒绝覆盖，以及五个 Markdown 文件的本地读取。打开 `SKILL.md` 交给自己的 Agent，提供资料，再按 `references/review-checklist.md` 检查结果。公开示例免费且为 MIT，不需要钱包，也不会生成付费授权。公开 Devnet CLI 路径已验证；公开网站的付费 API、浏览器钱包和退款仍待验收。
 
 ## 0.2 完整网站功能
 
