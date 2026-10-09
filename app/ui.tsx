@@ -1,8 +1,9 @@
 'use client';
 import { useState, useEffect, useId, useRef } from 'react';
 import { Connection, Transaction, PublicKey } from '@solana/web3.js';
-import { DEVNET_GENESIS, type Version, type Order } from '../src/types.ts';
+import { type Version, type Order } from '../src/types.ts';
 import { validateWalletTransaction } from '../src/transactions.ts';
+import { signFreshDevnetTransaction } from '../src/wallet-transaction.ts';
 import { Recovery } from './recovery';
 import { checkoutState } from '../src/checkout-state.ts';
 
@@ -456,11 +457,11 @@ export function Checkout({ id }: { id: string }) {
           order,
         );
         const connection = new Connection('https://api.devnet.solana.com', 'finalized');
-        if ((await connection.getGenesisHash()) !== DEVNET_GENESIS)
-          throw new Error('Wallet payments support Solana Devnet only.');
-        const signed = await wallet.signTransaction(transaction);
+        const signed = await signFreshDevnetTransaction(transaction, wallet, connection);
         const sig = await connection.sendRawTransaction(signed.serialize(), {
           skipPreflight: false,
+          preflightCommitment: 'confirmed',
+          maxRetries: 3,
         });
         setPendingSignature(sig);
         setMessage('Transaction submitted. Waiting for final confirmation…');

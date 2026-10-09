@@ -1,6 +1,7 @@
 import { PublicKey, Transaction, Connection } from '@solana/web3.js';
-import { DEVNET_GENESIS, type Version } from '../src/types.ts';
+import { type Version } from '../src/types.ts';
 import { validateWalletTransaction } from '../src/transactions.ts';
+import { signFreshDevnetTransaction } from '../src/wallet-transaction.ts';
 import { decode64, encode64 } from '../src/browser-package.ts';
 export type SigningIdentity = { address: string; secret?: Uint8Array };
 export async function sodiumClient() {
@@ -61,9 +62,12 @@ export async function approveTransaction(
     'approve',
   );
   const rpc = new Connection('https://api.devnet.solana.com', 'finalized');
-  if ((await rpc.getGenesisHash()) !== DEVNET_GENESIS) throw new Error('Expected Solana Devnet');
-  const signed = await w.signTransaction(tx),
-    signature = await rpc.sendRawTransaction(signed.serialize(), { skipPreflight: false });
+  const signed = await signFreshDevnetTransaction(tx, w, rpc),
+    signature = await rpc.sendRawTransaction(signed.serialize(), {
+      skipPreflight: false,
+      preflightCommitment: 'confirmed',
+      maxRetries: 3,
+    });
   for (let n = 0; n < 45; n++) {
     const st = (await rpc.getSignatureStatuses([signature])).value[0];
     if (st?.err) throw new Error('Approval failed; sync the version before retrying');
