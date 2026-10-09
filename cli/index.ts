@@ -159,6 +159,7 @@ async function main() {
       );
     const packed = await pack(source),
       encrypted = encrypt(packed);
+    const contentHash = sha256(packed);
     packed.fill(0);
     const metadata = JSON.parse(await readFile(manifestFile, 'utf8'));
     const manifest: Manifest = {
@@ -166,6 +167,7 @@ async function main() {
       publisher: signer.publicKey.toBase58(),
       issuer: config.issuer,
       bundleHash: sha256(encrypted.ciphertext),
+      ...(metadata.price === '0' ? { contentHash } : {}),
     };
     const id = sha256(canonical(manifest));
     console.log(
@@ -229,6 +231,21 @@ async function main() {
   if (command === 'install') {
     if (!positional[0]) throw new Error('Use install <version hash> --destination directory');
     const version = await request<Version>('versions/' + versionId(positional[0]));
+    if (version.manifest.price === '0') {
+      const bytes = await download(origin + '/api/versions/' + version.id + '/free-bundle');
+      if (!version.manifest.contentHash || sha256(bytes) !== version.manifest.contentHash)
+        throw new Error('Free package integrity check failed');
+      const target = await install(
+        bytes,
+        flags.get('destination') ||
+          path.join('skills', version.manifest.skillId + '@' + version.manifest.version),
+      );
+      console.log(
+        `Installed free ${version.manifest.name} v${version.manifest.version} at ${target}. No wallet, payment or scripts required.`,
+      );
+      return;
+    }
+
     const waitSeconds = Number(flags.get('wait-seconds') || 300);
     if (!Number.isFinite(waitSeconds) || waitSeconds < 0 || waitSeconds > 3600)
       throw new Error('--wait-seconds must be between 0 and 3600');
