@@ -25,7 +25,7 @@ await writeFile(
   JSON.stringify(
     {
       name: '@fangnster/skillseal-cli',
-      version: '0.1.1',
+      version: '0.2.0',
       type: 'module',
       license: 'MIT',
       description: 'Safe local Skill installation and Solana Devnet delivery',
@@ -47,7 +47,9 @@ await writeFile(
 // Ship reviewed, typechecked source as ordinary ESM JavaScript.
 for (const name of [
   'cli/index',
-  ...['bundle', 'crypto', 'transactions', 'types', 'client', 'sample'].map((name) => `src/${name}`),
+  ...['bundle', 'crypto', 'transactions', 'types', 'client', 'sample', 'portable'].map(
+    (name) => `src/${name}`,
+  ),
 ]) {
   const input = (await readFile(`${name}.ts`, 'utf8')).replace(
     /(from\s+['"][^'"]+|import\(['"][^'"]+)\.ts(['"])/g,
@@ -66,7 +68,7 @@ const sample = await pack('examples/research-brief');
 if (sha256(sample) !== SAMPLE_SHA256)
   throw new Error('Sample changed: review it and update the pinned hash before publishing');
 await writeFile(path.join(output, 'downloads/research-brief-v1.bundle.json'), sample);
-execFileSync('pnpm', ['pack', '--out', path.join(output, 'downloads/skillseal-cli-0.1.1.tgz')], {
+execFileSync('pnpm', ['pack', '--out', path.join(output, 'downloads/skillseal-cli-0.2.0.tgz')], {
   cwd: pkg,
   stdio: 'pipe',
   env: {
@@ -75,12 +77,18 @@ execFileSync('pnpm', ['pack', '--out', path.join(output, 'downloads/skillseal-cl
     pnpm_config_verify_deps_before_run: 'false',
   },
 });
-const archive = await readFile(path.join(output, 'downloads/skillseal-cli-0.1.1.tgz'));
+const archive = await readFile(path.join(output, 'downloads/skillseal-cli-0.2.0.tgz'));
+// Preserve the already-shared installation URL as a compatibility alias.
+await cp(
+  path.join(output, 'downloads/skillseal-cli-0.2.0.tgz'),
+  path.join(output, 'downloads/skillseal-cli-0.1.1.tgz'),
+);
+
 await writeFile(
   path.join(output, 'downloads/release.json'),
   JSON.stringify(
     {
-      cliVersion: '0.1.1',
+      cliVersion: '0.2.0',
       cliSha256: sha256(archive),
       sampleSha256: SAMPLE_SHA256,
       license: 'MIT',

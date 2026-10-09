@@ -6,8 +6,13 @@ import { Keypair, Connection, PublicKey } from '@solana/web3.js';
 import { DEVNET_GENESIS } from '../src/types.ts';
 import { loadConfig } from '../src/config.ts';
 
-if (process.env.PAYMENT_BACKEND !== 'solana' || process.env.PERSISTENT_STORAGE !== '1')
-  throw new Error('Hosted service requires Solana and a confirmed persistent disk');
+if (
+  !['solana', 'disabled'].includes(process.env.PAYMENT_BACKEND || '') ||
+  process.env.PERSISTENT_STORAGE !== '1'
+)
+  throw new Error(
+    'Hosted service requires a persistent disk and either disabled checkout or Solana Devnet',
+  );
 const dir = process.env.DATA_DIR;
 if (!dir || !path.isAbsolute(dir)) throw new Error('Set an absolute persistent DATA_DIR');
 process.env.APP_ORIGIN ||= process.env.RENDER_EXTERNAL_URL;
@@ -42,12 +47,18 @@ if (!(await exists(process.env.SOLANA_ISSUER_KEYPAIR))) {
   );
 }
 const config = loadConfig();
-const rpc = new Connection(config.rpc, 'finalized');
-if ((await rpc.getGenesisHash()) !== DEVNET_GENESIS)
-  throw new Error('Hosted checkout requires Devnet');
-const program = await rpc.getAccountInfo(new PublicKey(config.programId));
-if (!program?.executable)
-  throw new Error('Deploy the configured program on public Devnet before starting checkout');
+if (!config.adminWallet || new PublicKey(config.adminWallet).toBase58() !== config.adminWallet)
+  throw new Error('Set ADMIN_WALLET to the reviewer public signing identity');
+if (config.backend === 'solana' && !config.publisherAllowlist?.length)
+  throw new Error('Set PUBLISHER_ALLOWLIST before enabling hosted Devnet publishing');
+if (config.backend === 'solana') {
+  const rpc = new Connection(config.rpc, 'finalized');
+  if ((await rpc.getGenesisHash()) !== DEVNET_GENESIS)
+    throw new Error('Hosted checkout requires Devnet');
+  const program = await rpc.getAccountInfo(new PublicKey(config.programId));
+  if (!program?.executable)
+    throw new Error('Deploy the configured program on public Devnet before starting checkout');
+}
 const port = Number(process.env.PORT || 3000);
 if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('Invalid PORT');
 Object.assign(process.env, { NODE_ENV: 'production' });

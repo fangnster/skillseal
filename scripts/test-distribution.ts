@@ -5,7 +5,7 @@ import { createServer } from 'node:http';
 import { spawn } from 'node:child_process';
 import assert from 'node:assert/strict';
 const root = await mkdtemp(path.join(tmpdir(), 'skillseal-release-test-'));
-const archive = path.resolve('site-dist/downloads/skillseal-cli-0.1.1.tgz');
+const archive = path.resolve('site-dist/downloads/skillseal-cli-0.2.0.tgz');
 const sample = await readFile('site-dist/downloads/research-brief-v1.bundle.json');
 function run(command: string, args: string[], cwd = root) {
   return new Promise<{ code: number | null; output: string }>((resolve, reject) => {
