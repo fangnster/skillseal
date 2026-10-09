@@ -49,8 +49,33 @@ async function handle(request: Request, context: Context) {
         mint: DEVNET_USDC,
         network: 'devnet',
         programId: config.programId,
+        adminWallet: service.options.adminWallet,
+        moderationRequired: config.moderationRequired,
+        paidPublishing: config.backend !== 'disabled',
       });
     if (method === 'GET' && area === 'versions' && !id) return json(service.store.versions());
+    if (method === 'GET' && area === 'versions' && id && operation === 'free-bundle') {
+      const plain = service.freeBundle(id);
+      return new Response(new Uint8Array(plain), {
+        headers: {
+          'Content-Type': 'application/json',
+          'Content-Disposition': `attachment; filename="${id}.bundle.json"`,
+          'Cache-Control': 'no-store',
+        },
+      });
+    }
+    if (method === 'POST' && area === 'versions' && operation === 'review-challenge') {
+      const b = await body(request);
+      return json(service.reviewChallenge(id, b.wallet, b.decision));
+    }
+    if (method === 'POST' && area === 'versions' && operation === 'review-preview') {
+      const b = await body(request);
+      return json(await service.reviewPreview(id, b.challengeId, b.signature));
+    }
+    if (method === 'POST' && area === 'versions' && operation === 'review') {
+      const b = await body(request);
+      return json(await service.review(id, b.challengeId, b.signature));
+    }
     if (method === 'GET' && area === 'versions' && id && operation === 'bundle') {
       service.version(id);
       return new Response(new Uint8Array(service.store.bundle(id)), {
