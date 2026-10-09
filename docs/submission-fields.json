@@ -11,7 +11,9 @@
     "buildingAndAudience": "SkillSeal helps wallet-native Agent developers buy reusable workflows that stay on their own machines, and lets collaborating creators sell a version with an agreed revenue split. Buyers download ciphertext before checkout, sign with a wallet, and unlock a local installation after settlement. The MVP includes an English marketplace, wallet checkout, publish/install/recovery CLI, encrypted key service, and an Anchor escrow program. Our Research Brief example turns supplied sources into a cited decision brief with contradictions and verification steps. A purchase covers one immutable version; installed files remain usable offline. The current product flow is verified with an explicit local mock ledger, and the compiled program has local SBF integration-test evidence. Public Devnet end-to-end acceptance is still pending. The service holds content keys; encryption gates first access but cannot stop copying after decryption.",
     "whyAndWhyNow": "Agent workflows increasingly combine prompts, reference material, and reusable instructions into locally installed packages. We want to test whether creators can sell those packages while preserving local use and sharing revenue with collaborators. SkillSeal focuses first on developers who already use wallets, rather than assuming every buyer wants crypto payments. Solana makes the approved split and wallet/version receipt inspectable, while encryption and the installer handle delivery. Ordinary payment systems can offer similar access control; our hypothesis is that wallet-native teams value transparent collaboration accounting and purchase recovery. We have not established paying demand. The next experiment is to observe a small group of developers purchasing and reinstalling a useful Skill, measure failures and total costs, and distinguish interest from actual payment commitments.",
     "technologies": "Solana; Anchor/Rust escrow program; SPL Token and Devnet USDC; TypeScript; Next.js 16 and React 19; Node.js 24; SQLite; AES-256-GCM; libsodium X25519 sealed boxes; @solana/web3.js; Phantom/Solflare wallet integration; pnpm; GitHub Actions. OpenAI Codex assisted implementation, review, tests, and documentation. The current prototype does not require an LLM API to buy or install a Skill.",
-    "chains": ["Solana"],
+    "chains": [
+      "Solana"
+    ],
     "chainUsage": "The Anchor program registers immutable versions and author-approved splits, escrows Devnet USDC, and atomically records a wallet/version license and distributes creator shares. The original buyer can refund an unsettled order after 600 seconds. The key service verifies finalized chain state before releasing an encrypted key. The program has local compiled-SBF test evidence; public Devnet acceptance remains pending.",
     "category": "AI Platforms / Agents",
     "teamCountry": "China",
@@ -19,13 +21,15 @@
     "otherContributors": "OpenAI Codex assisted with code generation, implementation review, tests, and documentation. The registered human team currently has one member. Any additional human contributor should be disclosed here before submission.",
     "notesForJudges": "This is an early prototype. Local mock payments are labelled explicitly and are not public-chain transactions or revenue. The key service is trusted and decrypted files can be copied. Public Devnet purchase acceptance, independent security review, and real willingness-to-pay evidence remain pending. Please use the validation record for the exact scope of each test result.",
     "repoContext": "Complete MVP source: marketplace, API, CLI, key service, worker, Anchor escrow, tests, and a MIT-licensed example Skill. Initial public upload: October 9, 2026. Runtime keys, sessions, and data are excluded. Local mock tests and compiled local SBF tests are distinct from public Devnet acceptance, which remains pending. See VALIDATION.md for the scope of each result.",
-    "accessInstructions": "Use Node.js 24+ and pnpm 11. After installing dependencies, run pnpm run demo for an isolated, explicitly labelled local mock flow. For the local web walkthrough, follow docs/DEMO.md. No login is needed for the local demo. A hosted product and public Devnet acceptance are not yet available.",
-    "githubRepository": "https://github.com/fangnster/skillseal"
+    "accessInstructions": "A standalone CLI and free MIT Research Brief sample are prepared for the public website. Public HTTPS deployment acceptance is in progress. The paid marketplace flow can be reproduced with Node.js 24+, pnpm 11 and pnpm run demo; mock payments are explicitly labelled. Public Devnet payment acceptance remains pending.",
+    "githubRepository": "https://github.com/fangnster/skillseal",
+    "demoVideo": "https://youtu.be/eSiJYIZ4oU8",
+    "pitchVideo": "https://youtu.be/R40MxhZ26mo"
   },
   "missing": {
-    "teamTelegram": "Required; user has not supplied a Telegram contact.",
-    "demoVideo": "2:23 English local mock walkthrough produced locally; owner review and YouTube/Loom/Vimeo link pending.",
-    "pitchVideo": "1:41 founder video produced locally from owner-supplied photos and resume; owner review and public platform link pending.",
+    "teamTelegram": "Required; owner explicitly has no Telegram account. Do not invent a contact.",
+    "demoVideo": "Published Unlisted at https://youtu.be/eSiJYIZ4oU8; an updated public website walkthrough is in preparation.",
+    "pitchVideo": "Published Unlisted at https://youtu.be/R40MxhZ26mo; title is Senior Technical Expert.",
     "founderProfile": "Owner must review full name, public role, gender/prefer-not-to-say, city, school status, education, and relevant experience.",
     "publicDevnetEvidence": "Not yet deployed or accepted on public Devnet. Do not invent addresses or transaction signatures.",
     "communityReferral": "Select the owner-requested solar community option after verifying it in the form; separate from Solana chain selection."

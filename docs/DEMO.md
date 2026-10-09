@@ -2,6 +2,12 @@
 
 Use this script to record a short product demo or walk a reviewer through the project. The current Crypto World's Fair form requires a live product video up to three minutes and a separate pitch video up to two minutes. Target 2:45 for this product walkthrough; see PITCH.md for the founder pitch.
 
+## Public website and free installation
+
+The public website provides product meaning, workflow, example preview, creator guidance and two installation commands. Install the standalone CLI archive with npm, then run `skillseal sample --server WEBSITE_URL --destination ./skills/research-brief`. The archive contains compiled JavaScript and does not require a server environment file. Use a new directory for repeat installation. The free MIT sample is directly distributed and does not exercise payment or create a paid license.
+
+The updated product video should first show the actual public website and installation, then distinctly label the implemented paid purchase/recovery demonstration as local mock. Public Devnet remains pending. Keep the total below three minutes. The original product video is [available on YouTube](https://youtu.be/eSiJYIZ4oU8); retain it as a previous version when publishing the new walkthrough.
+
 ## Before recording
 
 Install Node.js 24+ and pnpm 11. Run `pnpm install --frozen-lockfile` in a fresh project copy. Keep `.env.local`, `.data`, wallet secrets and downloaded session files out of recordings and uploads. Public wallet addresses and version hashes are safe to show.

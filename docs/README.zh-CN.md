@@ -181,3 +181,14 @@ SBF_OUT_DIR="$PWD/target/deploy" cargo test --test escrow
 TypeScript 测试覆盖密文篡改、错误密钥、危险路径、符号链接、未付款领取、伪造数据库授权、所有作者批准、钱包签名重放与过期、结算中断恢复、超时退款、再次安装和成本去重。协议测试核对 Anchor/Borsh 字段、链上所有者、价格、代币、网络与钱包交易账户。Rust 测试加载实际编译的 SBF 合约，执行真实 SPL Token 转移，验证固定分账、结算权限、原子性、重复付款/结算、作者批准和超时退款。
 
 本地验证结果与公开 Devnet 部署状态见 [VALIDATION.md](../VALIDATION.md)。生产构建通过不等同于已部署合约或完成公开 Devnet 交易。
+
+
+## 公开网站与独立安装工具
+
+产品形态是“网站 + 独立 CLI + 支付与密钥交付 API”。网站负责解释价值、预览技能和给出安装入口；CLI 将技能安装到用户机器；付费服务负责不可变版本、作者分成、订单、解密密钥和恢复。现阶段免费 MIT 示例可独立安装，公开 Devnet 购买尚待验收。
+
+执行 `pnpm run build:distribution` 会生成 `site-dist/`，包含网站、编译后的 JavaScript CLI 压缩包、带固定 SHA-256 校验的 Research Brief 示例和发行哈希清单。网站的安装页按当前地址生成可复制命令。用户仅需 Node.js 24+，不需要服务端 `.env.local`、钱包或完整源码仓库。安装后打开 `SKILL.md`，提供自己的资料，再用 `references/review-checklist.md` 检查输出。免费示例直接下载，与付费解锁验收分开记录。
+
+GitHub Actions 在应用测试、完整生产构建、干净目录发行包安装和合约检查通过后，将网站自动发布到 GitHub Pages。Render 账户创建静态网站时要求绑卡，未创建任何服务或付费资源；持久化 API 的准备配置见 [DEPLOYMENT.md](DEPLOYMENT.md)。
+
+区块链支付对 agent 的价值在于钱包签名接口、稳定币计价、可读取的交易回执，以及一次交易内同步写入版本许可和支付作者份额。自主花费仍需预算、授权和私钥管理，当前 MVP 尚未实现这些控制。传统支付同样可以支持交付和分账；比较时需要计入链上手续费、账户租金、RPC 和出入金成本。
