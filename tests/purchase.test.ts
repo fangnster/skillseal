@@ -312,8 +312,10 @@ test('transaction costs are deduplicated when the same purchase is recovered', a
   });
   const first = await f.bind();
   await f.service.demoFund(first.order.id);
+  await f.service.sync(first.order.id, true);
   const recovered = await f.bind();
   await f.service.claim(recovered.order.id);
+  await f.service.sync(recovered.order.id, true);
   assert.equal(f.service.metrics().chainCosts.transactionFeesLamports, 10000);
   assert.equal(f.service.metrics().chainCosts.rentDepositsLamports, 30000);
   assert.equal(f.service.metrics().chainCosts.transactions.length, 2);
@@ -372,4 +374,25 @@ test('an expired escrow exposes refund recovery without claiming a license', asy
   assert.equal(checkoutState(refunded).canRefund, false);
   assert.match(checkoutState(refunded).message, /cannot unlock/);
   await assert.rejects(() => f.service.claim(order.id), /finalized purchase/);
+});
+
+test('slow RPC cost history cannot delay a granted purchase or recovery', async (t) => {
+  const f = await fixture(t);
+  await f.approve();
+  const { order } = await f.bind();
+  let costCalls = 0;
+  Object.assign(f.payment, {
+    costs: async () => {
+      costCalls++;
+      throw new Error('RPC history unavailable');
+    },
+  });
+  await f.service.demoFund(order.id);
+  assert.ok((await f.service.claim(order.id)).envelope);
+  assert.equal(costCalls, 0);
+  await f.service.sync(order.id, true);
+  assert.equal(costCalls, 1);
+  assert.equal(f.service.order(order.id).status, 'granted');
+  assert.equal(f.service.metrics().chainCosts.ordersWithUnavailableHistory, 1);
+  assert.equal(f.service.metrics().failures, 0);
 });
