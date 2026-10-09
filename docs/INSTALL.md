@@ -1,5 +1,7 @@
 # SkillSeal installation
 
+> Current October 10 acceptance: Hosted Solana Devnet checkout is enabled on the existing Alibaba server. Public HTTPS CLI purchase, exact 70/30 payouts, five-file installation, browser session recovery, a real 600-second timeout refund and encrypted off-host paid-vault restoration passed. Phantom browser purchase and exact ZIP recovery also passed. Test funds only; no mainnet payments or revenue claims. See [hosted evidence](ONLINE-ACCEPTANCE.md).
+
 Requires Node.js 24 or newer. The public website's Install section generates the exact command using its own HTTPS address.
 
 ```sh
@@ -18,7 +20,7 @@ npm install --ignore-scripts --prefix ./skillseal-tool https://YOUR_SITE/downloa
 
 ## Paid version purchase and recovery
 
-These commands target a separately configured marketplace API; the static website's free example does not create a paid license. Public Devnet checkout remains pending until the deployment acceptance checklist passes.
+These commands target a separately configured marketplace API; the static website's free example does not create a paid license. Hosted Devnet test checkout is enabled; see ONLINE-ACCEPTANCE.md for exact scope.
 
 ```sh
 skillseal list --server https://YOUR_MARKETPLACE

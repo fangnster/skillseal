@@ -1,6 +1,6 @@
 {
   "status": "PROJECT, MEDIA AND FOUNDER PROFILE SAVED AS DRAFT — NOT FINALLY SUBMITTED",
-  "reviewedAt": "2026-10-09",
+  "reviewedAt": "2026-10-10",
   "event": "Crypto World's Fair 2026",
   "projectUrl": "https://colosseum.com/arena/projects/skillseal",
   "projectId": 16413,
@@ -8,26 +8,26 @@
   "fields": {
     "projectName": "SkillSeal",
     "briefDescription": "Encrypted delivery, permanent version licenses, and approved creator revenue splits for locally installed Agent Skills, using Solana USDC escrow.",
-    "buildingAndAudience": "SkillSeal helps Agent developers publish and install reusable workflow packages with clear version licenses and creator shares. The live 0.2 website includes Creator Studio upload/preview, signed author approvals, operator file inspection, permanent version share pages, verified free ZIP delivery and a standalone CLI. Approved free Skills need no buyer account or wallet. The paid design uses encrypted packages and Solana USDC escrow to couple a wallet/version license with approved creator payouts atomically. Our MIT Research Brief turns supplied sources into a cited decision brief. Alibaba Cloud acceptance passed signed publication/review, exact ZIP/CLI installation and release/key persistence after app restart. The existing website stayed healthy. A public Devnet CLI purchase paid 0.7/0.3 test USDC and verified installation/recovery. Hosted paid checkout stays disabled; browser/refund checks remain pending. The service holds content keys and cannot prevent copying after decryption.",
+    "buildingAndAudience": "SkillSeal packages reusable Agent workflows with version licenses and approved creator shares. Its website provides upload/preview, signed collaborator approval, operator inspection and share pages; the independent CLI installs locally. Free MIT Skills need no buyer wallet. The hosted Devnet API escrows test USDC, atomically pays collaborators and records a wallet/version grant before key delivery. Public HTTPS purchase, exact 70/30 payouts, five-file installation, no-second-payment reinstall, browser session ZIP recovery, real ten-minute timeout refund and encrypted off-host paid-vault restoration passed. Phantom browser purchase and exact ZIP recovery also passed. The key service is trusted, and decrypted files can be copied. Test accounts are not customers or revenue.",
     "whyAndWhyNow": "Agent workflows increasingly combine prompts, reference material, and reusable instructions into locally installed packages. We want to test whether creators can sell those packages while preserving local use and sharing revenue with collaborators. SkillSeal focuses first on developers who already use wallets, rather than assuming every buyer wants crypto payments. Solana makes the approved split and wallet/version receipt inspectable, while encryption and the installer handle delivery. Ordinary payment systems can offer similar access control; our hypothesis is that wallet-native teams value transparent collaboration accounting and purchase recovery. We have not established paying demand. The next experiment is to observe a small group of developers purchasing and reinstalling a useful Skill, measure failures and total costs, and distinguish interest from actual payment commitments.",
     "technologies": "Solana; Anchor/Rust escrow program; SPL Token and Devnet USDC; TypeScript; Next.js 16 and React 19; Node.js 24; SQLite; AES-256-GCM; libsodium X25519 sealed boxes; @solana/web3.js; Phantom/Solflare wallet integration; pnpm; GitHub Actions. OpenAI Codex assisted implementation, review, tests, and documentation. The current prototype does not require an LLM API to buy or install a Skill.",
     "chains": ["Solana"],
-    "chainUsage": "The Anchor program registers immutable versions and approved author splits. It escrows Devnet USDC, then atomically records a wallet/version license and pays collaborators. The key service checks finalized state before delivery. Public Devnet deployment, both approvals, a 1 test-USDC CLI purchase, 70/30 payouts and recovery are verified. The contract supports buyer refunds after 600 seconds; browser-wallet and public refund checks remain pending.",
+    "chainUsage": "Anchor registers immutable versions and approved shares; escrows Devnet USDC, then atomically grants a wallet/version license and pays collaborators. Finalized state gates key delivery. Hosted HTTPS purchase, 70/30 payouts, recovery and a real 600-second timeout refund passed. Refunded orders cannot claim keys. Phantom purchase passed.",
     "category": "AI Platforms / Agents",
     "teamCountry": "China",
     "teamTelegram": null,
     "otherContributors": "OpenAI Codex assisted with code generation, implementation review, tests, and documentation. The registered human team currently has one member. Any additional human contributor should be disclosed here before submission.",
-    "notesForJudges": "The 132.5-second video shows the live free catalog, English upload and actual public Devnet CLI purchase/recovery. Finalized 1 test-USDC payment distributed 0.7/0.3, with five files matching source and no second payment. The paid API ran locally. Hosted checkout stays disabled; browser/refund checks remain pending. Test accounts and assets are not customers or revenue. The key service is trusted; decrypted files can be copied. Independent review and paying demand remain unverified.",
-    "repoContext": "MIT 0.2 source: Creator Studio, operator review, share pages, ZIP/CLI delivery, recovery, API/worker and Anchor escrow. CI passes 33 tests, clean CLI installation, Next build and Anchor checks. Alibaba HTTPS, signed publication/review, exact delivery and restart persistence passed. Public Devnet CLI purchase, 70/30 payouts and recovery passed; browser/refund checks remain pending. No keys, sessions or personal media sources are published.",
-    "accessInstructions": "Live free platform: https://skillseal-47-236-112-184.sslip.io/ — no buyer login or wallet. Open Publish to upload; share the approved version URL. ZIP works directly; CLI needs Node.js 24+. Paid checkout disabled.",
+    "notesForJudges": "The video shows actual hosted pages and verified Devnet HTTPS CLI purchase: 1 test USDC paid 0.7/0.3, five exact files and recovery without repayment. Real ten-minute refund and encrypted off-host paid-vault restore passed. Phantom purchase also passed. No real funds, customers or revenue. Generic synthetic narration and edited result views are disclosed. Trusted keys; no independent audit.",
+    "repoContext": "MIT 0.2 website, CLI, review/share/recovery, persistent API/worker and Anchor escrow. CI passes 39 tests, production build, clean CLI/container and Rust/SBF builds. Public HTTPS Devnet purchase, 70/30 payouts, exact install/recovery, real timeout refund and paid-vault off-host restore passed. Phantom purchase passed. Private keys, sessions and personal video sources are excluded.",
+    "accessInstructions": "Website: https://skillseal-47-236-112-184.sslip.io/ — free MIT sample needs no wallet. Publish supports upload/preview; approved releases have ZIP/CLI share pages. Priced engineering releases use Solana Devnet only, 1 test USDC plus test SOL fees. Node.js 24+ for CLI. See repository docs/ONLINE-ACCEPTANCE.md for acceptance scope.",
     "githubRepository": "https://github.com/fangnster/skillseal",
-    "demoVideo": "https://youtu.be/MaYbKNupnBA",
+    "demoVideo": "https://youtu.be/aptKyuK1mVI",
     "pitchVideo": "https://youtu.be/R40MxhZ26mo",
     "website": "https://skillseal-47-236-112-184.sslip.io/"
   },
   "missing": {
     "teamTelegram": "Required; owner explicitly has no Telegram account. Do not invent a contact.",
-    "publicDevnetEvidence": "Browser-wallet purchase, interrupted payment-submission recovery and public Devnet timeout refund remain pending; deployment and positive CLI path are verified in docs/DEVNET-ACCEPTANCE.md.",
+    "publicDevnetEvidence": "Public HTTPS payment interruption recovery passed using the independent CLI. Phantom browser purchase and exact ZIP recovery also passed.",
     "communityReferral": "Select the owner-requested solar community option after verifying it in the form; separate from Solana chain selection."
   },
   "sourceLicense": "MIT",
@@ -51,34 +51,37 @@
   ],
   "publishedWebsite": "https://skillseal-47-236-112-184.sslip.io/",
   "publishedMedia": {
-    "demo": "https://youtu.be/MaYbKNupnBA",
+    "demo": "https://youtu.be/aptKyuK1mVI",
     "founder": "https://youtu.be/R40MxhZ26mo",
     "visibility": "Unlisted, viewable by link",
-    "demoSeconds": 132.5,
+    "demoSeconds": 149.0,
     "founderSeconds": 99.42,
-    "demoScope": "Live Alibaba free catalog and public Devnet test transactions via local API/source CLI; hosted paid checkout disabled",
+    "demoScope": "Hosted public HTTPS Devnet purchase/recovery/refund and paid-vault restoration; Phantom browser purchase and exact ZIP recovery also passed.",
     "previousLocalDemo": "https://youtu.be/374T4FpqwEI",
-    "previousCloudDemo": "https://youtu.be/YWXcdWWev34"
+    "previousCloudDemo": "https://youtu.be/YWXcdWWev34",
+    "previousDevnetLocalApiDemo": "https://youtu.be/MaYbKNupnBA"
   },
   "publicCloudAcceptance": {
     "status": "passed",
-    "sourceCommit": "c3ffe58cfd8021a0216ee487263c388a76351cab",
+    "sourceCommit": "f5ebb4cc1f70b6b80d544e6d50dbe1441fbaff89",
     "versionId": "778fda57fca27de5da92df1d4a13a5f300a02494992a2714e8b60a2530a5ae9e",
     "completedAt": "2026-10-09T21:51:10+08:00",
-    "evidence": "docs/CLOUD-ACCEPTANCE.md",
-    "englishControlsSourceCommit": "2d61be3d3ef248a269ca5a85aa4f184ea48fa3b4"
+    "evidence": "docs/ONLINE-ACCEPTANCE.md",
+    "englishControlsSourceCommit": "2d61be3d3ef248a269ca5a85aa4f184ea48fa3b4",
+    "latestPaidVaultRestorePassed": true
   },
   "staticIntroduction": "https://fangnster.github.io/skillseal/",
   "founderProfileStatus": "Colosseum confirmed complete; personal answers remain in the private submission profile.",
   "publicDevnetAcceptance": {
-    "scope": "Local API/source CLI with public Devnet transactions; test assets only",
+    "scope": "Hosted public HTTPS API/CLI and actual browser session recovery; faucet test assets only",
     "programId": "AXwhEjRZEqA8Yz6C5gyToudg65UZie8nXuJvbd83LKQu",
     "deploymentSignature": "61kBkeFNH1x5bsAP4wwnzGr1en77MinJqAHrya6a5dbVkr6ncU3b4NfzRfUHwgXJs9htZUSSso8ZA8f8DoMxhL44",
-    "evidence": "docs/DEVNET-ACCEPTANCE.md",
+    "evidence": "docs/ONLINE-ACCEPTANCE.md",
     "purchasePassed": true,
     "recoveryPassed": true,
-    "hostedCheckoutEnabled": false,
-    "browserWalletPassed": false,
-    "timeoutRefundPassed": false
+    "hostedCheckoutEnabled": true,
+    "browserWalletPassed": true,
+    "timeoutRefundPassed": true,
+    "offHostBackupRestored": true
   }
 }

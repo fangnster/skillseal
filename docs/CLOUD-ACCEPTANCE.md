@@ -1,5 +1,9 @@
 # Alibaba Cloud free catalog acceptance
 
+> Current October 10 acceptance: Hosted Solana Devnet checkout is enabled on the existing Alibaba server. Public HTTPS CLI purchase, exact 70/30 payouts, five-file installation, browser session recovery, a real 600-second timeout refund and encrypted off-host paid-vault restoration passed. Phantom browser purchase and exact ZIP recovery also passed. Test funds only; no mainnet payments or revenue claims. See [hosted evidence](ONLINE-ACCEPTANCE.md).
+
+The records below describe their stated observation times. Later hosted results above supersede earlier pending/disabled statuses.
+
 Accepted October 9, 2026 at 21:51 Shanghai. [Open the live platform](https://skillseal-47-236-112-184.sslip.io/) · [Publish a Skill](https://skillseal-47-236-112-184.sslip.io/creators) · [Install the CLI](https://skillseal-47-236-112-184.sslip.io/install).
 
 The selected existing 1 GiB Alibaba server hosts the full Next.js application and persistent SQLite vault behind its existing Caddy proxy. No new paid resource was created. GitHub Pages remains the static introduction and installer distribution.

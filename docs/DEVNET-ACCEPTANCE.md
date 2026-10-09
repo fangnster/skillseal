@@ -1,5 +1,9 @@
 # Public Devnet acceptance
 
+> Current October 10 acceptance: Hosted Solana Devnet checkout is enabled on the existing Alibaba server. Public HTTPS CLI purchase, exact 70/30 payouts, five-file installation, browser session recovery, a real 600-second timeout refund and encrypted off-host paid-vault restoration passed. Phantom browser purchase and exact ZIP recovery also passed. Test funds only; no mainnet payments or revenue claims. See [hosted evidence](ONLINE-ACCEPTANCE.md).
+
+The records below describe their stated observation times. Later hosted results above supersede earlier pending/disabled statuses.
+
 Status on October 9, 2026: **program deployed; real test-USDC CLI purchase, 70/30 payouts, installation and recovery/reinstall verified**. The owner completed the official SOL and Circle USDC faucets. Local SBF ProgramTest results and mock payments remain separate evidence. The public Alibaba free catalog still has checkout disabled.
 
 Use test funds only. Keep keypair files, `.env.local`, the vault master key, and session private keys out of repository files, recordings and logs.

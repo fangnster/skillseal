@@ -1,0 +1,596 @@
+{
+  "recordedAt": "2026-10-09T17:43:58.520456+00:00",
+  "scope": "Public HTTPS service and public Solana Devnet; faucet test assets; no customers or revenue",
+  "deployment": {
+    "recordedAt": "2026-10-09T17:43:58.520456+00:00",
+    "accepted": true,
+    "origin": "https://skillseal-47-236-112-184.sslip.io",
+    "sourceCommit": "f5ebb4cc1f70b6b80d544e6d50dbe1441fbaff89",
+    "runtimeSha256": "d69409b4b133f20eba4f006afc3eb0dfacbf84bf6ae4c88407c6d2235fff22bc",
+    "execution": "t-sgp6zjhqzj4ibr4",
+    "exitCode": 0,
+    "checkoutBackend": "solana",
+    "network": "devnet",
+    "method": "Verified runtime read-only bind mount over existing Node image; no host build",
+    "issuerPreserved": true,
+    "vaultMasterPreserved": true,
+    "workerRunning": true,
+    "originalWebsiteHttpStatus": 200,
+    "oomKilled": false,
+    "appMemoryMiB": 229.9,
+    "appLimitMiB": 384,
+    "hostAvailableMemoryMiB": 298,
+    "paidResourcesCreated": false,
+    "failedImageRebuild": "t-sgp6zjcjulap5hc timed out; host recovered after owner-authenticated reboot",
+    "ciRunId": 37967126708
+  },
+  "purchase": {
+    "recordedAt": "2026-10-09T16:35:34.711Z",
+    "origin": "https://skillseal-47-236-112-184.sslip.io",
+    "cluster": "devnet",
+    "programId": "AXwhEjRZEqA8Yz6C5gyToudg65UZie8nXuJvbd83LKQu",
+    "issuer": "BaCmykXfMB3KTN4d31EttQGpq9WcTURc8D3Q93ZJBvXg",
+    "versionId": "1e94474e54e43e9b19907a8be3d7997cc794fb6db0473e01ce05c0774552c330",
+    "versionPda": "HqwcH6vepNL6Dj4sht3PJPVETmJGcW5tR2DL8HhPGqmZ",
+    "orderPda": "2UPZNBYNQFiFaXg2pR2uUsfRbgbXur1CVhMMTj4tkmen",
+    "buyer": "8fHzM29cBkrCjk8mvzYTg7a5FgydvM5i8axKmB79RfX",
+    "priceBaseUnits": "1000000",
+    "splits": [
+      {
+        "wallet": "965U51Yg2UMreesDHXervVpoXn9xf5WUhC62UN67atn7",
+        "bps": 7000
+      },
+      {
+        "wallet": "E2PNPLiS6uj3qrjM4oKzYjRjS7319PNq2F1yYQPLYutE",
+        "bps": 3000
+      }
+    ],
+    "chainStatus": "granted",
+    "paidAt": 1791563400000,
+    "expiresAt": 1791564000000,
+    "balances": [
+      {
+        "wallet": "965U51Yg2UMreesDHXervVpoXn9xf5WUhC62UN67atn7",
+        "ata": "EVniwJs4eYH515pG2xmjSUoL4FerVSSVvRs61PrnGE3s",
+        "baseUnits": "1400000"
+      },
+      {
+        "wallet": "E2PNPLiS6uj3qrjM4oKzYjRjS7319PNq2F1yYQPLYutE",
+        "ata": "CXH3TjGErGfKNknthowVxqnMMiRYPK816nCfPYBit4D1",
+        "baseUnits": "600000"
+      },
+      {
+        "wallet": "8fHzM29cBkrCjk8mvzYTg7a5FgydvM5i8axKmB79RfX",
+        "ata": "EUCJkFA2gtgWgUho8J5evYtYGUkTv4vYsGbGFvve7wow",
+        "baseUnits": "17000000"
+      }
+    ],
+    "transactions": [
+      {
+        "signature": "46Yg9r6HsururDvHij5Da4FYcVGegoXq9V8C2kwPSFHmiqGiQcJzmnKM7B4YgSRu8wLG3QXm4RFnq8EEbkkjPtAh",
+        "blockTime": 1791563403,
+        "confirmationStatus": "finalized",
+        "feeLamports": 5000,
+        "preTokenBalances": [
+          {
+            "accountIndex": 2,
+            "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+            "owner": "2UPZNBYNQFiFaXg2pR2uUsfRbgbXur1CVhMMTj4tkmen",
+            "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "uiTokenAmount": {
+              "amount": "1000000",
+              "decimals": 6,
+              "uiAmount": 1,
+              "uiAmountString": "1"
+            }
+          },
+          {
+            "accountIndex": 3,
+            "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+            "owner": "E2PNPLiS6uj3qrjM4oKzYjRjS7319PNq2F1yYQPLYutE",
+            "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "uiTokenAmount": {
+              "amount": "300000",
+              "decimals": 6,
+              "uiAmount": 0.3,
+              "uiAmountString": "0.3"
+            }
+          },
+          {
+            "accountIndex": 4,
+            "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+            "owner": "965U51Yg2UMreesDHXervVpoXn9xf5WUhC62UN67atn7",
+            "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "uiTokenAmount": {
+              "amount": "700000",
+              "decimals": 6,
+              "uiAmount": 0.7,
+              "uiAmountString": "0.7"
+            }
+          }
+        ],
+        "postTokenBalances": [
+          {
+            "accountIndex": 2,
+            "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+            "owner": "2UPZNBYNQFiFaXg2pR2uUsfRbgbXur1CVhMMTj4tkmen",
+            "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "uiTokenAmount": {
+              "amount": "0",
+              "decimals": 6,
+              "uiAmount": null,
+              "uiAmountString": "0"
+            }
+          },
+          {
+            "accountIndex": 3,
+            "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+            "owner": "E2PNPLiS6uj3qrjM4oKzYjRjS7319PNq2F1yYQPLYutE",
+            "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "uiTokenAmount": {
+              "amount": "600000",
+              "decimals": 6,
+              "uiAmount": 0.6,
+              "uiAmountString": "0.6"
+            }
+          },
+          {
+            "accountIndex": 4,
+            "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+            "owner": "965U51Yg2UMreesDHXervVpoXn9xf5WUhC62UN67atn7",
+            "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "uiTokenAmount": {
+              "amount": "1400000",
+              "decimals": 6,
+              "uiAmount": 1.4,
+              "uiAmountString": "1.4"
+            }
+          }
+        ]
+      },
+      {
+        "signature": "3JGuHXhY2ASSY7MkcqAgE5eENiPbLxCSKeVgrtwc5b1WHee5Bmtpn2tbLVZHX7QSLqcFmL6p5VhY7BTytKapXzyQ",
+        "blockTime": 1791563400,
+        "confirmationStatus": "finalized",
+        "feeLamports": 5000,
+        "preTokenBalances": [
+          {
+            "accountIndex": 3,
+            "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+            "owner": "8fHzM29cBkrCjk8mvzYTg7a5FgydvM5i8axKmB79RfX",
+            "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "uiTokenAmount": {
+              "amount": "19000000",
+              "decimals": 6,
+              "uiAmount": 19,
+              "uiAmountString": "19"
+            }
+          }
+        ],
+        "postTokenBalances": [
+          {
+            "accountIndex": 2,
+            "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+            "owner": "2UPZNBYNQFiFaXg2pR2uUsfRbgbXur1CVhMMTj4tkmen",
+            "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "uiTokenAmount": {
+              "amount": "1000000",
+              "decimals": 6,
+              "uiAmount": 1,
+              "uiAmountString": "1"
+            }
+          },
+          {
+            "accountIndex": 3,
+            "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+            "owner": "8fHzM29cBkrCjk8mvzYTg7a5FgydvM5i8axKmB79RfX",
+            "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "uiTokenAmount": {
+              "amount": "18000000",
+              "decimals": 6,
+              "uiAmount": 18,
+              "uiAmountString": "18"
+            }
+          }
+        ]
+      }
+    ],
+    "install": {
+      "exactSourceBytesMatch": true,
+      "fileCount": 5,
+      "files": [
+        "SKILL.md",
+        "assets/brief-template.md",
+        "examples/demo-input.md",
+        "examples/reference-brief.md",
+        "references/review-checklist.md"
+      ]
+    },
+    "reinstall": {
+      "freshDirectory": true,
+      "secondPaymentRequired": false,
+      "secondPayout": false,
+      "sameWalletVersionPda": true
+    },
+    "packagedCli": {
+      "version": "0.2.0",
+      "installedPublicDistribution": true,
+      "recoveryOrderId": "cd5cc154-5484-4fae-ba66-70b8be636aab",
+      "allFiveFilesMatchSource": true,
+      "noSecondPayment": true
+    },
+    "orders": [
+      {
+        "id": "bb4b041a-be12-4c40-8a7d-f77100e823e6",
+        "versionId": "1e94474e54e43e9b19907a8be3d7997cc794fb6db0473e01ce05c0774552c330",
+        "status": "granted",
+        "buyer": "8fHzM29cBkrCjk8mvzYTg7a5FgydvM5i8axKmB79RfX",
+        "createdAt": 1791563399003
+      },
+      {
+        "id": "010f40d2-a699-470e-a794-a60c851019c5",
+        "versionId": "1e94474e54e43e9b19907a8be3d7997cc794fb6db0473e01ce05c0774552c330",
+        "status": "granted",
+        "buyer": "8fHzM29cBkrCjk8mvzYTg7a5FgydvM5i8axKmB79RfX",
+        "createdAt": 1791563566994
+      }
+    ]
+  },
+  "refund": {
+    "recordedAt": "2026-10-09T16:31:48.012Z",
+    "completedAt": "2026-10-09T16:42:22.783Z",
+    "origin": "https://skillseal-47-236-112-184.sslip.io",
+    "cluster": "devnet",
+    "programId": "AXwhEjRZEqA8Yz6C5gyToudg65UZie8nXuJvbd83LKQu",
+    "issuer": "BaCmykXfMB3KTN4d31EttQGpq9WcTURc8D3Q93ZJBvXg",
+    "versionId": "74bbd259736e6368c176f5b2e7162e08c83ab7caf3bbc4700960dc1914c11846",
+    "versionPda": "onjP6tm2qeGH8x5ETwQ9qr3rLmiHpekFXQDUNwER4MF",
+    "orderId": "7e4e2c15-9a66-48bf-9b62-50a8cbaa3558",
+    "orderPda": "ERLbijArcAexU1eeue7ZNKLghhZebiVTJBXKeE1K38AB",
+    "buyer": "8fHzM29cBkrCjk8mvzYTg7a5FgydvM5i8axKmB79RfX",
+    "paymentSignature": "3efzcCHwqFPLJZUVN8YoA7tjL6tUi7WPssV4sewkrThxXk4BnAf5sLoLUkQF6UwzXvQj5Zq94pFRtxmiGqHD3kVU",
+    "refundSignature": "5dZ4FVeDLHUWJ6BA9nQEVRnjeh7FkhPBPZrB4Nhx95JLYfGhDfMufh2PNQAzRKmiqaa6m8RmLK1WZVUmSJUJn12S",
+    "chainBefore": {
+      "paidAt": 1791563506000,
+      "expiresAt": 1791564106000,
+      "status": 1
+    },
+    "chainAfter": {
+      "paidAt": 1791563506000,
+      "expiresAt": 1791564106000,
+      "status": 3
+    },
+    "status": "refunded-accepted",
+    "expiredSyncDidNotSettle": true,
+    "refundTransaction": {
+      "feeLamports": 5000,
+      "preTokenBalances": [
+        {
+          "accountIndex": 1,
+          "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+          "owner": "ERLbijArcAexU1eeue7ZNKLghhZebiVTJBXKeE1K38AB",
+          "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "uiTokenAmount": {
+            "amount": "1000000",
+            "decimals": 6,
+            "uiAmount": 1,
+            "uiAmountString": "1"
+          }
+        },
+        {
+          "accountIndex": 3,
+          "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+          "owner": "8fHzM29cBkrCjk8mvzYTg7a5FgydvM5i8axKmB79RfX",
+          "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "uiTokenAmount": {
+            "amount": "17000000",
+            "decimals": 6,
+            "uiAmount": 17,
+            "uiAmountString": "17"
+          }
+        }
+      ],
+      "postTokenBalances": [
+        {
+          "accountIndex": 1,
+          "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+          "owner": "ERLbijArcAexU1eeue7ZNKLghhZebiVTJBXKeE1K38AB",
+          "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "uiTokenAmount": {
+            "amount": "0",
+            "decimals": 6,
+            "uiAmount": null,
+            "uiAmountString": "0"
+          }
+        },
+        {
+          "accountIndex": 3,
+          "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+          "owner": "8fHzM29cBkrCjk8mvzYTg7a5FgydvM5i8axKmB79RfX",
+          "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "uiTokenAmount": {
+            "amount": "18000000",
+            "decimals": 6,
+            "uiAmount": 18,
+            "uiAmountString": "18"
+          }
+        }
+      ]
+    },
+    "earlyRefundRejected": true,
+    "postRefundClaimRejected": true,
+    "duplicateRefundRejected": true
+  },
+  "browserRecovery": {
+    "recordedAt": "2026-10-09T16:36:27.706867+00:00",
+    "origin": "https://skillseal-47-236-112-184.sslip.io",
+    "browserSessionRecovery": true,
+    "zipDownloaded": true,
+    "allFiveFilesMatchSource": true,
+    "files": [
+      "SKILL.md",
+      "assets/brief-template.md",
+      "examples/demo-input.md",
+      "examples/reference-brief.md",
+      "references/review-checklist.md"
+    ],
+    "secondPaymentRequired": false
+  },
+  "offHostRestore": {
+    "recordedAt": "2026-10-09T17:28:39.962Z",
+    "offHostEncryptedBackup": true,
+    "authenticatedDecryption": true,
+    "sqliteIntegrity": "ok",
+    "issuer": "BaCmykXfMB3KTN4d31EttQGpq9WcTURc8D3Q93ZJBvXg",
+    "issuerPreserved": true,
+    "versions": [
+      {
+        "id": "74bbd259736e6368c176f5b2e7162e08c83ab7caf3bbc4700960dc1914c11846",
+        "active": true,
+        "bundleHashMatched": true,
+        "contentHashMatched": true
+      },
+      {
+        "id": "1e94474e54e43e9b19907a8be3d7997cc794fb6db0473e01ce05c0774552c330",
+        "active": true,
+        "bundleHashMatched": true,
+        "contentHashMatched": true
+      },
+      {
+        "id": "778fda57fca27de5da92df1d4a13a5f300a02494992a2714e8b60a2530a5ae9e",
+        "active": true,
+        "bundleHashMatched": true,
+        "contentHashMatched": true
+      }
+    ],
+    "ordersRestored": 6,
+    "paidEnvelopeRestored": true,
+    "paidContentHashMatched": true,
+    "refundedOrderPreserved": true,
+    "refundedOrderHasNoEnvelope": true,
+    "networkUsed": false
+  },
+  "browserWallet": {
+    "recordedAt": "2026-10-09T17:44:43.755Z",
+    "scope": "Actual public HTTPS checkout using owner Phantom extension; Devnet faucet assets",
+    "origin": "https://skillseal-47-236-112-184.sslip.io",
+    "cluster": "devnet",
+    "buyer": "5EqRJYkcaJPLAgTjcRJU5Gt5n85etgDYDzBNNxgYwUgp",
+    "programId": "AXwhEjRZEqA8Yz6C5gyToudg65UZie8nXuJvbd83LKQu",
+    "versionId": "1e94474e54e43e9b19907a8be3d7997cc794fb6db0473e01ce05c0774552c330",
+    "orderId": "62f8b88f-1b30-4291-8b26-1ead2aa09c2a",
+    "orderPda": "8zWuvNNSHS7tuQE6jR26Hq7drRvJrLHkAwviNVdUzhTq",
+    "chainStatus": 2,
+    "paidAt": 1791567833000,
+    "expiresAt": 1791568433000,
+    "transactions": [
+      {
+        "signature": "3yapVhUGoUe6HtU44jM8zXE3uEgQrrQT49siQ8GYtM9GiePfeaiEJnhCZJbobYFq3eSKtQFBDVSmCFTrUvfqYsRv",
+        "confirmationStatus": "finalized",
+        "feeLamports": 5000,
+        "tokenDeltas": [
+          {
+            "owner": "965U51Yg2UMreesDHXervVpoXn9xf5WUhC62UN67atn7",
+            "baseUnits": "700000"
+          },
+          {
+            "owner": "E2PNPLiS6uj3qrjM4oKzYjRjS7319PNq2F1yYQPLYutE",
+            "baseUnits": "300000"
+          }
+        ]
+      },
+      {
+        "signature": "2hWgC582qJ7WAsqBAhai4vXjUXU62v3g1bwehUek6dKbUEJXMuKYuyAJ6ZbzGfndqkBzhYQnEiJa5dabSThicVTh",
+        "confirmationStatus": "finalized",
+        "feeLamports": 5000,
+        "tokenDeltas": [
+          {
+            "owner": "5EqRJYkcaJPLAgTjcRJU5Gt5n85etgDYDzBNNxgYwUgp",
+            "baseUnits": "-1000000"
+          }
+        ]
+      }
+    ],
+    "buyerBeforeBaseUnits": "2000000",
+    "buyerAfterBaseUnits": "1000000",
+    "exact70_30Payout": true,
+    "exactlyOnePaymentAndSettlement": true,
+    "chainAccepted": true,
+    "passed": true,
+    "zipDownloaded": true,
+    "browserRecoveryPassed": true,
+    "allFiveFilesMatchSource": true,
+    "files": [
+      "SKILL.md",
+      "assets/brief-template.md",
+      "examples/demo-input.md",
+      "examples/reference-brief.md",
+      "references/review-checklist.md"
+    ],
+    "noSecondPaymentOnRecovery": true,
+    "completedAt": "2026-10-09T17:45:04.428031+00:00"
+  },
+  "productVideo": {
+    "url": "https://youtu.be/aptKyuK1mVI",
+    "durationSeconds": 149.0,
+    "visibility": "Unlisted"
+  },
+  "historicalEvidence": "DEVNET-EVIDENCE.json",
+  "interruptedPaymentRecovery": {
+    "recordedAt": "2026-10-09T17:11:41.127Z",
+    "scope": "Public HTTPS API with a dedicated engineering CLI test account; client exits after finalized payment before any sync/claim",
+    "origin": "https://skillseal-47-236-112-184.sslip.io",
+    "cluster": "devnet",
+    "buyer": "CE3Lj3Wf9gQAF6jxxmyBL75r9GmkVzeDrxNiyU6hVtTD",
+    "versionId": "1e94474e54e43e9b19907a8be3d7997cc794fb6db0473e01ce05c0774552c330",
+    "orderId": "632b64ec-3d78-467b-b17c-bff41a4bb182",
+    "orderPda": "G1Y1BjdW2m6XWgg8s9Ukss7mJr5gbNUWJVVZmsbUdjyU",
+    "paymentSignature": "2UGZHLJ2FntmzhRSv4uKkFjeqrnvm7CTfKYt2oYGa1BvMZ5DhpWDGgwjnyYuGGtmUJZ3TYzZTvwuxtVwANZC4xFv",
+    "paidAt": 1791565899000,
+    "expiresAt": 1791566499000,
+    "chainStatusBeforeResume": 1,
+    "status": "resumed-installed",
+    "clientExitedAfterFinalizedPayment": true,
+    "independentPublicCliResume": true,
+    "allFiveFilesMatchSource": true,
+    "secondPayment": false,
+    "files": [
+      "SKILL.md",
+      "assets/brief-template.md",
+      "examples/demo-input.md",
+      "examples/reference-brief.md",
+      "references/review-checklist.md"
+    ],
+    "chainStatusAfterResume": 2,
+    "finalizedTransactions": [
+      {
+        "signature": "4PjCpN9fP1UZmRh2QXDKYhqXyUZjSvp9uWMiMKeThDxQp1DmAjBR8Z5SpVgy6WbncYaeoFhFAoUJANsAD9z91ygy",
+        "confirmationStatus": "finalized",
+        "feeLamports": 5000,
+        "preTokenBalances": [
+          {
+            "accountIndex": 1,
+            "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+            "owner": "G1Y1BjdW2m6XWgg8s9Ukss7mJr5gbNUWJVVZmsbUdjyU",
+            "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "uiTokenAmount": {
+              "amount": "1000000",
+              "decimals": 6,
+              "uiAmount": 1,
+              "uiAmountString": "1"
+            }
+          },
+          {
+            "accountIndex": 2,
+            "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+            "owner": "E2PNPLiS6uj3qrjM4oKzYjRjS7319PNq2F1yYQPLYutE",
+            "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "uiTokenAmount": {
+              "amount": "600000",
+              "decimals": 6,
+              "uiAmount": 0.6,
+              "uiAmountString": "0.6"
+            }
+          },
+          {
+            "accountIndex": 3,
+            "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+            "owner": "965U51Yg2UMreesDHXervVpoXn9xf5WUhC62UN67atn7",
+            "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "uiTokenAmount": {
+              "amount": "1400000",
+              "decimals": 6,
+              "uiAmount": 1.4,
+              "uiAmountString": "1.4"
+            }
+          }
+        ],
+        "postTokenBalances": [
+          {
+            "accountIndex": 1,
+            "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+            "owner": "G1Y1BjdW2m6XWgg8s9Ukss7mJr5gbNUWJVVZmsbUdjyU",
+            "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "uiTokenAmount": {
+              "amount": "0",
+              "decimals": 6,
+              "uiAmount": null,
+              "uiAmountString": "0"
+            }
+          },
+          {
+            "accountIndex": 2,
+            "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+            "owner": "E2PNPLiS6uj3qrjM4oKzYjRjS7319PNq2F1yYQPLYutE",
+            "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "uiTokenAmount": {
+              "amount": "900000",
+              "decimals": 6,
+              "uiAmount": 0.9,
+              "uiAmountString": "0.9"
+            }
+          },
+          {
+            "accountIndex": 3,
+            "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+            "owner": "965U51Yg2UMreesDHXervVpoXn9xf5WUhC62UN67atn7",
+            "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "uiTokenAmount": {
+              "amount": "2100000",
+              "decimals": 6,
+              "uiAmount": 2.1,
+              "uiAmountString": "2.1"
+            }
+          }
+        ]
+      },
+      {
+        "signature": "2UGZHLJ2FntmzhRSv4uKkFjeqrnvm7CTfKYt2oYGa1BvMZ5DhpWDGgwjnyYuGGtmUJZ3TYzZTvwuxtVwANZC4xFv",
+        "confirmationStatus": "finalized",
+        "feeLamports": 5000,
+        "preTokenBalances": [
+          {
+            "accountIndex": 2,
+            "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+            "owner": "CE3Lj3Wf9gQAF6jxxmyBL75r9GmkVzeDrxNiyU6hVtTD",
+            "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "uiTokenAmount": {
+              "amount": "1000000",
+              "decimals": 6,
+              "uiAmount": 1,
+              "uiAmountString": "1"
+            }
+          }
+        ],
+        "postTokenBalances": [
+          {
+            "accountIndex": 1,
+            "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+            "owner": "G1Y1BjdW2m6XWgg8s9Ukss7mJr5gbNUWJVVZmsbUdjyU",
+            "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "uiTokenAmount": {
+              "amount": "1000000",
+              "decimals": 6,
+              "uiAmount": 1,
+              "uiAmountString": "1"
+            }
+          },
+          {
+            "accountIndex": 2,
+            "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+            "owner": "CE3Lj3Wf9gQAF6jxxmyBL75r9GmkVzeDrxNiyU6hVtTD",
+            "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "uiTokenAmount": {
+              "amount": "0",
+              "decimals": 6,
+              "uiAmount": null,
+              "uiAmountString": "0"
+            }
+          }
+        ]
+      }
+    ],
+    "exactlyOnePaymentAndSettlement": true,
+    "completedAt": "2026-10-09T17:12:40.790Z"
+  }
+}

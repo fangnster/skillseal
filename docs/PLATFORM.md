@@ -1,6 +1,8 @@
 # Publishing, sharing and installing a Skill
 
-Live free platform: [https://skillseal-47-236-112-184.sslip.io](https://skillseal-47-236-112-184.sslip.io/). Open `/creators` to publish, share an approved version page, and download a ZIP or copy its CLI command. [Cloud acceptance](CLOUD-ACCEPTANCE.md) is complete; public paid checkout remains disabled.
+> Current October 10 acceptance: Hosted Solana Devnet checkout is enabled on the existing Alibaba server. Public HTTPS CLI purchase, exact 70/30 payouts, five-file installation, browser session recovery, a real 600-second timeout refund and encrypted off-host paid-vault restoration passed. Phantom browser purchase and exact ZIP recovery also passed. Test funds only; no mainnet payments or revenue claims. See [hosted evidence](ONLINE-ACCEPTANCE.md).
+
+Live free platform: [https://skillseal-47-236-112-184.sslip.io](https://skillseal-47-236-112-184.sslip.io/). Open `/creators` to publish, share an approved version page, and download a ZIP or copy its CLI command. [Cloud acceptance](CLOUD-ACCEPTANCE.md) is complete; Devnet test checkout is enabled.
 
 The full Next.js application adds browser Creator Studio (`/creators`), reviewed version pages (`/skills/<version hash>`), operator inspection/review (`/manage`), and purchase recovery (`/library`). These pages require a running API and persistent vault. GitHub Pages remains the static introduction and free-example installer; it does not host the API.
 

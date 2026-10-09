@@ -1,5 +1,7 @@
 # 发布 SkillSeal 到 GitHub
 
+> Current October 10 acceptance: Hosted Solana Devnet checkout is enabled on the existing Alibaba server. Public HTTPS CLI purchase, exact 70/30 payouts, five-file installation, browser session recovery, a real 600-second timeout refund and encrypted off-host paid-vault restoration passed. Phantom browser purchase and exact ZIP recovery also passed. Test funds only; no mainnet payments or revenue claims. See [hosted evidence](ONLINE-ACCEPTANCE.md).
+
 独立项目根目录是 `skillseal/`。在这个目录内初始化和发布仓库，避免把上一级输出目录、旧项目或其他资料上传。
 
 公开仓库：[fangnster/skillseal](https://github.com/fangnster/skillseal)。项目简介：
@@ -52,9 +54,9 @@ pnpm run demo
 
 ## 参加黑客松
 
-准备好的 [项目介绍](HACKATHON.md) 与 [演示步骤](DEMO.md) 可作为报名和视频素材。当前赛事是 Crypto World’s Fair 2026。报名草稿已保存英文项目说明、China、Solana、公开仓库链接和标志；尚未最终提交。[新版产品视频](https://youtu.be/fCNz1DUwwtM) 和 [创始人视频](https://youtu.be/R40MxhZ26mo) 已上传 YouTube，均为 Unlisted，可通过链接观看。创始人必填资料仍需补齐。既有工作与开发时间范围须在最终确认时核对。
+准备好的 [项目介绍](HACKATHON.md) 与 [演示步骤](DEMO.md) 可作为报名和视频素材。当前赛事是 Crypto World’s Fair 2026。报名草稿已保存英文项目说明、China、Solana、公开仓库链接和标志；尚未最终提交。[新版产品视频](https://youtu.be/aptKyuK1mVI) 和 [创始人视频](https://youtu.be/R40MxhZ26mo) 已上传 YouTube，均为 Unlisted，可通过链接观看。创始人资料已确认完整；最终提交前再次核对。既有工作与开发时间范围须在最终确认时核对。
 
-公开 Devnet 部署仍是下一项技术验收：获得测试 SOL、部署、两位作者批准、真实测试 USDC 购买、恢复与退款。详细状态见 `VALIDATION.md`。
+公网 Devnet 部署、作者批准、真实测试 USDC 购买、70/30 分账、Phantom 购买与 ZIP 恢复、付款中断续传、真实超时退款与异机加密备份恢复均已完成。当前证据见 [ONLINE-ACCEPTANCE.md](ONLINE-ACCEPTANCE.md)。
 
 ## Final submission restriction
 
@@ -62,4 +64,4 @@ pnpm run demo
 
 ## 网站与独立安装包已发布
 
-公开地址为 [https://fangnster.github.io/skillseal/](https://fangnster.github.io/skillseal/)。GitHub Actions 在应用、发行包安装和合约检查通过后发布 `site-dist` 到 GitHub Pages。0.1.1 安装包包含编译后的 JavaScript 客户端；公开 MIT 示例通过固定 SHA-256 验证。真实 HTTPS 下载、npm 安装、重复安装、防覆盖和本地读取已验证。Render 因要求账户付款信息未创建服务；网站发布没有创建付费资源。持久化付费 API 与公开 Devnet 验收仍待完成。
+公开地址为 [https://fangnster.github.io/skillseal/](https://fangnster.github.io/skillseal/)。GitHub Actions 在应用、发行包安装和合约检查通过后发布 `site-dist` 到 GitHub Pages。0.2.0 安装包包含编译后的 JavaScript 客户端；0.1.1 URL 保留为兼容别名；公开 MIT 示例通过固定 SHA-256 验证。真实 HTTPS 下载、npm 安装、重复安装、防覆盖和本地读取已验证。Render 因要求账户付款信息未创建服务；网站发布没有创建付费资源。现有服务器上的公网 Devnet API/CLI、退款与备份恢复已通过；浏览器钱包状态见线上验收。
