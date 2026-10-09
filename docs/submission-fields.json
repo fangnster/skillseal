@@ -1,5 +1,5 @@
 {
-  "status": "PREPARED LOCALLY \u2014 NOT SAVED OR SUBMITTED TO COLOSSEUM",
+  "status": "PROJECT AND REPOSITORY FIELDS SAVED AS DRAFT — NOT FINALLY SUBMITTED",
   "reviewedAt": "2026-10-09",
   "event": "Crypto World's Fair 2026",
   "projectUrl": "https://colosseum.com/arena/projects/skillseal",
@@ -18,19 +18,28 @@
     "teamTelegram": null,
     "otherContributors": "OpenAI Codex assisted with code generation, implementation review, tests, and documentation. The registered human team currently has one member. Any additional human contributor should be disclosed here before submission.",
     "notesForJudges": "This is an early prototype. Local mock payments are labelled explicitly and are not public-chain transactions or revenue. The key service is trusted and decrypted files can be copied. Public Devnet purchase acceptance, independent security review, and real willingness-to-pay evidence remain pending. Please use the validation record for the exact scope of each test result.",
-    "repoContext": "The intended repository contains the marketplace, API, CLI, key custody service, worker, Anchor program, tests, example Skill, and validation notes. Runtime keys, sessions, env files, and data are excluded. Local mock tests and compiled local SBF tests are separate from public Devnet acceptance. The project was prepared during the current hackathon period; confirm any earlier work before final submission.",
+    "repoContext": "Complete MVP source: marketplace, API, CLI, key service, worker, Anchor escrow, tests, and a MIT-licensed example Skill. Initial public upload: October 9, 2026. Runtime keys, sessions, and data are excluded. Local mock tests and compiled local SBF tests are distinct from public Devnet acceptance, which remains pending. See VALIDATION.md for the scope of each result.",
     "accessInstructions": "Use Node.js 24+ and pnpm 11. After installing dependencies, run pnpm run demo for an isolated, explicitly labelled local mock flow. For the local web walkthrough, follow docs/DEMO.md. No login is needed for the local demo. A hosted product and public Devnet acceptance are not yet available.",
     "githubRepository": "https://github.com/fangnster/skillseal"
   },
   "missing": {
     "teamTelegram": "Required; user has not supplied a Telegram contact.",
-    "demoVideo": "Record a live product video, maximum 3 minutes; upload to YouTube, Loom, or Vimeo.",
-    "pitchVideo": "Record a separate founder/team introduction, maximum 2 minutes; upload to YouTube, Loom, or Vimeo.",
+    "demoVideo": "2:23 English local mock walkthrough produced locally; owner review and YouTube/Loom/Vimeo link pending.",
+    "pitchVideo": "1:41 founder video produced locally from owner-supplied photos and resume; owner review and public platform link pending.",
     "founderProfile": "Owner must review full name, public role, gender/prefer-not-to-say, city, school status, education, and relevant experience.",
     "publicDevnetEvidence": "Not yet deployed or accepted on public Devnet. Do not invent addresses or transaction signatures.",
     "communityReferral": "Select the owner-requested solar community option after verifying it in the form; separate from Solana chain selection."
   },
   "sourceLicense": "MIT",
   "ownerApprovalRequired": true,
-  "communityReferralRequested": "solar"
+  "communityReferralRequested": "solar",
+  "savedDraftFields": [
+    "English project answers",
+    "China",
+    "Solana",
+    "GitHub repository",
+    "Project logo",
+    "Repository context",
+    "Local access instructions"
+  ]
 }

@@ -2,7 +2,7 @@
 
 独立项目根目录是 `skillseal/`。在这个目录内初始化和发布仓库，避免把上一级输出目录、旧项目或其他资料上传。
 
-建议仓库名：`skillseal`。项目简介可直接使用：
+公开仓库：[fangnster/skillseal](https://github.com/fangnster/skillseal)。项目简介：
 
 > Encrypted Agent Skill delivery with Solana escrow, permanent version licenses and transparent creator payouts.
 
@@ -35,27 +35,24 @@ pnpm run demo
 
 GitHub CI 不使用钱包或网络测试币：执行格式检查、TypeScript 测试、独立模拟演示和生产构建，并检查 Rust 格式与库编译。SBF 集成测试的复现命令在中文运行手册中；CI 本身不声称执行公开 Devnet 验收。
 
-## 创建远程仓库
+## 已发布仓库
 
-完成源码许可选择后，可在 GitHub 创建一个空的 `skillseal` 仓库，保留本项目已有的 README 和忽略规则。以下命令需在项目根目录运行，把地址替换为实际账号：
+2026 年 10 月 9 日，完整源码已上传至 `fangnster/skillseal`。70 个文件的 Git blob 哈希与本地源码逐一核对一致。平台源码和公开示例为 MIT 许可；创始人的照片、简历和视频素材没有上传到代码仓库。
 
-交付的本地目录已初始化 `main`。源码 ZIP 不含 `.git`，从 ZIP 解压时先运行 `git init -b main`。
+首次完整源码的 [GitHub CI](https://github.com/fangnster/skillseal/actions/runs/37903979497) 已通过：应用格式、类型、测试、独立模拟演示、生产构建，以及 Anchor Rust 格式和库编译。它不等于公开 Devnet 验收。
 
 ```sh
-# 本地已经初始化 main 分支；先确认 git status 中只有预期文件。
-git add .
-git commit -m "Initial SkillSeal MVP"
-git remote add origin https://github.com/YOUR_ACCOUNT/skillseal.git
-git push -u origin main
+git clone https://github.com/fangnster/skillseal.git
+cd skillseal
+pnpm install --frozen-lockfile
+pnpm run demo
 ```
 
-如选择 GitHub CLI，也可使用 `gh repo create` 创建实际仓库，但应先核对登录账号和可见性。此交付没有执行创建远程仓库或 push。
-
-仓库创建后，把真实仓库、演示视频和部署证据链接填入 `docs/HACKATHON.md`。不要添加不存在的部署链接或“CI 已通过”徽章。
+仓库材料更新后，重新检查 CI 和公开访问。不要添加不存在的部署链接。后续提交不得包含运行时密钥、会话、个人照片或简历。
 
 ## 参加黑客松
 
-准备好的 [项目介绍](HACKATHON.md) 与 [演示步骤](DEMO.md) 可作为报名和视频素材。你选择比赛后，再按其要求调整字段和时长。尤其要核对既有项目、开发时间范围和公开代码要求；这里不预设项目满足某场比赛资格。
+准备好的 [项目介绍](HACKATHON.md) 与 [演示步骤](DEMO.md) 可作为报名和视频素材。当前赛事是 Crypto World’s Fair 2026。报名草稿已保存英文项目说明、China、Solana、公开仓库链接和标志；尚未最终提交。两段英文视频已在本机生成，发布平台链接与创始人资料仍需完成。既有工作与开发时间范围须在最终确认时核对。
 
 公开 Devnet 部署仍是下一项技术验收：获得测试 SOL、部署、两位作者批准、真实测试 USDC 购买、恢复与退款。详细状态见 `VALIDATION.md`。
 

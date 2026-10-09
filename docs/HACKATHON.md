@@ -1,6 +1,10 @@
 # SkillSeal — Crypto World's Fair submission preparation
 
-SkillSeal's project registration was verified in the owner's Colosseum browser on October 9, 2026: [project page](https://colosseum.com/arena/projects/skillseal), project ID 16413, category **AI Platforms / Agents**, one registered team member. The project is created; **final submission is not complete**. The page showed seven project-detail items, four media/code items, and the founder submission profile requiring attention. No online fields were changed during this review.
+SkillSeal's registration is verified: [project page](https://colosseum.com/arena/projects/skillseal), project ID 16413, category **AI Platforms / Agents**, one registered team member. On October 9, 2026, the English project answers, China, Solana, public repository link and logo were saved as a draft. **Final submission is not complete and requires explicit owner confirmation.**
+
+[The public MIT repository](https://github.com/fangnster/skillseal) contains the complete MVP. Its first full-source CI passed. Two English videos have been produced locally for owner review: a 2:23 product walkthrough of the explicitly labelled local mock flow and a separate 1:41 founder introduction. They are not yet uploaded to an accepted video platform. Founder photographs, resume and private video production assets stay outside the public code repository.
+
+The remaining form requirements are a Telegram contact, two video links and the incomplete founder profile. The owner requested **solar** as the community referral; that option is not present in the observed project-details, media/code or review sections and must be verified before final submission. It is distinct from the selected Solana chain checkbox.
 
 ## Event and deadline
 
@@ -8,7 +12,7 @@ The active event is [Crypto World's Fair](https://colosseum.com/worldsfair), Sep
 
 The current logged-in submission form requires:
 
-- English project answers; the public brief description currently needs translation.
+- English project answers; the saved public brief description is now English.
 - A direct GitHub repository link, with public access or judge access. A profile link is not accepted.
 - A project logo or graphic in JPEG, PNG, WebP, or GIF. A prepared 512px PNG is in `assets/skillseal-mark.png`.
 - A live product demo video **up to 3 minutes**. It should show the product in use.
@@ -16,11 +20,11 @@ The current logged-in submission form requires:
 - Complete founder submission profiles for every team member.
 - Required country and Telegram contact. Country is confirmed as **China**; Telegram remains unavailable.
 
-Selecting **Solana** in the chain field reflects the implementation and is the proposed track choice. The checkbox is currently unselected online. The accelerator application switch is currently off; no accelerator application is assumed.
+Selecting **Solana** in the chain field reflects the implementation and is the proposed track choice. The checkbox is now selected and saved online. The accelerator application switch is currently off; no accelerator application is assumed.
 
 ## Form-ready answers
 
-[submission-fields.json](submission-fields.json) contains English answers corresponding to the observed form. The brief description, build/audience answer, motivation, chain use, technology disclosure, contributor disclosure, judge notes, and repository context are within the observed character limits. Null entries are unresolved information, not values to paste into a form. This file is a local draft, not a submission receipt.
+[submission-fields.json](submission-fields.json) contains English answers corresponding to the observed form. The brief description, build/audience answer, motivation, chain use, technology disclosure, contributor disclosure, judge notes, and repository context are within the observed character limits. Null entries are unresolved information, not values to paste into a form. The prepared project and repository fields have been saved to the online draft; this file is not a final submission receipt.
 
 **One-line pitch:** SkillSeal delivers encrypted Agent Skills, permanent version licenses, and approved creator revenue splits through Solana escrow, while keeping installed workflows local.
 
@@ -38,13 +42,13 @@ The service is trusted to hold content keys. Encryption cannot stop copying afte
 
 ## Work schedule — China Standard Time
 
-| Date                 | Work and completion condition                                                                                                                                                 | Dependency                                                                         |
-| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| Oct 9                | Verify registration, prepare English UI and form answers, fix pending checkout states, strengthen the example Skill, run regression checks.                                   | Local implementation and review.                                                   |
-| Oct 10               | Deploy to public Devnet; complete one real test-USDC purchase, 70/30 payouts, local install and reinstall. Record transaction evidence. Prepare the direct GitHub repository. | Test SOL, program build/deploy, author/buyer funding, repository/license decision. |
-| Oct 11               | Exercise interrupted checkout and timeout refund; record the live product demo and the separate founder pitch. Check uploaded video visibility.                               | Devnet acceptance, founder facts, video recording/upload.                          |
-| Oct 12, before 20:00 | Finalize form answers, logo, repository/video links, Telegram contact and founder profile. Review the complete submission preview. Submit and verify the receipt.             | Owner's missing profile/contact information and final submission action.           |
-| Oct 13, before 14:59 | Emergency buffer only: resolve upload/access issues and confirm the platform shows the project submitted.                                                                     | Official deadline; no new feature scope.                                           |
+| Date                 | Work and completion condition                                                                                                                                                                              | Dependency                                                                   |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Oct 9                | Verify registration, prepare English UI and form answers, fix pending checkout states, strengthen the example Skill, run regression checks.                                                                | Local implementation and review.                                             |
+| Oct 10               | Deploy to public Devnet; complete one real test-USDC purchase, 70/30 payouts, local install and reinstall. Record transaction evidence. The public GitHub repository is already available.                 | Test SOL, program build/deploy and author/buyer funding.                     |
+| Oct 11               | Exercise interrupted checkout and timeout refund; review the prepared videos and update chain footage after Devnet acceptance. Publish reviewed videos and check visibility.                               | Devnet acceptance, founder facts, video recording/upload.                    |
+| Oct 12, before 20:00 | Finalize form answers, logo, repository/video links, Telegram contact and founder profile. Review the complete submission preview. Obtain explicit owner confirmation, then submit and verify the receipt. | Owner's missing profile/contact information and explicit final confirmation. |
+| Oct 13, before 14:59 | Emergency buffer only: resolve upload/access issues and confirm the platform shows the project submitted.                                                                                                  | Official deadline; no new feature scope.                                     |
 
 If Devnet funding is still blocked on Oct 10, keep developing the repeatable local flow and record the blocker accurately. A mock video is a fallback demonstration, not a substitute for chain acceptance. Do not spend the remaining time adding NFTs, mainnet payments, usage metering, or another chain.
 
@@ -52,7 +56,6 @@ If Devnet funding is still blocked on Oct 10, keep developing the repeatable loc
 
 - Telegram contact: required by the form; no contact supplied yet.
 - Founder profile: role/title, city, school status, educational background, relevant experience, and the required gender choice (including “Prefer not to say”). Review the prefilled full name; a handle is not necessarily the desired full name.
-- Source-code license: MIT, selected under the owner's request for a permissive license. The new public repository is https://github.com/fangnster/skillseal. Purchased creator packages may have separate terms.
 - Confirm the founder pitch biography and any work predating the contest before publishing the final videos and submission.
 
 Prepared next to the code: [product demo guide](DEMO.md), [two-minute pitch script](PITCH.md), [Devnet acceptance runbook](DEVNET-ACCEPTANCE.md), [publishing guide](PUBLISHING.md). The plan does not create reminders or schedule background runs.
