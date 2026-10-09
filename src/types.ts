@@ -13,6 +13,7 @@ export type Manifest = {
   bundleHash: string;
   publisher: string;
   issuer: string;
+  contentHash?: string;
 };
 export type Version = {
   id: string;
@@ -20,6 +21,7 @@ export type Version = {
   approvals: string[];
   active: boolean;
   createdAt: number;
+  reviewStatus?: 'pending' | 'approved' | 'rejected';
 };
 export type Order = {
   id: string;
@@ -50,7 +52,7 @@ export type PaymentCost = {
   rentDepositLamports: number;
 };
 export type PaymentAdapter = {
-  readonly kind: 'solana' | 'mock';
+  readonly kind: 'solana' | 'mock' | 'disabled';
   readonly issuer: string;
   register(version: Version): Promise<void>;
   approvalTransaction(version: Version, wallet: string): Promise<string>;

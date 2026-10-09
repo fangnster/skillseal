@@ -43,7 +43,11 @@ const manifestSchema = z
     name: z.string().min(1).max(100),
     version: z.string().regex(/^\d+\.\d+\.\d+$/),
     description: z.string().max(1000),
-    price: z.string().regex(/^[1-9][0-9]{0,11}$/),
+    price: z.string().regex(/^(0|[1-9][0-9]{0,11})$/),
+    contentHash: z
+      .string()
+      .regex(/^[a-f0-9]{64}$/)
+      .optional(),
     mint: z.literal(DEVNET_USDC),
     splits: z
       .array(z.object({ wallet, bps: z.number().int().min(1).max(10000) }).strict())
@@ -70,7 +74,19 @@ export class VaultService {
   store: Store;
   payments: PaymentAdapter;
   origin: string;
-  constructor(store: Store, payments: PaymentAdapter, origin: string) {
+  options: {
+    moderationRequired?: boolean;
+    adminWallet?: string;
+    publisherAllowlist?: string[];
+    storageLimitBytes?: number;
+  };
+  constructor(
+    store: Store,
+    payments: PaymentAdapter,
+    origin: string,
+    options: VaultService['options'] = {},
+  ) {
+    this.options = options;
     this.store = store;
     this.payments = payments;
     this.origin = origin;
@@ -100,6 +116,19 @@ export class VaultService {
         'INVALID_SPLITS',
         'Issuer, publisher or split configuration is invalid',
       );
+    if (manifest.price === '0' && !manifest.contentHash)
+      throw new AppError(400, 'CONTENT_HASH', 'Free releases require a signed content hash');
+    if (
+      manifest.price !== '0' &&
+      this.payments.kind === 'solana' &&
+      this.options.publisherAllowlist &&
+      !this.options.publisherAllowlist.includes(manifest.publisher)
+    )
+      throw new AppError(
+        403,
+        'ONBOARDING',
+        'Paid publishing requires creator onboarding; ask the operator to approve your wallet',
+      );
     const id = sha256(canonical(manifest));
     if (!(await verifyWallet(versionMessage(id, this.origin), input.signature, manifest.publisher)))
       throw new AppError(
@@ -118,6 +147,8 @@ export class VaultService {
       const plain = decrypt(bundle, key);
       try {
         parseBundle(plain);
+        if (manifest.contentHash && sha256(plain) !== manifest.contentHash)
+          throw new Error('Content hash mismatch');
       } finally {
         plain.fill(0);
       }
@@ -128,7 +159,34 @@ export class VaultService {
         'Encrypted package, key or file structure is invalid',
       );
     }
-    const version: Version = { id, manifest, approvals: [], active: false, createdAt: Date.now() };
+    if (
+      this.store.storageBytes() + bundle.length >
+      (this.options.storageLimitBytes ?? 256 * 1024 * 1024)
+    ) {
+      key.fill(0);
+      throw new AppError(
+        507,
+        'STORAGE_LIMIT',
+        'Catalog storage limit reached; contact the operator',
+      );
+    }
+    const recent = this.store
+      .versions()
+      .filter(
+        (v) => v.manifest.publisher === manifest.publisher && v.createdAt > Date.now() - 86400000,
+      );
+    if (recent.length >= 10) {
+      key.fill(0);
+      throw new AppError(429, 'PUBLISH_QUOTA', 'Creator release limit reached; retry tomorrow');
+    }
+    const version: Version = {
+      id,
+      manifest,
+      approvals: [],
+      active: false,
+      createdAt: Date.now(),
+      reviewStatus: this.options.moderationRequired ? 'pending' : 'approved',
+    };
     try {
       this.store.insertVersion(version, bundle, key);
     } catch {
@@ -140,17 +198,145 @@ export class VaultService {
     } finally {
       key.fill(0);
     }
-    await this.payments.register(version);
+    if (manifest.price !== '0' && version.reviewStatus === 'approved')
+      await this.payments.register(version);
     this.store.event('version_published', id);
     return version;
   }
   async refreshVersion(id: string) {
     const version = this.version(id);
-    await this.payments.register(version);
-    version.approvals = await this.payments.approvals(version);
-    version.active = version.manifest.splits.every((s) => version.approvals.includes(s.wallet));
+    const reviewed = (version.reviewStatus || 'approved') === 'approved';
+    if (version.manifest.price === '0' || this.payments.kind === 'disabled' || !reviewed) {
+      version.approvals = this.store
+        .all<{ wallet: string }>('SELECT wallet FROM author_approvals WHERE version_id=?', id)
+        .map((r) => r.wallet);
+    } else {
+      await this.payments.register(version);
+      version.approvals = await this.payments.approvals(version);
+    }
+    version.reviewStatus = this.version(id).reviewStatus;
+    version.active =
+      (version.reviewStatus || 'approved') === 'approved' &&
+      version.manifest.splits.every((s) => version.approvals.includes(s.wallet)) &&
+      (version.manifest.price === '0' || this.payments.kind !== 'disabled');
     this.store.saveVersion(version);
     return version;
+  }
+  freeBundle(id: string) {
+    const v = this.version(id);
+    if (
+      v.manifest.price !== '0' ||
+      !v.active ||
+      v.reviewStatus === 'rejected' ||
+      v.reviewStatus === 'pending'
+    )
+      throw new AppError(403, 'NOT_FREE', 'Only approved, active free releases can be downloaded');
+    const key = this.store.key(id);
+    try {
+      const plain = decrypt(this.store.bundle(id), key);
+      parseBundle(plain);
+      if (sha256(plain) !== v.manifest.contentHash) {
+        plain.fill(0);
+        throw new AppError(503, 'INTEGRITY', 'Content integrity check failed');
+      }
+      return plain;
+    } finally {
+      key.fill(0);
+    }
+  }
+  reviewChallenge(id: string, address: string, decision: string) {
+    this.version(id);
+    if (
+      address !== this.options.adminWallet ||
+      !['approved', 'rejected', 'inspect'].includes(decision)
+    )
+      throw new AppError(403, 'ADMIN', 'Only the configured reviewer can review releases');
+    const challengeId = randomUUID(),
+      expires = Date.now() + 300_000;
+    const message = `SkillSeal listing review\nOrigin: ${this.origin}\nVersion: ${id}\nDecision: ${decision}\nNonce: ${challengeId}\nExpires: ${expires}`;
+    this.store.run(
+      'INSERT INTO challenges (id,wallet,action,resource,public_key,message,expires) VALUES (?,?,?,?,?,?,?)',
+      challengeId,
+      address,
+      'review-listing',
+      id,
+      decision,
+      message,
+      expires,
+    );
+    return { id: challengeId, message, expires };
+  }
+  async reviewPreview(id: string, challengeId: string, signature: string) {
+    const c = this.store.get<Challenge>('SELECT * FROM challenges WHERE id=?', challengeId);
+    if (
+      !c ||
+      c.action !== 'review-listing' ||
+      c.resource !== id ||
+      c.public_key !== 'inspect' ||
+      c.wallet !== this.options.adminWallet ||
+      c.consumed ||
+      c.expires < Date.now() ||
+      !(await verifyWallet(c.message, signature, c.wallet))
+    )
+      throw new AppError(
+        401,
+        'REVIEW_SIGNATURE',
+        'Inspection authorization is invalid, expired or already used',
+      );
+    this.store.transaction(() => {
+      if (
+        this.store.run(
+          'UPDATE challenges SET consumed=1 WHERE id=? AND consumed=0 AND expires>=?',
+          challengeId,
+          Date.now(),
+        ).changes !== 1
+      )
+        throw new AppError(401, 'REPLAY', 'Inspection already used');
+    });
+    const key = this.store.key(id);
+    let plain: Buffer | undefined;
+    try {
+      plain = decrypt(this.store.bundle(id), key);
+      parseBundle(plain);
+      return { bundle: plain.toString('base64') };
+    } finally {
+      key.fill(0);
+      plain?.fill(0);
+    }
+  }
+  async review(id: string, challengeId: string, signature: string) {
+    const c = this.store.get<Challenge>('SELECT * FROM challenges WHERE id=?', challengeId);
+    if (
+      !c ||
+      c.action !== 'review-listing' ||
+      c.resource !== id ||
+      !['approved', 'rejected'].includes(c.public_key || '') ||
+      c.wallet !== this.options.adminWallet ||
+      c.consumed ||
+      c.expires < Date.now() ||
+      !(await verifyWallet(c.message, signature, c.wallet))
+    )
+      throw new AppError(
+        401,
+        'REVIEW_SIGNATURE',
+        'Review authorization is invalid, expired or already used',
+      );
+    this.store.transaction(() => {
+      if (
+        this.store.run(
+          'UPDATE challenges SET consumed=1 WHERE id=? AND consumed=0 AND expires>=?',
+          challengeId,
+          Date.now(),
+        ).changes !== 1
+      )
+        throw new AppError(401, 'REPLAY', 'Review authorization already used');
+      const v = this.version(id);
+      v.reviewStatus = c.public_key as Version['reviewStatus'];
+      v.active = false;
+      this.store.saveVersion(v);
+      this.store.event('review:' + challengeId, id, { decision: v.reviewStatus });
+    });
+    return this.refreshVersion(id);
   }
   async approve(id: string, address: string, signature: string) {
     const version = this.version(id);
@@ -163,6 +349,14 @@ export class VaultService {
         'INVALID_SIGNATURE',
         'Author signature does not approve this configuration',
       );
+    if (
+      version.manifest.price === '0' ||
+      this.payments.kind === 'disabled' ||
+      (version.reviewStatus && version.reviewStatus !== 'approved')
+    ) {
+      this.store.run('INSERT OR IGNORE INTO author_approvals VALUES (?,?)', id, address);
+      return { version: await this.refreshVersion(id), transaction: null };
+    }
     await this.payments.register(version);
     if (this.payments instanceof MockPayment) {
       await this.payments.approve(version, address);
@@ -178,6 +372,14 @@ export class VaultService {
       throw new AppError(400, 'INVALID_KEY', 'A valid X25519 encryption public key is required');
     }
     const version = await this.refreshVersion(versionId);
+    if (version.manifest.price === '0')
+      throw new AppError(
+        400,
+        'FREE_DOWNLOAD',
+        'This release is free; download it without checkout',
+      );
+    if (this.payments.kind === 'disabled')
+      throw new AppError(503, 'CHECKOUT_DISABLED', 'Paid checkout is not enabled');
     if (!version.active)
       throw new AppError(409, 'UNAPPROVED', 'All authors must approve before purchase');
     const order: Order = {

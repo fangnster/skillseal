@@ -1,5 +1,13 @@
 import { DatabaseSync, type SQLInputValue } from 'node:sqlite';
-import { mkdirSync, chmodSync, writeFileSync, readFileSync, existsSync } from 'node:fs';
+import {
+  mkdirSync,
+  chmodSync,
+  writeFileSync,
+  readFileSync,
+  existsSync,
+  readdirSync,
+  statSync,
+} from 'node:fs';
 import path from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { encrypt, decrypt } from './crypto.ts';
@@ -26,6 +34,7 @@ export class Store {
       CREATE TABLE IF NOT EXISTS mock_orders (id TEXT PRIMARY KEY, payload TEXT NOT NULL);
       CREATE TABLE IF NOT EXISTS mock_balances (wallet TEXT PRIMARY KEY, amount TEXT NOT NULL);
       CREATE TABLE IF NOT EXISTS rate_limits (id TEXT PRIMARY KEY, count INTEGER NOT NULL, expires INTEGER NOT NULL);
+      CREATE TABLE IF NOT EXISTS author_approvals (version_id TEXT NOT NULL REFERENCES versions(id), wallet TEXT NOT NULL, PRIMARY KEY(version_id,wallet));
       CREATE TABLE IF NOT EXISTS chain_costs (signature TEXT PRIMARY KEY, resource TEXT NOT NULL, phase TEXT NOT NULL, fee INTEGER NOT NULL, rent INTEGER NOT NULL);
     `);
     chmodSync(path.join(directory, 'vault.sqlite'), 0o600);
@@ -77,6 +86,12 @@ export class Store {
       );
       this.run('INSERT INTO keys VALUES (?,?)', version.id, wrapped);
     });
+  }
+  storageBytes() {
+    return readdirSync(path.join(this.directory, 'bundles')).reduce(
+      (n, file) => n + statSync(path.join(this.directory, 'bundles', file)).size,
+      0,
+    );
   }
   bundle(id: string) {
     if (!/^[a-f0-9]{64}$/.test(id)) throw new Error('Invalid bundle id');

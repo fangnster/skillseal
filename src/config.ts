@@ -4,7 +4,10 @@ export type Config = {
   origin: string;
   dataDir: string;
   masterKey: Buffer;
-  backend: 'solana' | 'mock';
+  backend: 'solana' | 'mock' | 'disabled';
+  adminWallet?: string;
+  moderationRequired?: boolean;
+  publisherAllowlist?: string[];
   rpc: string;
   programId: string;
   issuerPath: string;
@@ -15,7 +18,8 @@ export function loadConfig(): Config {
   ).origin;
   const loopback = ['localhost', '127.0.0.1', '[::1]'].includes(new URL(origin).hostname);
   const backend = process.env.PAYMENT_BACKEND || 'solana';
-  if (backend !== 'solana' && backend !== 'mock') throw new Error('Unsupported payment backend');
+  if (backend !== 'solana' && backend !== 'mock' && backend !== 'disabled')
+    throw new Error('Unsupported payment backend');
   if (
     backend === 'mock' &&
     (process.env.LOCAL_DEMO !== '1' || !loopback || process.env.NODE_ENV === 'production')
@@ -32,6 +36,12 @@ export function loadConfig(): Config {
     dataDir: path.resolve(/*turbopackIgnore: true*/ process.env.DATA_DIR || '.data'),
     masterKey: fromBase64(process.env.KEY_VAULT_MASTER_KEY, 32),
     backend,
+    adminWallet: process.env.ADMIN_WALLET || '',
+    moderationRequired: process.env.MODERATION_REQUIRED !== '0' || !loopback,
+    publisherAllowlist: (process.env.PUBLISHER_ALLOWLIST || '')
+      .split(',')
+      .map((s) => s.trim())
+      .filter(Boolean),
     rpc: process.env.SOLANA_RPC_URL || 'https://api.devnet.solana.com',
     programId: process.env.SOLANA_PROGRAM_ID || '',
     issuerPath: path.resolve(

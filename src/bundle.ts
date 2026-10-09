@@ -14,31 +14,8 @@ import { canonical, fromBase64 } from './crypto.ts';
 
 const MAX_BYTES = 10 * 1024 * 1024;
 const MAX_FILES = 500;
-type Bundle = { format: 'skill-vault-files-v1'; files: { path: string; data: string }[] };
-export function safePath(name: string) {
-  if (
-    !name ||
-    name.length > 240 ||
-    name.includes('\\') ||
-    /[\x00-\x1f:]/.test(name) ||
-    name.startsWith('/') ||
-    name.split('/').some((s) => !s || s === '.' || s === '..') ||
-    path.posix.normalize(name) !== name
-  )
-    throw new Error('Unsafe bundle path');
-  if (
-    name
-      .split('/')
-      .some(
-        (s) =>
-          /[. ]$/.test(s) ||
-          /[<>|?*]/.test(s) ||
-          /^(con|prn|aux|nul|com[1-9]|lpt[1-9])(?:\.|$)/i.test(s),
-      )
-  )
-    throw new Error('Unsafe portable bundle path');
-  return name;
-}
+import { safePath, type Bundle } from './portable.ts';
+export { safePath } from './portable.ts';
 export function parseBundle(bytes: Uint8Array): Bundle {
   if (bytes.length > MAX_BYTES * 1.5) throw new Error('Bundle too large');
   const bundle = JSON.parse(Buffer.from(bytes).toString('utf8')) as Bundle;

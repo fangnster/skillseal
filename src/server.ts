@@ -3,6 +3,7 @@ import { Keypair } from '@solana/web3.js';
 import { loadConfig } from './config.ts';
 import { Store } from './store.ts';
 import { MockPayment } from './mock-payment.ts';
+import { DisabledPayment } from './disabled-payment.ts';
 import { SolanaPayment } from './solana-payment.ts';
 import { VaultService } from './service.ts';
 type Context = { service: VaultService; config: ReturnType<typeof loadConfig> };
@@ -15,7 +16,15 @@ export function server(): Context {
     Uint8Array.from(JSON.parse(readFileSync(config.issuerPath, 'utf8'))),
   ).publicKey.toBase58();
   const payments =
-    config.backend === 'mock' ? new MockPayment(store, issuer) : new SolanaPayment(config);
-  const service = new VaultService(store, payments, config.origin);
+    config.backend === 'mock'
+      ? new MockPayment(store, issuer)
+      : config.backend === 'disabled'
+        ? new DisabledPayment(issuer)
+        : new SolanaPayment(config);
+  const service = new VaultService(store, payments, config.origin, {
+    moderationRequired: config.moderationRequired,
+    adminWallet: config.adminWallet || issuer,
+    publisherAllowlist: config.publisherAllowlist,
+  });
   return (globalContext.skillVaultContext = { service, config });
 }

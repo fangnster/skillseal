@@ -4,20 +4,7 @@ import bs58 from 'bs58';
 
 export const sha256 = (bytes: string | Uint8Array) =>
   createHash('sha256').update(bytes).digest('hex');
-export function canonical(value: unknown): string {
-  if (Array.isArray(value)) return '[' + value.map(canonical).join(',') + ']';
-  if (value !== null && typeof value === 'object') {
-    return (
-      '{' +
-      Object.keys(value)
-        .sort()
-        .map((k) => JSON.stringify(k) + ':' + canonical((value as Record<string, unknown>)[k]))
-        .join(',') +
-      '}'
-    );
-  }
-  return JSON.stringify(value);
-}
+export { canonical } from './portable.ts';
 export function fromBase64(value: string, size?: number): Buffer {
   if (!/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(value))
     throw new Error('Invalid base64');
