@@ -1,9 +1,21 @@
-# SkillSeal founder pitch
+# SkillSeal: the short pitch
 
-> Current October 10 acceptance: Hosted Solana Devnet checkout is enabled on the existing Alibaba server. Public HTTPS CLI purchase, exact 70/30 payouts, five-file installation, browser session recovery, a real 600-second timeout refund and encrypted off-host paid-vault restoration passed. Phantom browser purchase and exact ZIP recovery also passed. Test funds only; no mainnet payments or revenue claims. See [hosted evidence](ONLINE-ACCEPTANCE.md).
+SkillSeal helps developers find and install reusable AI work guides, and helps their creators get paid.
 
-The published founder video is [Ning Fang — SkillSeal](https://youtu.be/R40MxhZ26mo), approximately 1:40, Unlisted on YouTube and saved in the Colosseum draft. It uses the owner-provided Ning_Fang_Resume and latest three original photographs. The biography names the CCB Fintech position only as **Senior Technical Expert**. Product sections use architecture and workflow diagrams. English narration is generic synthetic speech; it is not a voice or mouth clone.
+A Skill is a package of instructions, templates and reference files. Think of a research brief: the AI needs a structure to follow and a checklist to review its answer. Passing around a prompt link is often not enough.
 
-SkillSeal helps creators deliver versioned Agent workflow packages with explicit collaborator shares, and helps buyers install and recover the purchased version locally. Its form is a discovery website, standalone installation CLI, and a separately hosted payment and encrypted-key delivery API. The open MIT example demonstrates installation without a wallet. Public Devnet deployment and a 1 test-USDC CLI purchase with exact 70/30 payouts and recovery/reinstall are verified. Phantom browser purchase and exact ZIP recovery also passed. Paying demand remains unverified.
+SkillSeal provides a website to find or publish that package, plus a tool to install the chosen version locally. Free Skills need no wallet. Paid Skills use Solana for the payment, purchase record and agreed collaborator payouts. The first users are developers who already use wallets.
 
-The final competition application must still receive the owner's explicit approval. Select the requested `solar` community referrer before submission. Do not invent Telegram contact details or claim that a pending public-chain milestone is complete.
+The live prototype has verified test-network purchase, recovery and timeout refund. It uses test money. Our next question is whether developers find the Skills useful enough to pay for them.
+
+## Founder
+
+Ning Fang has 20+ years in software and applied AI, a computer-science Ph.D., and research experience in Hong Kong and Singapore. He was a **Senior Technical Expert** at CCB Fintech and managed AI R&D at Lufax.
+
+Founder photos are owner-supplied. The generic AI narration is not a voice clone; personal sources stay private.
+
+## Review media
+
+[Current published product demo](https://youtu.be/p0zld2clCl8) · [Current published founder introduction](https://youtu.be/R40MxhZ26mo)
+
+Final competition submission still requires the owner's explicit approval. Verify and select `solar` as the community referral; the owner has no Telegram account.

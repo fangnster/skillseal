@@ -7,19 +7,19 @@
   "deadline": "2026-10-12T23:59:00-07:00",
   "fields": {
     "projectName": "SkillSeal",
-    "briefDescription": "Encrypted delivery, permanent version licenses, and approved creator revenue splits for locally installed Agent Skills, using Solana USDC escrow.",
-    "buildingAndAudience": "SkillSeal packages reusable Agent workflows with version licenses and approved creator shares. Its website provides upload/preview, signed collaborator approval, operator inspection and share pages; the independent CLI installs locally. Free MIT Skills need no buyer wallet. The hosted Devnet API escrows test USDC, atomically pays collaborators and records a wallet/version grant before key delivery. Public HTTPS purchase, exact 70/30 payouts, five-file installation, no-second-payment reinstall, browser session ZIP recovery, real ten-minute timeout refund and encrypted off-host paid-vault restoration passed. Phantom browser purchase and exact ZIP recovery also passed. The key service is trusted, and decrypted files can be copied. Test accounts are not customers or revenue.",
-    "whyAndWhyNow": "Agent workflows increasingly combine prompts, reference material, and reusable instructions into locally installed packages. We want to test whether creators can sell those packages while preserving local use and sharing revenue with collaborators. SkillSeal focuses first on developers who already use wallets, rather than assuming every buyer wants crypto payments. Solana makes the approved split and wallet/version receipt inspectable, while encryption and the installer handle delivery. Ordinary payment systems can offer similar access control; our hypothesis is that wallet-native teams value transparent collaboration accounting and purchase recovery. We have not established paying demand. The next experiment is to observe a small group of developers purchasing and reinstalling a useful Skill, measure failures and total costs, and distinguish interest from actual payment commitments.",
+    "briefDescription": "Find and install reusable AI work guides. Creators publish Skills and receive agreed collaborator payouts through Solana.",
+    "buildingAndAudience": "A Skill is a package of instructions, templates and reference files for an AI assistant. SkillSeal helps developers find the complete package, install the version they chose, and recover a purchase. Creators upload a Skill, set its terms, agree on collaborator shares, and share a link after review. Free Skills need no wallet. Paid versions use Solana for payment, a version-specific purchase record and collaborator payouts. The first users are developers and creator teams who already use wallets. The website is live; paid purchase, 70/30 payouts, recovery and timeout refund passed on Devnet with test money. We have not validated customer demand or revenue.",
+    "whyAndWhyNow": "Useful AI workflows are often scattered across prompt links, folders and messages. A prompt alone may omit the template, references or checks needed to repeat a task. We want to make that work easy to package, deliver and reuse, while giving collaborators a clear way to receive their agreed shares. Solana fits teams already using wallets: purchase records and payouts can be inspected together. Traditional payments can also support this. Our next experiment is to observe developers using a Skill and measure whether it is useful enough to pay for, separating successful installation from actual demand.",
     "technologies": "Solana; Anchor/Rust escrow program; SPL Token and Devnet USDC; TypeScript; Next.js 16 and React 19; Node.js 24; SQLite; AES-256-GCM; libsodium X25519 sealed boxes; @solana/web3.js; Phantom/Solflare wallet integration; pnpm; GitHub Actions. OpenAI Codex assisted implementation, review, tests, and documentation. The current prototype does not require an LLM API to buy or install a Skill.",
     "chains": ["Solana"],
-    "chainUsage": "Anchor registers immutable versions and approved shares; escrows Devnet USDC, then atomically grants a wallet/version license and pays collaborators. Finalized state gates key delivery. Hosted HTTPS purchase, 70/30 payouts, recovery and a real 600-second timeout refund passed. Refunded orders cannot claim keys. Phantom purchase passed.",
+    "chainUsage": "Solana is the payment and receipt layer. For a paid Skill, the program holds test USDC, then records access to the chosen version and pays the approved collaborator shares in one transaction. A completed purchase can be recovered without paying again. An unsettled payment is refundable after ten minutes. Public Devnet tests verified purchase, 70/30 payouts, recovery and refund. No mainnet money is collected.",
     "category": "AI Platforms / Agents",
     "teamCountry": "China",
     "teamTelegram": null,
     "otherContributors": "OpenAI Codex assisted with code generation, implementation review, tests, and documentation. The registered human team currently has one member. Any additional human contributor should be disclosed here before submission.",
-    "notesForJudges": "The video shows actual hosted pages and verified Devnet HTTPS CLI purchase: 1 test USDC paid 0.7/0.3, five exact files and recovery without repayment. Real ten-minute refund and encrypted off-host paid-vault restore passed. Phantom purchase also passed. No real funds, customers or revenue. Generic synthetic narration and edited result views are disclosed. Trusted keys; no independent audit.",
-    "repoContext": "MIT 0.2 website, CLI, review/share/recovery, persistent API/worker and Anchor escrow. CI passes 39 tests, production build, clean CLI/container and Rust/SBF builds. Public HTTPS Devnet purchase, 70/30 payouts, exact install/recovery, real timeout refund and paid-vault off-host restore passed. Phantom purchase passed. Private keys, sessions and personal video sources are excluded.",
-    "accessInstructions": "Open https://skillseal-47-236-112-184.sslip.io/. Free MIT sample needs no wallet; Publish previews uploads. Paid releases: Solana Devnet only, 1 test USDC plus test SOL fees. CLI: Node.js 24+. Acceptance: repository docs/ONLINE-ACCEPTANCE.md.",
+    "notesForJudges": "First watch https://youtu.be/p0zld2clCl8 (92 seconds). A Skill is a reusable AI work guide. Try a free one without a wallet. The full demo shows verified Devnet payment: 1 test USDC split 0.7/0.3, purchase recovery and timeout refund. Browser purchase and encrypted backup restore passed. Edited actual screens and generic AI narration are disclosed. No real customers or revenue. Evidence: docs/ONLINE-ACCEPTANCE.md.",
+    "repoContext": "MIT website, installer CLI, reviewed version/share pages, recovery API and Solana payment program. CI verifies 39 tests, application build, clean installation, container readiness and program builds. Public Devnet purchase, payouts, recovery, timeout refund and encrypted backup restoration passed. Source packages keep their own licenses. Keys, recovery files, resumes and personal video sources are excluded.",
+    "accessInstructions": "Open https://skillseal-47-236-112-184.sslip.io/. Choose Free: ZIP or installer, then load SKILL.md in your AI tool. No wallet. Paid tests: Phantom/Solflare, Solana Devnet, test USDC/SOL. CLI: Node.js 24+. Evidence: docs/ONLINE-ACCEPTANCE.md.",
     "githubRepository": "https://github.com/fangnster/skillseal",
     "demoVideo": "https://youtu.be/AuWg-B13cbg",
     "pitchVideo": "https://youtu.be/R40MxhZ26mo",
@@ -47,7 +47,9 @@
     "Public installation access instructions",
     "Completed founder submission profile",
     "Verified public Devnet CLI purchase and recovery evidence",
-    "Updated Devnet product video"
+    "Updated Devnet product video",
+    "Plain-language project description and answers",
+    "Natural narration product introduction link in notes for judges"
   ],
   "publishedWebsite": "https://skillseal-47-236-112-184.sslip.io/",
   "publishedMedia": {
@@ -59,7 +61,17 @@
     "demoScope": "Hosted public HTTPS Devnet purchase/recovery/refund and paid-vault restoration; Phantom browser purchase and exact ZIP recovery also passed.",
     "previousLocalDemo": "https://youtu.be/374T4FpqwEI",
     "previousCloudDemo": "https://youtu.be/YWXcdWWev34",
-    "previousDevnetLocalApiDemo": "https://youtu.be/MaYbKNupnBA"
+    "previousDevnetLocalApiDemo": "https://youtu.be/MaYbKNupnBA",
+    "plainLanguageEnglish": "https://youtu.be/p0zld2clCl8",
+    "plainLanguageChinese": "https://youtu.be/s0OTYYRy4cY",
+    "plainLanguageEnglishSeconds": 91.922,
+    "plainLanguageChineseSeconds": 92.546,
+    "plainLanguageScope": "Natural continuous narration; plain-language explanation, diagrams and edited actual operation screens.",
+    "competitionDemoSelection": "Full 149-second operation video retained because the form requires live-product operation.",
+    "pendingFounderRevision": {
+      "seconds": 59.162,
+      "status": "Local complete; YouTube daily limit. Phone verified; advanced verification or 24-hour reset still required."
+    }
   },
   "publicCloudAcceptance": {
     "status": "passed",
@@ -83,5 +95,7 @@
     "browserWalletPassed": true,
     "timeoutRefundPassed": true,
     "offHostBackupRestored": true
-  }
+  },
+  "copyRevision": "Plain-language AI/Web3 explanation, October 10; project answers, repository context, access instructions and introduction link verified in saved online draft. Not finally submitted.",
+  "plainLanguageDraftSavedOnline": true
 }

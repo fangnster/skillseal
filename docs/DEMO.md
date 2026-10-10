@@ -1,41 +1,25 @@
-# Product walkthrough — hosted Devnet 0.2
+# SkillSeal product demo
 
-[Current product video](https://youtu.be/AuWg-B13cbg) — 149.00 seconds, Unlisted. [Founder introduction](https://youtu.be/R40MxhZ26mo) — 99.42 seconds, Unlisted. The product video stays below the three-minute form limit; the separate founder introduction stays below two minutes.
+**The story:** an AI assistant needs a complete work guide; a developer needs the right version; its creators need reliable delivery and payment.
 
-Hosted Solana Devnet checkout is enabled on the existing Alibaba server. Public HTTPS CLI purchase, exact 70/30 payouts, five-file installation, browser session recovery, a real 600-second timeout refund and encrypted off-host paid-vault restoration passed. Phantom browser purchase and exact ZIP recovery also passed. Test funds only; no mainnet payments or revenue claims.
+A Skill is a package of instructions, templates and reference files. SkillSeal is the website and installer that connect those steps. It does not supply an AI model.
 
-## What the current video shows
+[92-second plain-language introduction](https://youtu.be/p0zld2clCl8) · [Founder introduction](https://youtu.be/R40MxhZ26mo)
 
-| Approximate time | Scene                                    |
-| ---------------- | ---------------------------------------- |
-| 0:00–0:24        | A complete Skill, ready for local use    |
-| 0:24–0:47        | Why blockchain for agent payments?       |
-| 0:47–1:09        | Upload, preview, review and share        |
-| 1:09–1:35        | Public HTTPS purchase and 70/30 payout   |
-| 1:35–1:59        | Phantom purchase and local ZIP recovery  |
-| 1:59–2:28        | Timeout refund and encrypted restoration |
+[Full operation and Devnet walkthrough — 149 seconds](https://youtu.be/AuWg-B13cbg). The competition form asks for the live product; this remains its demo video. The shorter introductions explain the product with diagrams and edited actual screens. [中文介绍 — 93 秒](https://youtu.be/s0OTYYRy4cY).
 
-Five scenes use actual hosted catalog, Creator Studio, version/share/install, completed Phantom checkout and confirmed refund pages. One scene explains the product architecture. Narration describes independently recorded CLI, chain and backup results; this is an edited walkthrough, not a continuous screen capture. Generic synthetic narration and edited scenes are disclosed on screen and in the description. Product visuals contain no founder photographs.
+## Follow the demo
 
-The independent HTTPS CLI test paid one test USDC and received a permanent grant with exact 70/30 payouts. A fresh directory reused that grant without another payment. A different engineering client exited after finalized payment, then the public packaged CLI resumed its saved session to exact installation with only one payment and one settlement. Phantom browser purchase and exact ZIP recovery also passed.
+1. **Find a Skill.** Open [the live website](https://skillseal-47-236-112-184.sslip.io/) and choose Free. Download a ZIP or copy the installation command. No wallet is needed.
+2. **Use it.** Load the installed `SKILL.md` into your AI tool and supply your own notes. For Research Brief, review the result with its included checklist.
+3. **Publish and share.** A creator uploads a package, sets its license and price, and shares its version page after review. Collaborators agree on their shares first.
+4. **Understand the paid flow.** Solana records the purchase and sends agreed shares together. The verified test paid 1 test USDC, split 0.7 / 0.3. Paid publishing is currently curated.
+5. **Recover or refund.** Save the private recovery file before checkout. A completed purchase can be restored without repaying. An unsettled payment becomes refundable after ten minutes; delivered content is not covered by that timeout refund.
 
-The real 600-second timeout refund used a separate engineering wallet and a controlled settlement-worker pause with automatic resume. Early and duplicate refund attempts were rejected. The paid-vault backup snapshot restored the original issuer, three encrypted Skill keys and six orders. A saved paid delivery session decrypted restored content, while the refunded record stayed refunded. See [ONLINE-ACCEPTANCE.md](ONLINE-ACCEPTANCE.md) for signatures, scope and observed failures.
+## Evidence, without crowding the story
 
-## Repeat the user flow
+[ONLINE-ACCEPTANCE.md](ONLINE-ACCEPTANCE.md) contains payment, Phantom download, interruption recovery, timeout refund and encrypted backup-restoration evidence. [CURATED-SKILLS.md](CURATED-SKILLS.md) records the free upstream packages and licenses. [INSTALL.md](INSTALL.md) has full commands.
 
-1. Open [the live platform](https://skillseal-47-236-112-184.sslip.io/). The free MIT Research Brief needs no buyer wallet. Open its permanent version page to share its URL, download a ZIP or copy the exact CLI installation command.
-2. In Publish, choose a Skill folder with a root `SKILL.md` or a single file. Preview the package and version license. Collaborators sign the exact shares; an operator inspects and reviews it. Paid creator onboarding remains curated.
-3. For a reviewed test-priced version, save the private recovery session before signing. Use Solana Devnet, test USDC and test SOL for fees. The wallet owner reviews and signs the license message and transaction. No real funds are used.
-4. Once the license is granted, choose the saved session in checkout or Recover. The browser decrypts locally and downloads a ZIP. The private delivery key is not posted to the API. Extract and load `SKILL.md`; no package scripts are executed.
-5. If interrupted, keep the session and sync or resume the same order. Do not start another payment while finality is pending. An unsettled escrow becomes refundable to the original buyer after ten minutes; granted content has no timeout refund.
+Paid checkout uses Solana **Devnet**, its test network, and test tokens with no real-money value. These tests are not customers, revenue or an independent security audit. The service keeps paid-content keys; decrypted files can be copied.
 
-## Media history
-
-| Video                                                              | Recorded scope                                                                                                                            |
-| ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| [Previous public Devnet walkthrough](https://youtu.be/MaYbKNupnBA) | 132.50s; live free website plus public-chain CLI purchase through a local API. Hosted paid checkout and Phantom/refund were pending then. |
-| [Earlier cloud walkthrough](https://youtu.be/YWXcdWWev34)          | 136.12s; hosted free publication, exact delivery and restart persistence.                                                                 |
-| [Earlier local 0.2 demo](https://youtu.be/374T4FpqwEI)             | 166.00s; explicitly labelled local functional demonstration.                                                                              |
-| [Previous website/installer demo](https://youtu.be/fCNz1DUwwtM)    | Earlier public free installer plus explicitly labelled local mock checkout.                                                               |
-
-The founder video uses the approved `Senior Technical Expert` employment title. Personal photos, resume, raw narration and production files stay outside public source. Mainnet collection, independent security review, paying demand and autonomous-agent spending controls remain outside the accepted Devnet scope. Final competition submission requires separate owner confirmation.
+Videos use edited actual page/result views and generic AI narration. Product visuals use workflows and operation screens; personal photographs appear only in the founder introduction. Final competition submission needs separate owner approval.

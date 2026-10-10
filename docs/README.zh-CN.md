@@ -1,16 +1,37 @@
-# SkillSeal · 加密下载与 Solana 授权 MVP
+# SkillSeal：给 AI 助手装一份工作说明书
 
-> 10 月 10 日：线上 Devnet 测试收费已启用；公网 HTTPS CLI 购买、70/30 分账、安装、网页恢复、真实十分钟退款、异机加密备份恢复均已通过。Phantom 状态以[线上验收](ONLINE-ACCEPTANCE.md)为准。仅使用免费测试币，不代表主网收款或收入。
+**找到好用的 Skill，装到自己的电脑；需要付费时，让创作者按约定收到收入。**
 
-0.2 已实现网页上传、发布预览、作者批准、运营者文件审核、固定版本分享页、免费 ZIP 下载、独立 CLI 安装及私有 session 恢复。免费目录无需买家账号或钱包。[阿里云平台](https://skillseal-47-236-112-184.sslip.io/)已上线：发布签名、作者批准、包内容审核、分享页、网页 ZIP 与独立 CLI 安装验收通过；重启后版本和密钥保留，原网站仍正常。线上 Devnet 测试收费、退款和付费恢复已通过公网 API/CLI 验收。Linux 依赖已在 CI 打包，384 MiB 容器启动及重启后密钥保留验证通过。[新版产品演示（线上平台与真实 Devnet 交易）](https://youtu.be/AuWg-B13cbg)；[此前线上演示](https://youtu.be/YWXcdWWev34)；[此前本机演示](https://youtu.be/374T4FpqwEI)。
+Skill 是一组可复用的说明、模板和参考文件。例如，“研究简报”Skill 告诉 AI 怎样整理你提供的资料、引用来源、检查结论。它不是一个新模型；你仍使用自己的 AI 工具。
 
-2026 年 10 月 9 日已领取 10 测试 SOL 和 20 测试 USDC，完成公开 Devnet 程序部署、两位测试作者签名、1 测试 USDC 购买和 70/30 分账。作者实际到账 0.7 / 0.3，买家余额从 20 变为 19。五个安装文件与源包完全一致；一次同步超时后通过原 session 恢复成功，没有二次扣款或分账。[完整交易凭证与限制](DEVNET-ACCEPTANCE.md)。测试 API 在本机运行，链上交易使用真实公开 Devnet；这些测试资产和身份不代表收入或客户。
+[打开网站](https://skillseal-47-236-112-184.sslip.io/) · [产品演示](https://youtu.be/s0OTYYRy4cY) · [英文简介](../README.md)
 
-公开网站现使用 `solana` 支付后端与已部署 Devnet 合约，保留原发行者和密钥库。付费发布只对已准入创作者开放，并要求所有作者签名批准和运营者内容审核。线上 HTTPS CLI 的购买、70/30 分账、重复安装、网页 ZIP 恢复、真实 600 秒退款、付费密钥库异机加密恢复已通过。Phantom 验收状态见 [ONLINE-ACCEPTANCE.md](ONLINE-ACCEPTANCE.md)。主网收款和独立安全审计仍未完成。上传按钮为英文；系统文件选择窗口沿用系统语言。
+## 它解决什么问题？
 
-面向已有钱包的 Agent 开发者：先下载密文，再支付，最后在本地解密安装。购买者永久使用所购版本；新版本单独授权。安装后可离线使用，安装器不执行包内脚本。
+好用的 AI 工作流程经常散落在提示词链接、文件夹和聊天记录里。使用者要确认文件齐全、版本正确、安装后能找回来。创作者则需要交付、收款，并把收入分给合作伙伴。
 
-实现包括 Next.js 购买页面与 API、Node.js CLI、SQLite 与加密密钥库、独立结算 worker，以及 Anchor 托管、分账、授权和退款合约。另提供明确标注的本地模拟账本，便于不持有测试币时验证完整体验。模拟付款没有链上交易。
+## 怎么使用？
+
+- **使用者：** 在网站选择 Skill，下载 ZIP 或用安装工具。免费内容不需要钱包。把文件交给自己的 AI 工具，再提供任务资料。
+- **创作者：** 上传文件，设置许可与价格，合作伙伴先确认分成；审核通过后分享版本链接。
+- **付费买家：** 用钱包购买所选版本。购买成功后可以恢复安装，不重复付款。付款十分钟后仍未结算，可申请退回。
+
+## 为什么用区块链？
+
+这里的 Solana 就是**收款、分账和购买记录系统**。测试中，1 测试 USDC 自动按 70/30 分给两位合作作者，同时记录买家获得了哪个版本的使用许可。USDC 是按美元计价的代币；这里用的是没有真实货币价值的测试币。
+
+对本来就在用钱包的开发团队，这种记录和分账比较直接。传统支付也可以做交付和分账。自动让 AI 花钱所需的预算、权限和密钥管理，还没有做进这个版本。
+
+## 现在能用到什么程度？
+
+网站已上线，免费 Skill 可以直接下载。首批内容包含 Research Brief，以及保留原作者和 Apache-2.0 许可的三项 Anthropic Skill。[查看来源与安装方法](CURATED-SKILLS.md)。
+
+购买、分账、恢复、超时退款和备份恢复已通过验收，但**收费目前仅限 Solana Devnet 测试网，没有主网收款、真实客户或收入数据**。[完整验收记录](ONLINE-ACCEPTANCE.md)。
+
+购买者得到的是所选版本的使用许可，不是版权所有权。服务保存付费内容密钥；解密后的文件仍可被复制。独立安全审计尚未完成。
+
+<details>
+<summary>开发者操作手册：本地运行、发布、Devnet、恢复与退款</summary>
 
 ## 快速体验：本地模拟
 
@@ -202,7 +223,7 @@ GitHub Actions 在应用测试、完整生产构建、干净目录发行包安�
 
 ## 已上线的网站与安装入口
 
-[SkillSeal 网站](https://fangnster.github.io/skillseal/) · [新版产品演示](https://youtu.be/AuWg-B13cbg) · [创始人介绍](https://youtu.be/R40MxhZ26mo)。需要 Node.js 24 或更高版本：
+[SkillSeal 网站](https://fangnster.github.io/skillseal/) · [新版产品演示](https://youtu.be/s0OTYYRy4cY) · [创始人介绍](https://youtu.be/R40MxhZ26mo)。需要 Node.js 24 或更高版本：
 
 ```sh
 npm install --ignore-scripts -g https://fangnster.github.io/skillseal/downloads/skillseal-cli-0.2.0.tgz
@@ -221,3 +242,5 @@ Next.js 应用现已增加网页上传、发布预览、作者批准、审核人
 - `/library`：读取自己的私有恢复 session，在浏览器本地解密已购买版本，避免重复付款。
 
 公开测试收费仍要求完成 Devnet 部署、发行者测试 SOL、创作者准入、链上作者批准与实际购买验收。真实主网收款没有启用。现有 MIT 示例仍免费且可按 MIT 许可分发。操作步骤见 [PLATFORM.md](PLATFORM.md)，阿里云部署见 [deploy/aliyun/README.md](../deploy/aliyun/README.md)。
+
+</details>
