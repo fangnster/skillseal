@@ -37,6 +37,10 @@ The GitHub Actions workflow deploys the introduction and installer to GitHub Pag
 
 [Product video 0.2 — live website and real Devnet purchase](https://youtu.be/AuWg-B13cbg) · [Previous cloud walkthrough](https://youtu.be/YWXcdWWev34) · [Earlier local demo](https://youtu.be/374T4FpqwEI) · [Founder video](https://youtu.be/R40MxhZ26mo)
 
+## Free curated catalog
+
+Three Apache-2.0 Skills from Anthropic are now mirrored free: Frontend Design, Internal Communications and Anthropic Brand Guidelines. Original authors, license files and a pinned upstream commit are preserved. Browser ZIP downloads and CLI installations matched all files. SkillSeal signs these as the curator; this is not an upstream endorsement. See [catalog, provenance and installation commands](docs/CURATED-SKILLS.md).
+
 ## Try it in one command
 
 Requires **Node.js 24+ and pnpm 11**. Run from this directory:
