@@ -1,0 +1,160 @@
+{
+  "recordedAt": "2026-10-10T00:26:40.879Z",
+  "origin": "https://skillseal-47-236-112-184.sslip.io",
+  "upstreamRepository": "https://github.com/anthropics/skills",
+  "upstreamCommit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+  "originalAuthor": "Anthropic, PBC. and upstream contributors",
+  "curatorWallet": "F3ADhGzw3fwz4WfHntLvwinUVnva635sKZYSfLPGx6XZ",
+  "upstreamEndorsement": false,
+  "license": "Apache-2.0",
+  "paid": false,
+  "versions": [
+    {
+      "slug": "anthropic-frontend-design",
+      "name": "Frontend Design \u2014 Anthropic",
+      "id": "b635abbe85bd4013d60a644323587e5835ee67c1fa7403f9d55c6a6e5bf142e6",
+      "shareUrl": "https://skillseal-47-236-112-184.sslip.io/skills/b635abbe85bd4013d60a644323587e5835ee67c1fa7403f9d55c6a6e5bf142e6",
+      "sourceUrl": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/frontend-design",
+      "price": "0",
+      "license": "Apache-2.0",
+      "upstreamCommit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "contentHash": "f9e4690df0e659cc32a49e8b7ce007c63a7045f6e87a19a2cb80e013b3790bd2",
+      "fileCount": 5,
+      "upstreamFiles": [
+        {
+          "path": "LICENSE.txt",
+          "bytes": 10174,
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 9390,
+          "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3"
+        }
+      ],
+      "active": true,
+      "reviewStatus": "approved",
+      "reviewPreviewMatched": true,
+      "freeDownloadMatched": true,
+      "approvalRequiresChainTransaction": false,
+      "cliAcceptance": {
+        "version": "0.2.0",
+        "fileCount": 5,
+        "exactBytesMatched": true,
+        "overwriteRefused": true,
+        "noUpstreamCodeExecuted": true
+      },
+      "browserZipAcceptance": {
+        "fileCount": 5,
+        "exactBytesMatched": true,
+        "zipSha256": "0fe7718de43a0c489f1867b53e3a2e19cec5dd68ed01d19a16f7eedae45967e3",
+        "noUpstreamCodeExecuted": true
+      }
+    },
+    {
+      "slug": "anthropic-internal-comms",
+      "name": "Internal Communications \u2014 Anthropic",
+      "id": "f78e7f75c5cb4ec69eb732e895f060f2636e20ba0a0a94258baebb38994a4a7a",
+      "shareUrl": "https://skillseal-47-236-112-184.sslip.io/skills/f78e7f75c5cb4ec69eb732e895f060f2636e20ba0a0a94258baebb38994a4a7a",
+      "sourceUrl": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/internal-comms",
+      "price": "0",
+      "license": "Apache-2.0",
+      "upstreamCommit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "contentHash": "c5ee2c581478bc0255fe768a7ad71697e94419363ca9142328be627abc0de27d",
+      "fileCount": 9,
+      "upstreamFiles": [
+        {
+          "path": "LICENSE.txt",
+          "bytes": 11345,
+          "sha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 1511,
+          "sha256": "067b7587a344a928fc6534ef66b1bcd591fc7c26d207ea7ca3334aeb678d6475"
+        },
+        {
+          "path": "examples/3p-updates.md",
+          "bytes": 3274,
+          "sha256": "087e4363c0f3513728a7e695eeb9ead5c3ecd12a4681b59340691180e65b68fc"
+        },
+        {
+          "path": "examples/company-newsletter.md",
+          "bytes": 3295,
+          "sha256": "30f81cfbdb03858a006169c72169024089c7c5d3d32611d337782da4f38c86b5"
+        },
+        {
+          "path": "examples/faq-answers.md",
+          "bytes": 2366,
+          "sha256": "5ecd3356cd6666937f2ebefa753253edfdbdca15e368d07baf398bfcced72484"
+        },
+        {
+          "path": "examples/general-comms.md",
+          "bytes": 602,
+          "sha256": "4d3a4bb198a77626bcf018e96b2b45a2dbabed172d4ade0fcd70d23ae8a47a47"
+        }
+      ],
+      "active": true,
+      "reviewStatus": "approved",
+      "reviewPreviewMatched": true,
+      "freeDownloadMatched": true,
+      "approvalRequiresChainTransaction": false,
+      "cliAcceptance": {
+        "version": "0.2.0",
+        "fileCount": 9,
+        "exactBytesMatched": true,
+        "overwriteRefused": true,
+        "noUpstreamCodeExecuted": true
+      },
+      "browserZipAcceptance": {
+        "fileCount": 9,
+        "exactBytesMatched": true,
+        "zipSha256": "12498f9aeffd33c1e7b01863a2c362b4c3b1be17bb2dc4c3e5d83d40aee9bf4f",
+        "noUpstreamCodeExecuted": true
+      }
+    },
+    {
+      "slug": "anthropic-brand-guidelines",
+      "name": "Brand Guidelines \u2014 Anthropic",
+      "id": "4bbeb5fd6bfcc429e0ddc0e30443dd253509f81f20e36f837912a969033f1504",
+      "shareUrl": "https://skillseal-47-236-112-184.sslip.io/skills/4bbeb5fd6bfcc429e0ddc0e30443dd253509f81f20e36f837912a969033f1504",
+      "sourceUrl": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/brand-guidelines",
+      "price": "0",
+      "license": "Apache-2.0",
+      "upstreamCommit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "contentHash": "e991329c89e7b42880c4897b51539266c25d083bd883acc62095dd723590ea8e",
+      "fileCount": 5,
+      "upstreamFiles": [
+        {
+          "path": "LICENSE.txt",
+          "bytes": 11345,
+          "sha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 2235,
+          "sha256": "1120b3769e2985cefb3d25be981b1f914abeba57ae079b83c20c666c164fa9fe"
+        }
+      ],
+      "active": true,
+      "reviewStatus": "approved",
+      "reviewPreviewMatched": true,
+      "freeDownloadMatched": true,
+      "approvalRequiresChainTransaction": false,
+      "cliAcceptance": {
+        "version": "0.2.0",
+        "fileCount": 5,
+        "exactBytesMatched": true,
+        "overwriteRefused": true,
+        "noUpstreamCodeExecuted": true
+      },
+      "browserZipAcceptance": {
+        "fileCount": 5,
+        "exactBytesMatched": true,
+        "zipSha256": "d8105b2ba9128be42219ccbfa2251c758aa7badc1809711e55a3a34f99aa0883",
+        "noUpstreamCodeExecuted": true
+      }
+    }
+  ],
+  "cliVerifiedAt": "2026-10-10T00:28:12.200Z"
+}

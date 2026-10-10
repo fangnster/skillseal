@@ -6,6 +6,7 @@ This is an accepted Devnet test release, not mainnet commercial collection.
 | --------------------- | ------------------------------------------------------------------------------------------------------------------- |
 | Source checks         | 39 TypeScript tests; type/format/production/container/Rust/SBF builds passed; two prior local SBF integration tests |
 | Existing-host rollout | Runtime `f5ebb4c` accepted; persistent keys retained; original HTTPS site healthy                                   |
+| Free curated catalog | Three Apache-2.0 mirrors; pinned source, preserved notices and exact browser ZIP/CLI checks; see [curated Skills](CURATED-SKILLS.md) |
 | Creator gates         | Curated publishing, signed collaborator approvals and operator file inspection                                      |
 | HTTPS purchase        | 1 test USDC, finalized 70/30 split and exact five-file installation                                                 |
 | Reinstall             | Public packaged CLI, fresh directory, no second payment/payout                                                      |
