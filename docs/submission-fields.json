@@ -122,10 +122,7 @@
     "sentAt": "2026-10-10",
     "lastCheckedAt": "2026-10-11",
     "response": "No reply found",
-    "questions": [
-      "Accepted alternative to Telegram",
-      "Where to select solar community referral"
-    ]
+    "questions": ["Accepted alternative to Telegram", "Where to select solar community referral"]
   },
   "videoPlacementReviewedAt": "2026-10-11",
   "finalProjectSubmitted": false
