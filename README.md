@@ -1,3 +1,5 @@
+<img src="docs/assets/skillseal-mark.png" alt="SkillSeal logo" width="80" height="80" />
+
 # SkillSeal
 
 **Find an AI work guide. Install it locally. Pay its creators when it is a paid version.**
