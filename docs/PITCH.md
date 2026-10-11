@@ -16,6 +16,6 @@ Founder photos are owner-supplied. The generic AI narration is not a voice clone
 
 ## Review media
 
-[Current published product demo](https://youtu.be/p0zld2clCl8) · [Current published founder introduction](https://youtu.be/R40MxhZ26mo)
+[Current published product demo](https://youtu.be/p0zld2clCl8) · [Current published founder introduction](https://youtu.be/eN67Is1JbTM)
 
 Final competition submission still requires the owner's explicit approval. Verify and select `solar` as the community referral; the owner has no Telegram account.

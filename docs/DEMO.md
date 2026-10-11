@@ -4,7 +4,7 @@
 
 A Skill is a package of instructions, templates and reference files. SkillSeal is the website and installer that connect those steps. It does not supply an AI model.
 
-[92-second plain-language introduction](https://youtu.be/p0zld2clCl8) · [Founder introduction](https://youtu.be/R40MxhZ26mo)
+[92-second plain-language introduction](https://youtu.be/p0zld2clCl8) · [Founder introduction](https://youtu.be/eN67Is1JbTM)
 
 [Full operation and Devnet walkthrough — 149 seconds](https://youtu.be/AuWg-B13cbg). The competition form asks for the live product; this remains its demo video. The shorter introductions explain the product with diagrams and edited actual screens. [中文介绍 — 93 秒](https://youtu.be/s0OTYYRy4cY).
 

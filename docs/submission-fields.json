@@ -1,6 +1,6 @@
 {
   "status": "PROJECT, MEDIA AND FOUNDER PROFILE SAVED AS DRAFT — NOT FINALLY SUBMITTED",
-  "reviewedAt": "2026-10-10",
+  "reviewedAt": "2026-10-11",
   "event": "Crypto World's Fair 2026",
   "projectUrl": "https://colosseum.com/arena/projects/skillseal",
   "projectId": 16413,
@@ -22,12 +22,11 @@
     "accessInstructions": "Open https://skillseal-47-236-112-184.sslip.io/. Choose Free: ZIP or installer, then load SKILL.md in your AI tool. No wallet. Paid tests: Phantom/Solflare, Solana Devnet, test USDC/SOL. CLI: Node.js 24+. Evidence: docs/ONLINE-ACCEPTANCE.md.",
     "githubRepository": "https://github.com/fangnster/skillseal",
     "demoVideo": "https://youtu.be/AuWg-B13cbg",
-    "pitchVideo": "https://youtu.be/R40MxhZ26mo",
+    "pitchVideo": "https://youtu.be/eN67Is1JbTM",
     "website": "https://skillseal-47-236-112-184.sslip.io/"
   },
   "missing": {
     "teamTelegram": "Required; owner explicitly has no Telegram account. Do not invent a contact.",
-    "publicDevnetEvidence": "Public HTTPS payment interruption recovery passed using the independent CLI. Phantom browser purchase and exact ZIP recovery also passed.",
     "communityReferral": "Select the owner-requested solar community option after verifying it in the form; separate from Solana chain selection."
   },
   "sourceLicense": "MIT",
@@ -54,10 +53,10 @@
   "publishedWebsite": "https://skillseal-47-236-112-184.sslip.io/",
   "publishedMedia": {
     "demo": "https://youtu.be/AuWg-B13cbg",
-    "founder": "https://youtu.be/R40MxhZ26mo",
+    "founder": "https://youtu.be/eN67Is1JbTM",
     "visibility": "Unlisted, viewable by link",
     "demoSeconds": 149.0,
-    "founderSeconds": 99.42,
+    "founderSeconds": 59.162,
     "demoScope": "Hosted public HTTPS Devnet purchase/recovery/refund and paid-vault restoration; Phantom browser purchase and exact ZIP recovery also passed.",
     "previousLocalDemo": "https://youtu.be/374T4FpqwEI",
     "previousCloudDemo": "https://youtu.be/YWXcdWWev34",
@@ -68,9 +67,11 @@
     "plainLanguageChineseSeconds": 92.546,
     "plainLanguageScope": "Natural continuous narration; plain-language explanation, diagrams and edited actual operation screens.",
     "competitionDemoSelection": "Full 149-second operation video retained because the form requires live-product operation.",
-    "pendingFounderRevision": {
+    "previousFounder": "https://youtu.be/R40MxhZ26mo",
+    "founderRevision": {
       "seconds": 59.162,
-      "status": "Local complete; YouTube daily limit. Phone verified; advanced verification or 24-hour reset still required."
+      "publishedAt": "2026-10-11",
+      "status": "Published Unlisted; timed English subtitles; copyright checks passed"
     }
   },
   "publicCloudAcceptance": {
@@ -97,5 +98,21 @@
     "offHostBackupRestored": true
   },
   "copyRevision": "Plain-language AI/Web3 explanation, October 10; project answers, repository context, access instructions and introduction link verified in saved online draft. Not finally submitted.",
-  "plainLanguageDraftSavedOnline": true
+  "plainLanguageDraftSavedOnline": true,
+  "optionalWeeklyUpdate": {
+    "week": 4,
+    "seconds": 60,
+    "required": false,
+    "deadline": "2026-10-12T15:00:00Z",
+    "status": "Recommended by organizer reminder; not submitted"
+  },
+  "organizerInquiry": {
+    "sentAt": "2026-10-10",
+    "lastCheckedAt": "2026-10-11",
+    "response": "No reply found",
+    "questions": [
+      "Accepted alternative to Telegram",
+      "Where to select solar community referral"
+    ]
+  }
 }
