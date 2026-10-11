@@ -17,6 +17,6 @@ This is an accepted Devnet test release, not mainnet commercial collection.
 | Existing website      | HTTP 200 after recovery; separate app networks retained                                                                              |
 | Costs                 | Existing resources only; no paid Render API or mainnet funds                                                                         |
 | Media                 | New product walkthrough 149.00s; founder introduction unchanged, both Unlisted                                                       |
-| Submission            | Draft only; owner approval and accepted Telegram contact required; solar waived if unavailable                                       |
+| Submission            | Ready project draft; Telegram accepted, Solar selected, final survey prepared; owner confirmation required                           |
 
 Interrupted broadcast-to-grant installer recovery passed using a dedicated engineering test account; browser-wallet scope is stated above. Independent security review and paying-demand validation remain outstanding. Do not treat engineering balances as revenue. The 1 GiB host cannot safely be assumed to support an unrestricted local image rebuild; use the verified runtime mount procedure and retain rollback configuration. Keep encrypted backups and their separate recovery key private.

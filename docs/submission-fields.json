@@ -15,9 +15,8 @@
     "chainUsage": "Solana is the payment and receipt layer. For a paid Skill, the program holds test USDC, then records access to the chosen version and pays the approved collaborator shares in one transaction. A completed purchase can be recovered without paying again. An unsettled payment is refundable after ten minutes. Public Devnet tests verified purchase, 70/30 payouts, recovery and refund. No mainnet money is collected.",
     "category": "AI Platforms / Agents",
     "teamCountry": "China",
-    "teamTelegram": null,
     "otherContributors": "OpenAI Codex assisted with code generation, implementation review, tests, and documentation. The registered human team currently has one member. Any additional human contributor should be disclosed here before submission.",
-    "notesForJudges": "Pitch (87s): https://youtu.be/0ZcBnj1_i2Q. If YouTube requests login, both videos play at https://skillseal-47-236-112-184.sslip.io/review-videos/. Demo: Devnet 1 test USDC, 70/30 payout, recovery and timeout refund for an unsettled order. Browser purchase and encrypted backup restore passed. Edited screens and generic AI narration disclosed. No customers or revenue. Evidence: docs/ONLINE-ACCEPTANCE.md. No Telegram account; contact through Colosseum.",
+    "notesForJudges": "Pitch (87s): https://youtu.be/0ZcBnj1_i2Q. If YouTube requests login, both videos play at https://skillseal-47-236-112-184.sslip.io/review-videos/. Demo: Devnet 1 test USDC, 70/30 payout, recovery and timeout refund for an unsettled order. Browser purchase and encrypted backup restore passed. Edited screens and generic AI narration disclosed. No customers or revenue. Evidence: docs/ONLINE-ACCEPTANCE.md.",
     "repoContext": "MIT website, installer CLI, reviewed version/share pages, recovery API and Solana payment program. CI verifies 39 tests, application build, clean installation, container readiness and program builds. Public Devnet purchase, payouts, recovery, timeout refund and encrypted backup restoration passed. Source packages keep their own licenses. Keys, recovery files, resumes and personal video sources are excluded.",
     "accessInstructions": "Website: https://skillseal-47-236-112-184.sslip.io/. Free: ZIP or installer; load SKILL.md in your AI tool. No wallet. Paid tests: Phantom/Solflare, Solana Devnet, test USDC/SOL. CLI: Node.js 24+. No-login videos: https://skillseal-47-236-112-184.sslip.io/review-videos/.",
     "githubRepository": "https://github.com/fangnster/skillseal",
@@ -27,9 +26,7 @@
     "showDemoOnPublicProjectPage": true,
     "xProfile": "https://x.com/fangnster"
   },
-  "missing": {
-    "teamTelegram": "Required; owner has no account. Owner-authorized No and email attempts both rejected: Please enter a valid Telegram username. Restored to blank; organizer-approved alternative pending."
-  },
+  "missing": {},
   "sourceLicense": "MIT",
   "ownerApprovalRequired": true,
   "communityReferralRequested": "solar",
@@ -51,7 +48,8 @@
     "Plain-language project description and answers",
     "Natural narration product introduction link in notes for judges",
     "Public technical demo enabled",
-    "Public X profile link verified"
+    "Public X profile link verified",
+    "Owner-provided Telegram contact accepted and saved"
   ],
   "publishedWebsite": "https://skillseal-47-236-112-184.sslip.io/",
   "publishedMedia": {
@@ -121,11 +119,12 @@
     "sentAt": "2026-10-10",
     "lastCheckedAt": "2026-10-11",
     "response": "No reply found; thread contains only the sent inquiry and other matching mail was unrelated registration/weekly reminders.",
-    "questions": ["Accepted alternative to Telegram", "Where to select solar community referral"]
+    "questions": ["Accepted alternative to Telegram", "Where to select solar community referral"],
+    "resolution": "Owner-provided Telegram and final-survey Solar option resolved the earlier questions without an organizer reply."
   },
   "videoPlacementReviewedAt": "2026-10-11",
   "finalProjectSubmitted": false,
-  "communityReferralPolicy": "Owner update October 11: select solar if available; waived if unavailable. No option observed.",
+  "communityReferralPolicy": "Solar found and selected in the open final survey on October 11; selection is separate from the Solana chain checkbox.",
   "videoAccessAudit": {
     "checkedAt": "2026-10-11",
     "signedInDirectPitchPlayback": "passed; observed advancement from 0:06 to 0:26",
@@ -140,5 +139,15 @@
       "requiresLogin": false,
       "sourceMediaStoredOutsideRepository": true
     }
+  },
+  "privateContactFields": {
+    "teamTelegram": "Owner-provided real contact accepted and saved on October 11; value is intentionally omitted from public source."
+  },
+  "finalSurvey": {
+    "status": "Owner-confirmed answers prepared in the open page; not finally submitted",
+    "supportedCommunity": "Solar",
+    "personalAnswers": "Private preparation records only",
+    "submissionAgreesToHackathonRules": true,
+    "ownerConfirmationRequired": true
   }
 }

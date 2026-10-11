@@ -10,7 +10,7 @@ The public project Pitch was corrected on October 11 to the [87-second product-a
 
 The [59-second founder introduction](https://youtu.be/eN67Is1JbTM) was published on October 11 with continuous natural narration and timed English subtitles. YouTube checks reported no issues. The employment title remains **Senior Technical Expert**. Photos, resume and private production assets stay outside public source. Videos are Unlisted and disclose generic AI narration.
 
-The founder submission profile is confirmed complete. A required Telegram contact remains unresolved; the owner has no account. On October 11 the form rejected the owner-authorized attempts to enter `No` and an email address with “Please enter a valid Telegram username.” The field was restored to blank, and the saved judge notes explain the lack of Telegram. The organizer inquiry sent October 10 still has no reply. No **solar** community-referral option appears in the observed details, media/code or review sections; the owner waived that condition on October 11 if unavailable. It is separate from the selected Solana chain checkbox.
+The founder submission profile is confirmed complete. On October 11 the owner supplied a real Telegram contact, which was accepted and saved; the obsolete lack-of-Telegram note was removed. The project review now displays **Ready to submit**. `Solar` is available in the final survey under supporting communities and has been selected. The owner confirmed the survey answers, which are prepared in the open page. The earlier organizer inquiry remains unanswered, but no contact or referral alternative is needed. Nothing has been finally submitted.
 
 Video access was checked on October 11: signed-in direct Pitch playback worked; signed-out Pitch and Demo playback showed YouTube’s sign-in/anti-bot prompt. Embedding and age settings are correct. Do not claim that signed-out access is guaranteed. A [direct-play backup page](https://skillseal-47-236-112-184.sslip.io/review-videos/) is now live on the existing host, outside the source repository. In the signed-out browser both videos played and advanced without media errors. It creates no new paid resource.
 
@@ -28,13 +28,13 @@ The current logged-in submission form requires:
 - A live product demo video **up to 3 minutes**. It should show the product in use.
 - A separate public pitch/team video **up to 2 minutes**, introducing the team, what it is building, and why the team can build it. This current form is more specific than the general FAQ's presentation guidance.
 - Complete founder submission profiles for every team member.
-- Required country and Telegram contact. Country is confirmed as **China**; Telegram remains unavailable.
+- Required country and Telegram contact. Country is confirmed as **China**; the owner-provided Telegram contact is accepted and saved.
 
 Selecting **Solana** in the chain field reflects the implementation and is the proposed track choice. The checkbox is now selected and saved online. The accelerator application switch is currently off; no accelerator application is assumed.
 
 ## Form-ready answers
 
-[submission-fields.json](submission-fields.json) contains English answers corresponding to the observed form. The brief description, build/audience answer, motivation, chain use, technology disclosure, contributor disclosure, judge notes, and repository context are within the observed character limits. Null entries are unresolved information, not values to paste into a form. The prepared project and repository fields have been saved to the online draft; this file is not a final submission receipt.
+[submission-fields.json](submission-fields.json) contains English answers corresponding to the observed form. The brief description, build/audience answer, motivation, chain use, technology disclosure, contributor disclosure, judge notes, and repository context are within the observed character limits. The accepted Telegram value and personal survey responses are omitted from public source and retained in private preparation records. The prepared project and repository fields have been saved to the online draft; this file is not a final submission receipt.
 
 **One-line pitch:** Find and install reusable AI work guides; pay their creators and collaborators through Solana.
 
@@ -52,19 +52,19 @@ The service is trusted to hold content keys. Encryption cannot stop copying afte
 
 ## Work schedule — China Standard Time
 
-| Date                 | Work and completion condition                                                                                                                                                                              | Dependency                                                                   |
-| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| Oct 9                | Registration verified; public source, website and standalone installer published; HTTPS installation checked; English product and founder videos published.                                                | Local implementation and review.                                             |
-| Oct 10               | Hosted HTTPS CLI, Phantom purchase/ZIP recovery, 70/30 payouts, installer interruption, real timeout refund and encrypted paid-vault restore all passed.                                                   | Funded Devnet test accounts and deployed program are available.              |
-| Oct 11               | Timeout refund and paid-vault restoration completed October 10. Broadcast-to-grant installer interruption acceptance also passed; review synchronized materials and video access.                          | Devnet acceptance, founder facts, video recording/upload.                    |
-| Oct 12, before 20:00 | Finalize form answers, logo, repository/video links, Telegram contact and founder profile. Review the complete submission preview. Obtain explicit owner confirmation, then submit and verify the receipt. | Owner's missing profile/contact information and explicit final confirmation. |
-| Oct 13, before 14:59 | Emergency buffer only: resolve upload/access issues and confirm the platform shows the project submitted.                                                                                                  | Official deadline; no new feature scope.                                     |
+| Date                 | Work and completion condition                                                                                                                                                                              | Dependency                                                        |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| Oct 9                | Registration verified; public source, website and standalone installer published; HTTPS installation checked; English product and founder videos published.                                                | Local implementation and review.                                  |
+| Oct 10               | Hosted HTTPS CLI, Phantom purchase/ZIP recovery, 70/30 payouts, installer interruption, real timeout refund and encrypted paid-vault restore all passed.                                                   | Funded Devnet test accounts and deployed program are available.   |
+| Oct 11               | Timeout refund and paid-vault restoration completed October 10. Broadcast-to-grant installer interruption acceptance also passed; review synchronized materials and video access.                          | Devnet acceptance, founder facts, video recording/upload.         |
+| Oct 12, before 20:00 | Finalize form answers, logo, repository/video links, Telegram contact and founder profile. Review the complete submission preview. Obtain explicit owner confirmation, then submit and verify the receipt. | Explicit owner confirmation; survey is prepared in the open page. |
+| Oct 13, before 14:59 | Emergency buffer only: resolve upload/access issues and confirm the platform shows the project submitted.                                                                                                  | Official deadline; no new feature scope.                          |
 
-Devnet funding and the positive CLI purchase/recovery path are verified. Focus remaining time on video access, final draft review and the Telegram alternative. Keep test transactions separate from revenue; mainnet payments, NFTs, metering and additional chains are outside the submission scope.
+Devnet funding and the positive CLI purchase/recovery path are verified. Focus remaining time on final owner review and submission receipt verification. Keep test transactions separate from revenue; mainnet payments, NFTs, metering and additional chains are outside the submission scope.
 
 ## Remaining owner inputs
 
-- Telegram contact: the form requires it; the owner has no account. Resolve an organizer-approved alternative without inventing a contact.
+- Telegram is resolved, the founder profile is complete, and `Solar` is selected. The remaining action is explicit owner confirmation of the prepared survey, rules agreement and final submission.
 - Founder profile is confirmed complete. Review its saved full name and experience before final submission.
 - Review the published founder biography and disclose any work predating the contest before final submission.
 
@@ -72,4 +72,4 @@ Prepared next to the code: [product demo guide](DEMO.md), [two-minute pitch scri
 
 ## Owner approval and community referral
 
-The owner explicitly requires confirmation before **final submission**. Preparing or saving a draft, uploading authorized code and producing reviewable videos does not authorize the final submission action. Select `solar` as the community referral if available; the owner waived this condition if the form has no option. Do not substitute the Solana chain checkbox for the community referral. Telegram is still unresolved: `No` and an email address did not pass form validation.
+The owner explicitly requires confirmation before **final submission**. Preparing or saving a draft, uploading authorized code and producing reviewable videos does not authorize the final submission action. Select `solar` as the community referral if available; the owner waived this condition if the form has no option. Do not substitute the Solana chain checkbox for the community referral. Telegram is now accepted and saved. `Solar` was found in the final survey and selected. Submitting the survey agrees to the hackathon rules and locks most project answers; keep the prepared page open until the owner confirms.
