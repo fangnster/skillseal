@@ -10,7 +10,9 @@ The public project Pitch was corrected on October 11 to the [87-second product-a
 
 The [59-second founder introduction](https://youtu.be/eN67Is1JbTM) was published on October 11 with continuous natural narration and timed English subtitles. YouTube checks reported no issues. The employment title remains **Senior Technical Expert**. Photos, resume and private production assets stay outside public source. Videos are Unlisted and disclose generic AI narration.
 
-The founder submission profile is confirmed complete. A required Telegram contact remains unresolved; the owner has no account. The owner requested **solar** as the community referral; that option is not present in the observed project-details, media/code or review sections and must be verified before final submission. It is distinct from the selected Solana chain checkbox. The organizer inquiry sent October 10 has no reply as of October 11; both points remain open.
+The founder submission profile is confirmed complete. A required Telegram contact remains unresolved; the owner has no account. On October 11 the form rejected the owner-authorized attempts to enter `No` and an email address with “Please enter a valid Telegram username.” The field was restored to blank, and the saved judge notes explain the lack of Telegram. The organizer inquiry sent October 10 still has no reply. No **solar** community-referral option appears in the observed details, media/code or review sections; the owner waived that condition on October 11 if unavailable. It is separate from the selected Solana chain checkbox.
+
+Video access was checked on October 11: signed-in direct Pitch playback worked; signed-out Pitch and Demo playback showed YouTube’s sign-in/anti-bot prompt. Embedding and age settings are correct. Do not claim that signed-out access is guaranteed. A [direct-play backup page](https://skillseal-47-236-112-184.sslip.io/review-videos/) is now live on the existing host, outside the source repository. In the signed-out browser both videos played and advanced without media errors. It creates no new paid resource.
 
 ## Event and deadline
 
@@ -58,7 +60,7 @@ The service is trusted to hold content keys. Encryption cannot stop copying afte
 | Oct 12, before 20:00 | Finalize form answers, logo, repository/video links, Telegram contact and founder profile. Review the complete submission preview. Obtain explicit owner confirmation, then submit and verify the receipt. | Owner's missing profile/contact information and explicit final confirmation. |
 | Oct 13, before 14:59 | Emergency buffer only: resolve upload/access issues and confirm the platform shows the project submitted.                                                                                                  | Official deadline; no new feature scope.                                     |
 
-Devnet funding and the positive CLI purchase/recovery path are verified. Focus remaining time on final draft review, the Telegram alternative and solar referral verification. Keep test transactions separate from revenue; mainnet payments, NFTs, metering and additional chains are outside the submission scope.
+Devnet funding and the positive CLI purchase/recovery path are verified. Focus remaining time on video access, final draft review and the Telegram alternative. Keep test transactions separate from revenue; mainnet payments, NFTs, metering and additional chains are outside the submission scope.
 
 ## Remaining owner inputs
 
@@ -70,4 +72,4 @@ Prepared next to the code: [product demo guide](DEMO.md), [two-minute pitch scri
 
 ## Owner approval and community referral
 
-The owner explicitly requires confirmation before **final submission**. Preparing or saving a draft, uploading authorized code and producing reviewable videos does not authorize the final submission action. The owner requested `solar` as the community referral; check the exact form option and select it before final submission. Do not substitute the Solana chain checkbox for the community referral. Telegram is still unavailable.
+The owner explicitly requires confirmation before **final submission**. Preparing or saving a draft, uploading authorized code and producing reviewable videos does not authorize the final submission action. Select `solar` as the community referral if available; the owner waived this condition if the form has no option. Do not substitute the Solana chain checkbox for the community referral. Telegram is still unresolved: `No` and an email address did not pass form validation.

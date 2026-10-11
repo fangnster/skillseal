@@ -17,9 +17,9 @@
     "teamCountry": "China",
     "teamTelegram": null,
     "otherContributors": "OpenAI Codex assisted with code generation, implementation review, tests, and documentation. The registered human team currently has one member. Any additional human contributor should be disclosed here before submission.",
-    "notesForJudges": "First watch https://youtu.be/p0zld2clCl8 (92 seconds). A Skill is a reusable AI work guide. Try a free one without a wallet. The full demo shows verified Devnet payment: 1 test USDC split 0.7/0.3, purchase recovery and timeout refund. Browser purchase and encrypted backup restore passed. Edited actual screens and generic AI narration are disclosed. No real customers or revenue. Evidence: docs/ONLINE-ACCEPTANCE.md.",
+    "notesForJudges": "Pitch (87s): https://youtu.be/0ZcBnj1_i2Q. If YouTube requests login, both videos play at https://skillseal-47-236-112-184.sslip.io/review-videos/. Demo: Devnet 1 test USDC, 70/30 payout, recovery and timeout refund for an unsettled order. Browser purchase and encrypted backup restore passed. Edited screens and generic AI narration disclosed. No customers or revenue. Evidence: docs/ONLINE-ACCEPTANCE.md. No Telegram account; contact through Colosseum.",
     "repoContext": "MIT website, installer CLI, reviewed version/share pages, recovery API and Solana payment program. CI verifies 39 tests, application build, clean installation, container readiness and program builds. Public Devnet purchase, payouts, recovery, timeout refund and encrypted backup restoration passed. Source packages keep their own licenses. Keys, recovery files, resumes and personal video sources are excluded.",
-    "accessInstructions": "Open https://skillseal-47-236-112-184.sslip.io/. Choose Free: ZIP or installer, then load SKILL.md in your AI tool. No wallet. Paid tests: Phantom/Solflare, Solana Devnet, test USDC/SOL. CLI: Node.js 24+. Evidence: docs/ONLINE-ACCEPTANCE.md.",
+    "accessInstructions": "Open https://skillseal-47-236-112-184.sslip.io/. Choose Free: ZIP or installer, then load SKILL.md in your AI tool. No wallet. Paid tests: Phantom/Solflare, Solana Devnet, test USDC/SOL. CLI: Node.js 24+. Evidence: docs/ONLINE-ACCEPTANCE.md. Video backup (no login): https://skillseal-47-236-112-184.sslip.io/review-videos/.",
     "githubRepository": "https://github.com/fangnster/skillseal",
     "demoVideo": "https://youtu.be/AuWg-B13cbg",
     "pitchVideo": "https://youtu.be/0ZcBnj1_i2Q",
@@ -28,8 +28,7 @@
     "xProfile": "https://x.com/fangnster"
   },
   "missing": {
-    "teamTelegram": "Required; owner explicitly has no Telegram account. Do not invent a contact.",
-    "communityReferral": "Select the owner-requested solar community option after verifying it in the form; separate from Solana chain selection."
+    "teamTelegram": "Required; owner has no account. Owner-authorized No and email attempts both rejected: Please enter a valid Telegram username. Restored to blank; organizer-approved alternative pending."
   },
   "sourceLicense": "MIT",
   "ownerApprovalRequired": true,
@@ -121,9 +120,25 @@
   "organizerInquiry": {
     "sentAt": "2026-10-10",
     "lastCheckedAt": "2026-10-11",
-    "response": "No reply found",
+    "response": "No reply found; thread contains only the sent inquiry and other matching mail was unrelated registration/weekly reminders.",
     "questions": ["Accepted alternative to Telegram", "Where to select solar community referral"]
   },
   "videoPlacementReviewedAt": "2026-10-11",
-  "finalProjectSubmitted": false
+  "finalProjectSubmitted": false,
+  "communityReferralPolicy": "Owner update October 11: select solar if available; waived if unavailable. No option observed.",
+  "videoAccessAudit": {
+    "checkedAt": "2026-10-11",
+    "signedInDirectPitchPlayback": "passed; observed advancement from 0:06 to 0:26",
+    "signedOutPitchAndDemoPlayback": "YouTube sign-in/anti-bot prompt",
+    "allowEmbedding": true,
+    "ageRestriction": false,
+    "anonymousAccessGuaranteed": false,
+    "backupVideoPage": {
+      "url": "https://skillseal-47-236-112-184.sslip.io/review-videos/",
+      "published": true,
+      "signedOutPlayback": "Pitch advanced to 23 seconds; Demo advanced to 49 seconds; no media error",
+      "requiresLogin": false,
+      "sourceMediaStoredOutsideRepository": true
+    }
+  }
 }

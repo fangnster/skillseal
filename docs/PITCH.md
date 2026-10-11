@@ -23,4 +23,6 @@ Founder photos are owner-supplied. The generic AI narration is not a voice clone
 
 The optional Week 4 progress video (54 seconds) was submitted on October 11. Colosseum displayed its submission receipt. That submission is separate from the final project submission.
 
-Final competition submission still requires the owner's explicit approval. Verify and select `solar` as the community referral; the owner has no Telegram account.
+YouTube settings allow embedding, have no age restriction, and use Unlisted visibility. On October 11, direct playback worked in the signed-in browser, while signed-out playback of both Pitch and Demo showed YouTube's sign-in/anti-bot prompt. A [no-login video backup](https://skillseal-47-236-112-184.sslip.io/review-videos/) now plays both videos directly on the existing website; signed-out playback and video byte-range requests passed. Personal video files remain outside the source repository. This is an access limitation, not a video-placement error. [YouTube playback help](https://support.google.com/youtube/answer/3037019).
+
+Final competition submission still requires the owner's explicit approval. The owner waived the `solar` referral condition if no option is available. The required Telegram field rejected both `No` and an email address; an accepted contact alternative remains unresolved.
