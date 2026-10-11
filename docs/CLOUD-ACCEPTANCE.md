@@ -46,4 +46,4 @@ skillseal install 778fda57fca27de5da92df1d4a13a5f300a02494992a2714e8b60a2530a5ae
 
 Public paid checkout is disabled. This acceptance creates no paid orders, simulated payments, mainnet transactions or revenue claims. Public Solana Devnet contract funding, wallet purchase, finalized settlement, paid recovery and refund must pass [Devnet acceptance](DEVNET-ACCEPTANCE.md) separately. Off-host encrypted backup and restoration have not yet been accepted. The key service remains trusted, and unlocked files can be copied.
 
-Competition materials remain a draft. The owner must confirm before final submission; the requested `solar` referral must be verified before that step.
+Competition materials remain a draft. The owner must confirm before final submission. Select `solar` if the community-referral option is available; on October 11 the owner waived it if unavailable. The required Telegram contact remains unresolved: `No` and an email address were rejected.
