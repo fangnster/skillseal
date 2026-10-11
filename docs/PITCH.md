@@ -16,6 +16,11 @@ Founder photos are owner-supplied. The generic AI narration is not a voice clone
 
 ## Review media
 
-[Current published product demo](https://youtu.be/p0zld2clCl8) · [Current published founder introduction](https://youtu.be/eN67Is1JbTM)
+- **Colosseum Pitch / public project page:** [87-second product-and-founder pitch](https://youtu.be/0ZcBnj1_i2Q). Explains the pain, the website and installer, Solana payments, verified test results, and why the founder is building it. Product sections use actual screens and diagrams; the thumbnail shows the product.
+- **Colosseum Demo:** [149-second live-operation video](https://youtu.be/AuWg-B13cbg). Shows purchase, recovery and timeout refund.
+- **Supplementary explanation:** [92-second plain-language product introduction](https://youtu.be/p0zld2clCl8).
+- **Supplementary biography:** [59-second founder introduction](https://youtu.be/eN67Is1JbTM); not used as the project Pitch.
+
+The optional Week 4 progress video (54 seconds) was submitted on October 11. Colosseum displayed its submission receipt. That submission is separate from the final project submission.
 
 Final competition submission still requires the owner's explicit approval. Verify and select `solar` as the community referral; the owner has no Telegram account.

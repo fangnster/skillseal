@@ -223,7 +223,7 @@ GitHub Actions 在应用测试、完整生产构建、干净目录发行包安�
 
 ## 已上线的网站与安装入口
 
-[SkillSeal 网站](https://fangnster.github.io/skillseal/) · [新版产品演示](https://youtu.be/s0OTYYRy4cY) · [创始人介绍](https://youtu.be/eN67Is1JbTM)。需要 Node.js 24 或更高版本：
+[SkillSeal 网站](https://fangnster.github.io/skillseal/) · [中文产品演示](https://youtu.be/s0OTYYRy4cY) · [产品与创始人 Pitch](https://youtu.be/0ZcBnj1_i2Q) · [独立创始人介绍](https://youtu.be/eN67Is1JbTM)。比赛公开 Pitch 使用产品与创始人综合介绍；Demo 使用真实操作演示。需要 Node.js 24 或更高版本：
 
 ```sh
 npm install --ignore-scripts -g https://fangnster.github.io/skillseal/downloads/skillseal-cli-0.2.0.tgz

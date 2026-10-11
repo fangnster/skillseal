@@ -4,7 +4,7 @@
 
 A Skill is a package of instructions, templates and reference files. SkillSeal is the website and installer that connect those steps. It does not supply an AI model.
 
-[92-second plain-language introduction](https://youtu.be/p0zld2clCl8) · [Founder introduction](https://youtu.be/eN67Is1JbTM)
+[Project pitch — 87 seconds](https://youtu.be/0ZcBnj1_i2Q) · [92-second plain-language introduction](https://youtu.be/p0zld2clCl8) · [Separate founder biography](https://youtu.be/eN67Is1JbTM)
 
 [Full operation and Devnet walkthrough — 149 seconds](https://youtu.be/AuWg-B13cbg). The competition form asks for the live product; this remains its demo video. The shorter introductions explain the product with diagrams and edited actual screens. [中文介绍 — 93 秒](https://youtu.be/s0OTYYRy4cY).
 
@@ -22,4 +22,4 @@ A Skill is a package of instructions, templates and reference files. SkillSeal i
 
 Paid checkout uses Solana **Devnet**, its test network, and test tokens with no real-money value. These tests are not customers, revenue or an independent security audit. The service keeps paid-content keys; decrypted files can be copied.
 
-Videos use edited actual page/result views and generic AI narration. Product visuals use workflows and operation screens; personal photographs appear only in the founder introduction. Final competition submission needs separate owner approval.
+Videos use edited actual page/result views and generic AI narration. Product visuals use workflows and operation screens; personal photographs appear only in the founder biography and the founder sections of the project pitch. The Colosseum Demo field contains the live-operation video; its public Pitch field contains the product-and-founder pitch, not the standalone biography. Final competition submission needs separate owner approval.

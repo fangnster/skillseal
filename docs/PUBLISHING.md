@@ -54,7 +54,7 @@ pnpm run demo
 
 ## 参加黑客松
 
-准备好的 [项目介绍](HACKATHON.md) 与 [演示步骤](DEMO.md) 可作为报名和视频素材。当前赛事是 Crypto World’s Fair 2026。报名草稿已保存英文项目说明、China、Solana、公开仓库链接和标志；尚未最终提交。[新版产品视频](https://youtu.be/AuWg-B13cbg) 和 [创始人视频](https://youtu.be/eN67Is1JbTM) 已上传 YouTube，均为 Unlisted，可通过链接观看。创始人资料已确认完整；最终提交前再次核对。既有工作与开发时间范围须在最终确认时核对。
+准备好的 [项目介绍](HACKATHON.md) 与 [演示步骤](DEMO.md) 可作为报名和视频素材。当前赛事是 Crypto World’s Fair 2026。报名草稿已保存英文项目说明、China、Solana、公开仓库链接和标志；尚未最终提交。[真实产品操作 Demo](https://youtu.be/AuWg-B13cbg)、[87 秒产品与创始人 Pitch](https://youtu.be/0ZcBnj1_i2Q) 和 [独立创始人介绍](https://youtu.be/eN67Is1JbTM) 已上传 YouTube，均为 Unlisted，可通过链接观看。Colosseum 的公开 Pitch 已改为产品与创始人综合介绍，Demo 保留真实操作视频；个人介绍作为补充材料。第四周 54 秒进展视频已于 10 月 11 日单独提交并取得回执，周视频链接保留在私有准备记录中。创始人资料已确认完整；最终提交前再次核对。既有工作与开发时间范围须在最终确认时核对。
 
 公网 Devnet 部署、作者批准、真实测试 USDC 购买、70/30 分账、Phantom 购买与 ZIP 恢复、付款中断续传、真实超时退款与异机加密备份恢复均已完成。当前证据见 [ONLINE-ACCEPTANCE.md](ONLINE-ACCEPTANCE.md)。
 

@@ -22,8 +22,10 @@
     "accessInstructions": "Open https://skillseal-47-236-112-184.sslip.io/. Choose Free: ZIP or installer, then load SKILL.md in your AI tool. No wallet. Paid tests: Phantom/Solflare, Solana Devnet, test USDC/SOL. CLI: Node.js 24+. Evidence: docs/ONLINE-ACCEPTANCE.md.",
     "githubRepository": "https://github.com/fangnster/skillseal",
     "demoVideo": "https://youtu.be/AuWg-B13cbg",
-    "pitchVideo": "https://youtu.be/eN67Is1JbTM",
-    "website": "https://skillseal-47-236-112-184.sslip.io/"
+    "pitchVideo": "https://youtu.be/0ZcBnj1_i2Q",
+    "website": "https://skillseal-47-236-112-184.sslip.io/",
+    "showDemoOnPublicProjectPage": true,
+    "xProfile": "https://x.com/fangnster"
   },
   "missing": {
     "teamTelegram": "Required; owner explicitly has no Telegram account. Do not invent a contact.",
@@ -42,13 +44,15 @@
     "Live platform access instructions",
     "Public website URL",
     "Updated product video URL",
-    "Founder video URL",
+    "Product and founder pitch video URL",
     "Public installation access instructions",
     "Completed founder submission profile",
     "Verified public Devnet CLI purchase and recovery evidence",
     "Updated Devnet product video",
     "Plain-language project description and answers",
-    "Natural narration product introduction link in notes for judges"
+    "Natural narration product introduction link in notes for judges",
+    "Public technical demo enabled",
+    "Public X profile link verified"
   ],
   "publishedWebsite": "https://skillseal-47-236-112-184.sslip.io/",
   "publishedMedia": {
@@ -66,13 +70,18 @@
     "plainLanguageEnglishSeconds": 91.922,
     "plainLanguageChineseSeconds": 92.546,
     "plainLanguageScope": "Natural continuous narration; plain-language explanation, diagrams and edited actual operation screens.",
-    "competitionDemoSelection": "Full 149-second operation video retained because the form requires live-product operation.",
+    "competitionDemoSelection": "Full 149-second live-operation demo remains in the Demo field; a distinct 87-second product-and-founder pitch is in the public Pitch field.",
     "previousFounder": "https://youtu.be/R40MxhZ26mo",
     "founderRevision": {
       "seconds": 59.162,
       "publishedAt": "2026-10-11",
       "status": "Published Unlisted; timed English subtitles; copyright checks passed"
-    }
+    },
+    "pitch": "https://youtu.be/0ZcBnj1_i2Q",
+    "pitchSeconds": 86.917,
+    "pitchScope": "Product pain, website and installer, Solana payment and version receipt, verified Devnet results, and founder experience. Product thumbnail; photos only in founder sections.",
+    "standaloneFounderRole": "Supplementary biography, not the competition Pitch field.",
+    "previousCompetitionPitch": "https://youtu.be/eN67Is1JbTM"
   },
   "publicCloudAcceptance": {
     "status": "passed",
@@ -101,10 +110,13 @@
   "plainLanguageDraftSavedOnline": true,
   "optionalWeeklyUpdate": {
     "week": 4,
-    "seconds": 60,
+    "seconds": 54.083,
     "required": false,
     "deadline": "2026-10-12T15:00:00Z",
-    "status": "Recommended by organizer reminder; not submitted"
+    "status": "Submitted October 11; Colosseum Week 4 submission receipt verified",
+    "submitted": true,
+    "receiptUrl": "https://colosseum.com/arena/projects/16413/weekly-updates?week=4",
+    "videoLinkStorage": "Private preparation records only"
   },
   "organizerInquiry": {
     "sentAt": "2026-10-10",
@@ -114,5 +126,7 @@
       "Accepted alternative to Telegram",
       "Where to select solar community referral"
     ]
-  }
+  },
+  "videoPlacementReviewedAt": "2026-10-11",
+  "finalProjectSubmitted": false
 }
